@@ -1,0 +1,18 @@
+.center{
+    
+    width:200px;
+    margin:10% auto;
+    overflow:hidden;
+}
+.textcenter{
+    text-align:center;
+}
+.blue {
+    margin-top:8%;
+    color: blue;
+    border: solid blue 4px;
+    font-size: 20px;
+    width: 100px;
+    border-radius: 10px;
+    height: 40px;
+}
