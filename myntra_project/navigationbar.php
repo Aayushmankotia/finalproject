@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,14 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="myntra.css">
-    <link rel="stylesheet" href="logoutscreen.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>firstpage</title>
 
   </head>
   <body>
-
-    <header>
+<header>
       <!-- navigation section start -->
       <nav>
         <!-- main division  -->
@@ -149,13 +150,30 @@
             <!-- search bar section  -->
             <div class="searchBox">
               <input class="searchInput" type="text" name=""
-              placeholder="SEARCH FOR PRODUCTS ">
+                placeholder="SEARCH FOR PRODUCTS ">
               <button class="searchButton" href="#">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
+            </div>
+
+            <div class="profile_div">
+              <a class="profile anchor_margin" href="#profile">
+                <i class="fa fa-user-circle-o "></i>
+              </a>
+              
+              <div class="drop_profile">
+                <h6 class="orange_heading">WELCOME</h6>
+                <p class="drop_info">To access account and manage orders</p><br>
+                <a class="login_button" href="login.php"> LOGIN/SIGNUP</a>
+                <a class="login_button" href="logout.php"> LOGout</a>
+              </div>
 
             </div>
-            <a href="#CART">CART</a>
+
+            <div class="cart_div">
+              <a class="cart anchor_margin" href="cart.php">
+                <i class="fa fa-cart-plus "></i></a>
+            </div>
           </div>
         </div>
       </nav>
@@ -164,28 +182,5 @@
 
     </header>
     <!-- header section ends  -->
-    <!-- html form is created below -->
-
-    <!-- main section  -->
-    <section class="center " id="hide_borders">
-
-        <div class="textcenter">
-            <h3 class="headinglogin"><B>PLEASE LOG IN</B></h3>
-        </div>
-        <div class='myntraimg'>
-            <img class='loginimage' src='shoping.png' alt= '##'>
-        </div>
-        <div class="textcenter">
-           <a href="login.php"> <button class="blue">LOGIN</button></a>
-
-        </div>
-
-   
-
-
-    </section>
-    <!-- main section close  -->
-
-
-    </body>
-    </html>
+</body>
+</html>

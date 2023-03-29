@@ -13,8 +13,8 @@ nav {
   box-shadow: 0px 2px 9px 2px rgb(226, 226, 226);
   z-index: 2;
 }
- .anchor_padding{
-  padding:50px;
+ .anchor_margin{
+  margin-right:100px;
 
  }
 .dropspan{
@@ -24,6 +24,11 @@ nav {
   display:inline-block;
   
 }
+.loginimage{
+  width:100%;
+  height:300px;
+}
+
 /* .flexstyle{
   display: flex;
   justify-content: space-evenly;
@@ -114,6 +119,53 @@ justify-content:end;
 align-items:center;
 width: 50%;
 }
+/* .size{
+  font-size:40px;
+} */
+.profile{
+  font-size:40px;
+  padding:19px;
+}
+.cart{
+  font-size:40px;
+  padding:19px;
+
+}
+.drop_profile{
+    display:none;
+    height: 300px;
+    width: 270px;
+    position: absolute;
+    background-color: #ffffff;
+    padding: 8px;
+    top: 80px;
+    right: 14%;
+    box-shadow: 2px 2px 8px 2px #cecece;
+    border-top-color:cyan;
+    border-top-width:4px;
+    border-top-style:solid;
+}
+.profile_div:hover .drop_profile{ 
+  
+  display:block;
+}
+.orange_heading{
+  font-size:18px;
+  color:rgb(255, 49, 12);
+}
+.drop_info
+{
+  font-size:14px;
+  margin:5px;
+}
+.login_button{
+  border:solid black 1px;
+  background-color: #eeeeee;
+  padding:4px;
+  font-size:small;
+  margin-left:6px;
+  
+}
 
 /*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,navigation searchbar */
 
@@ -128,7 +180,7 @@ width: 50%;
 }
 
 .searchBox:hover > .searchInput {
-  width: 580px;
+  width: 540px;
   padding-left:22px;
 }
 
@@ -140,7 +192,7 @@ color : #1512d4;
 .searchButton {
   color: rgb(217, 34, 241);
   float: right;
-  width: 66px;
+  width: 56px;
   height: 40px;
   border-radius: 50%;
   background: #2f3640;
