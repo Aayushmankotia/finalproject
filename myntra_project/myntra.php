@@ -23,23 +23,23 @@
 
       <!-- images are added for the slider  -->
       <div class="mySlides fade">
-        <img class="slideimg" src="uploads/banner-1.webp">
+        <img class="slideimg" src="images/banner-1.webp">
       </div>
 
       <div class="mySlides fade">
-        <img class="slideimg" src="uploads/banner-2.webp">
+        <img class="slideimg" src="images/banner-2.webp">
       </div>
 
       <div class="mySlides fade">
-        <img class="slideimg" src="uploads/banner-3.webp">
+        <img class="slideimg" src="images/banner-3.webp">
       </div>
 
       <div class="mySlides fade">
-        <img class="slideimg" src="uploads/banner-4.webp">
+        <img class="slideimg" src="images/banner-4.webp">
       </div>
 
       <div class="mySlides fade">
-        <img class="slideimg" src="uploads/banner-5.webp">
+        <img class="slideimg" src="images/banner-5.webp">
       </div>
     </div>
 
@@ -72,7 +72,7 @@
       <div class="brand_division">
 
         <section class="brandimg brand">
-          <img class="banner" src="uploads/banner2.jpg" alt="">
+          <img class="banner" src="images/banner2.jpg" alt="">
         </section>
 
         <section class="brandtext brand">
@@ -141,28 +141,28 @@
         <section class="flexcircles">
           <a href="">
             <article class="box">
-              <img src="uploads/fassion.jpg" alt="product" class="productimg">
+              <img src="images/fassion.jpg" alt="product" class="productimg">
               <div class="productname">GIRL TOPS</div>
             </article>
           </a>
 
           <a href="">
             <article class="box">
-              <img src="uploads/menroyal.jpg" alt="product" class="productimg">
+              <img src="images/menroyal.jpg" alt="product" class="productimg">
               <div class="productname">SHERWANI</div>
             </article>
           </a>
 
           <a href="">
             <article class="box">
-              <img src="uploads/men1.jpg" alt="product" class="productimg">
-              <div class="productname">SHIRT AND PENT</div>
+              <img src="images/mblackcoat.jpg" alt="product" class="productimg">
+              <div class="productname">COAT-PANT</div>
             </article>
           </a>
 
           <a href="">
             <article class="box">
-              <img src="uploads/lady.jpg" alt="product" class="productimg">
+              <img src="images/lady.jpg" alt="product" class="productimg">
               <div class="productname">DRESSES</div>
             </article>
           </a>
@@ -170,28 +170,28 @@
           <section class="flexcircles"> -->
           <a href="">
             <article class="box">
-              <img src="uploads/nike.jpg" alt="product" class="productimg">
-              <div class="productname">SHOO</div>
+              <img src="images/nike.jpg" alt="product" class="productimg">
+              <div class="productname">SHOE</div>
             </article>
           </a>
 
           <a href="">
             <article class="box">
-              <img src="uploads/ladydress.jpg" alt="product" class="productimg">
+              <img src="images/wladybagsbrown.jpg" alt="product" class="productimg">
               <div class="productname">LADIES-BAGS</div>
             </article>
           </a>
 
           <a href="">
             <article class="box">
-              <img src="uploads/ladygown.jpg" alt="product" class="productimg">
-              <div class="productname">SAREES</div>
+              <img src="images/mformalshirtsmultiple.jpg" alt="product" class="productimg">
+              <div class="productname">SHIRT</div>
             </article>
           </a>
 
           <a href="">
             <article class="box">
-              <img src="uploads/kids.jpg" alt="product" class="productimg">
+              <img src="images/kcutedress.jpg" alt="product" class="productimg">
               <div class="productname"> TEEN WEAR</div>
             </article>
           </a>
