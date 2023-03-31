@@ -236,7 +236,7 @@ margin-right:14px;
 .slideshow-container {
  width: 100%;
   position: relative;
-  margin: auto;
+  margin:80px auto 10px auto;
   top:40px;
   height:540px;
 
