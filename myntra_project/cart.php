@@ -1,147 +1,179 @@
 <?php
-
-require 'configer.php';
-
 session_start();
-
-$phone = $_SESSION['phone'];
-
-if(!isset($phone)){
-   header('location:logoutscreen.php');
-};
-
-// if(isset($_GET['delete'])){
-//     $delete_id = $_GET['delete'];
-//     mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$delete_id'") or die('query failed');
-//     header('location:cart.php');
-// }
-
-// if(isset($_GET['delete_all'])){
-//     mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-//     header('location:cart.php');
-// };
-
-// if(isset($_POST['update_quantity'])){
-//     $cart_id = $_POST['cart_id'];
-//     $cart_quantity = $_POST['cart_quantity'];
-//     mysqli_query($conn, "UPDATE `cart` SET quantity = '$cart_quantity' WHERE id = '$cart_id'") or die('query failed');
-//     $message[] = 'cart quantity updated!';
-// }
-
 ?>
-
-<?php
-
-@include 'config.php';
-
-session_start();
-
-$u_id = $_SESSION['u_id'];
-
-if(!isset($u_id)){
-   header('location:login.php');
-};
-
-if(isset($_GET['delete'])){
-    $delete_id = $_GET['delete'];
-    mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$delete_id'") or die('query failed');
-    header('location:cart.php');
-}
-
-if(isset($_GET['delete_all'])){
-    mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$u_id'") or die('query failed');
-    header('location:cart.php');
-};
-
-if(isset($_POST['update_quantity'])){
-    $cart_id = $_POST['cart_id'];
-    $cart_quantity = $_POST['cart_quantity'];
-    mysqli_query($conn, "UPDATE `cart` SET quantity = '$cart_quantity' WHERE id = '$cart_id'") or die('query failed');
-    $message[] = 'cart quantity updated!';
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>shopping cart</title>
-
-   <!-- font awesome cdn link  -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-   <!-- custom admin css file link  -->
-   <link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="myntra.css">
+    <title>men</title>
 </head>
+
 <body>
-   
-<?php @include 'header.php'; ?>
 
-<section class="heading">
-    <h3>shopping cart</h3>
-    <p> <a href="home.php">home</a> / cart </p>
-</section>
-
-<section class="shopping-cart">
-
-    <h1 class="title">products added</h1>
-
-    <div class="box-container">
 
     <?php
-        $grand_total = 0;
-        $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-        if(mysqli_num_rows($select_cart) > 0){
-            while($fetch_cart = mysqli_fetch_assoc($select_cart)){
-    ?>
-    <div  class="box">
-        <a href="cart.php?delete=<?php echo $fetch_cart['id']; ?>" class="fas fa-times" onclick="return confirm('delete this from cart?');"></a>
-        <a href="view_page.php?pid=<?php echo $fetch_cart['pid']; ?>" class="fas fa-eye"></a>
-        <img src="uploaded_img/<?php echo $fetch_cart['image']; ?>" alt="" class="image">
-        <div class="name"><?php echo $fetch_cart['name']; ?></div>
-        <div class="price">$<?php echo $fetch_cart['price']; ?>/-</div>
-        <form action="" method="post">
-            <input type="hidden" value="<?php echo $fetch_cart['id']; ?>" name="cart_id">
-            <input type="number" min="1" value="<?php echo $fetch_cart['quantity']; ?>" name="cart_quantity" class="qty">
-            <input type="submit" value="update" class="option-btn" name="update_quantity">
-        </form>
-        <div class="sub-total"> sub-total : <span>$<?php echo $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?>/-</span> </div>
-    </div>
-    <?php
-    $grand_total += $sub_total;
-        }
-    }else{
-        echo '<p class="empty">your cart is empty</p>';
+
+    require 'configer.php';
+    // navigationbar.php file is include here for navigation bar 
+    @include 'navigationbar.php';
+
+
+
+    $phone = $_SESSION['phone'];
+
+    if (!isset($phone)) {
+        header('location:logoutscreen.php');
     }
+    ;
+
+    echo $_SESSION['phone'];
+    echo $_SESSION['name'];
+
+
+    $sql = "SELECT * FROM users WHERE phone = '$phone'";
+
+
+
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_num_rows($result);
+
+
+    if ($row === 1) {
+        while ($row = mysqli_fetch_array($result)) {
+
+            echo "<br>";
+            $_SESSION['u_id'] = $id = $row['u_id'];
+
+            echo $_SESSION['role_id'] = $role_id = $row['role_id'];
+            echo $_SESSION['u_name'] = $u_name = $row['user_name'];
+            echo $_SESSION['email'] = $email = $row['email'];
+            $_SESSION['pass'] = $pass = $row['pass'];
+            $_SESSION['phone'] = $phone = $row['phone'];
+            $_SESSION['registered'] = $id;
+
+            echo "dtfyghjk" . $_SESSION['u_name'];
+        }
+
+    }
+
     ?>
+    <div class="big_box_flex">
+        <div class="big_box">
+
+            <!-- container grid -->
+            <div class="maincontainer">
+
+                <?php
+                $sql = "SELECT * FROM cart WHERE u_id = '$id'";
+
+
+
+                $result = mysqli_query($conn, $sql);
+                $row = mysqli_num_rows($result);
+
+
+                if ($row >= 1) {
+                    while ($row = mysqli_fetch_array($result)) {
+
+                        echo "<br>";
+                        $_SESSION['cart_id '] = $cart_id = $row['cart_id '];
+                        $_SESSION['u_id'] = $id = $row['u_id'];
+
+                        $_SESSION['product_id'] = $product_id = $row['product_id'];
+                        $_SESSION['product_name'] = $product_name = $row['product_name'];
+                        $_SESSION['product_price'] = $product_price = $row['product_price'];
+                        $_SESSION['product_image'] = $product_image = $row['product_image'];
+                        $_SESSION['product_category'] = $product_category = $row['product_category'];
+                        $_SESSION['product_quantity'] = $product_quantity = $row['product_quantity'];
+
+                        $total = $_SESSION['product_price'] * $_SESSION['product_quantity'];
+                        // print_r($arr) = array('$total');
+                        $total_sum += $total;
+                        $product_qty += $product_quantity;
+
+                        if (isset($_POST['DELETE'])) {
+                            echo$_SESSION['product_id'] ;
+        
+                            $query = "DELETE FROM cart WHERE product_id = '$product_id'";
+                            echo $query;
+                            // Execute query
+                            if ($conn->query($query) === TRUE) {
+                                echo "Record deleted successfully";
+                            } else {
+                                echo "Error deleting record: " . $conn->error;
+                            }
+                        }
+
+                        ?>
+
+                        <section class="container_boxes box1">
+                            <!-- product container   -->
+                            <!--  form to add the item in the cart -->
+                            <form action="" method="POST" class="">
+
+                                <!-- fetch image and show here   -->
+                                <img src="uploads/<?php echo $row['product_image']; ?>" alt="" class="productimage">
+                                <div class="price">
+
+                                    <h3>
+                                        <!-- fetch the product name  -->
+                                        <?php echo $row['product_name']; ?>
+                                        <?php echo $_SESSION['product_id']; ?>
+                                    </h3>
+                                    <b>₹:
+                                        <!-- fetch the product price -->
+                                        <?php echo $row['product_price']; ?>
+                                    </b>
+                                    <?php echo "<span class='green'>(" . $row['product_quantity'] . ")</span>";
+                                    echo "<input type='submit' value='DELETE' name='DELETE'>";
+
+
+                                    ?>
+
+
+
+
+                        </section>
+
+
+                        <?php
+                    }
+                } else {
+
+                    echo '<p class="empty">no products added yet!</p>';
+                }
+
+                echo $total_sum;
+
+               
+                ?>
+
+
+            </div>
+        </div>
+        <div class="total">
+            <h3 class='grand_total'> GRAND TOTAL</h3>
+            <HR>
+            <div class="productnum"> WELCOME
+                <?php echo "<span class='green'>(" . $_SESSION['phone'] . ")</span>"; ?>
+            </div>
+            <div class="productnum"> NUMBERS OF PRODUCT
+                <?php echo "<span class='green'>(" . $product_qty . ")</span>"; ?>
+            </div>
+            <a href='contactdetails.php'><button>CONTINUE</button></a>
+
+
+        </div>
+
     </div>
 
-    <div class="more-btn">
-        <a href="cart.php?delete_all" class="delete-btn <?php echo ($grand_total > 1)?'':'disabled' ?>" onclick="return confirm('delete all from cart?');">delete all</a>
-    </div>
-
-    <div class="cart-total">
-        <p>grand total : <span>$<?php echo $grand_total; ?>/-</span></p>
-        <a href="shop.php" class="option-btn">continue shopping</a>
-        <a href="checkout.php" class="btn  <?php echo ($grand_total > 1)?'':'disabled' ?>">proceed to checkout</a>
-    </div>
-
-</section>
-
-
-
-
-
-
-<?php @include 'footer.php'; ?>
-
-<script src="js/script.js"></script>
 
 </body>
+
 </html>
-
-

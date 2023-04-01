@@ -6,17 +6,27 @@ if (isset($_SESSION['registered']) || $_SESSION['registered']) {
     header('Location: myntra.php');
     exit;
 }
-if (isset($_POST['submit'])){
 
+
+$phoneerr = null;
+$flag = TRUE;
+
+if (isset($_POST['submit'])){
  
 
-    
-
 //     // Retrieve the form data using the POST method
-    $phone = $_POST["phone"];
+   
+
+    if (!preg_match('/^[0-9]{10}+$/', $_POST['phone'])) {
+        $phoneerr = "INVALID PHONE NUMBER ";
+       $flag = false;
+    } else {
+        $phone = $_POST['phone'];
+    }
+
     echo $_SESSION['phone'] = $phone;
     echo "<br>";
-    
+    if($flag){
         $sql = "SELECT * FROM users WHERE phone = '$phone'";
         echo $sql;
 
@@ -56,7 +66,7 @@ if (isset($_POST['submit'])){
 
         }
         
-
+    }
        
     mysqli_close($conn);
 }
@@ -98,6 +108,8 @@ if (isset($_POST['submit'])){
 
             <div class="inputdivision textcenter">    
                 <input class="input" type="tel" name="phone" placeholder="+91 | Mobile Number*" >  
+                <?php echo "<span>" . $phoneerr . "<span>"; ?>
+
             </div>
 
             <div class="inputdivision">

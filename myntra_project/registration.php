@@ -6,8 +6,18 @@ include 'configer.php';
 
 
 
+$nameerr = $emailerr = $passerr = $phoneerr = $occupationerr = $cityerr = $pin_codeerr = $cpasserr = null;
 
 
+$flag = TRUE;
+
+function test($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return ($data);
+    }
 
 
 if (isset($_POST['create'])){
@@ -15,10 +25,49 @@ if (isset($_POST['create'])){
 // Retrieve the form data using the POST method
 $role_id = 2;
 $phone = $_SESSION['phone'] ;  // Enclose phone number in quotes to make it a string value
-$user_name = $_POST["user_name"];
 
-$email = $_POST["email"];
-$password = $_POST['pass'];
+
+ // name validation
+ if (empty($_POST["user_name"])) {
+    $nameerr = "**REQUIRED FIELD NAME ";
+    $flag = false;
+} elseif
+(!preg_match("/^[A-Z]*$/", $_POST['user_name'])) {
+    $nameerr = "CAPITAL LETTERS ONLY ";
+    $flag = false;
+} else {
+    $user_name = test($_POST['user_name']);
+}
+
+
+
+
+$email = test($_POST['email']);
+        if (empty($_POST["email"])) {
+            $emailerr = "*REQUIRED FIELD EMAIL";
+
+            $flag = false;
+        } elseif
+        (!preg_match('/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/', $_POST['email'])) {
+            $emailerr = "INVALID EMAIL";
+            $flag = false;
+        } else {
+
+            $check = "SELECT *FROM users WHERE email='$email' ";
+            $check_result = mysqli_query($conn, $check);
+
+            if (mysqli_num_rows($check_result) > 0) {
+                $emailerr = "EMAIL ALREADY EXIST !!";
+                $flag = false;
+            } else {
+                $email = test($_POST['email']);
+            }
+        }
+        //email validation end
+
+
+
+$password = md5($_POST['pass']);
 // $password = "#" . password_hash($_POST["pass"], PASSWORD_DEFAULT);
 
 // SQL query to insert user data into table
