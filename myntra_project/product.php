@@ -154,7 +154,7 @@ if(isset($_POST['add_to_cart'])){
    .box-container{
        display: grid;
     grid-template-columns: repeat(4,auto);
-    gap: 1.5rem;
+    gap:20px;
     align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto;

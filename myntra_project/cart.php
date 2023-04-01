@@ -30,6 +30,38 @@ if(!isset($phone)){
 
 ?>
 
+<?php
+
+@include 'config.php';
+
+session_start();
+
+$u_id = $_SESSION['u_id'];
+
+if(!isset($u_id)){
+   header('location:login.php');
+};
+
+if(isset($_GET['delete'])){
+    $delete_id = $_GET['delete'];
+    mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$delete_id'") or die('query failed');
+    header('location:cart.php');
+}
+
+if(isset($_GET['delete_all'])){
+    mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$u_id'") or die('query failed');
+    header('location:cart.php');
+};
+
+if(isset($_POST['update_quantity'])){
+    $cart_id = $_POST['cart_id'];
+    $cart_quantity = $_POST['cart_quantity'];
+    mysqli_query($conn, "UPDATE `cart` SET quantity = '$cart_quantity' WHERE id = '$cart_id'") or die('query failed');
+    $message[] = 'cart quantity updated!';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +94,7 @@ if(!isset($phone)){
 
     <?php
         $grand_total = 0;
-        $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE phone = '$phone'") or die('query failed');
+        $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
         if(mysqli_num_rows($select_cart) > 0){
             while($fetch_cart = mysqli_fetch_assoc($select_cart)){
     ?>
@@ -105,11 +137,11 @@ if(!isset($phone)){
 
 
 
-<?php
-//  @include 'footer.php';
- ?>
+<?php @include 'footer.php'; ?>
 
 <script src="js/script.js"></script>
 
 </body>
 </html>
+
+

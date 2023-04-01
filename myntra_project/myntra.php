@@ -15,6 +15,8 @@
     <?php 
     // navigationbar file is include here for navigation bar 
     @include 'navigationbar.php';
+  
+    echo $_SESSION['u_id'];
     
      ?>
 
@@ -54,6 +56,7 @@
       <span class="dot"></span>
 
     </div>
+    
     <?php 
     echo $_SESSION['role_id'];
     ?>

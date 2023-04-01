@@ -2,13 +2,14 @@
   
 session_start();
 include 'configer.php';
-
-if (isset($_POST['submit'])){
-
-  if (isset($_SESSION['registered']) || $_SESSION['registered']) {
-    header('Location: myntra.html');
+if (isset($_SESSION['registered']) || $_SESSION['registered']) {
+    header('Location: myntra.php');
     exit;
 }
+if (isset($_POST['submit'])){
+
+ 
+
     
 
 //     // Retrieve the form data using the POST method
@@ -28,12 +29,12 @@ if (isset($_POST['submit'])){
             while ($row = mysqli_fetch_array($result)) {
              
              
-            $_SESSION['id'] = $id = $row['user_id'];
+            $_SESSION['id'] = $id = $row['u_id'];
             $_SESSION['role_id'] = $role_id = $row['role_id'];
             $_SESSION['name'] =  $name = $row['user_name'];
             $_SESSION['email'] = $email = $row['email'];
             $_SESSION['pass'] = $pass = $row['pass'];
-            $_SESSION[''] = $phone = $row['phone'];
+            $_SESSION['phone'] = $phone = $row['phone'];
             $_SESSION['registered'] = $id;
 
           

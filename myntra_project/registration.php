@@ -1,18 +1,17 @@
 <?php
 session_start();
-// echo $_SESSION['phone'];
+
 // Establish a connection to the database 
 include 'configer.php';
 
 
 
-//  echo $_SESSION['phone'] = $phone;
+
 
 
 
 if (isset($_POST['create'])){
-//  $xx = $_SESSION['phone'];
-// session_destroy();
+
 // Retrieve the form data using the POST method
 $role_id = 2;
 $phone = $_SESSION['phone'] ;  // Enclose phone number in quotes to make it a string value
@@ -27,13 +26,18 @@ $sql = "INSERT INTO users (role_id, phone, user_name, email, pass, created, upda
  
 // Execute the SQL statement
 if (mysqli_query($conn, $sql)) {
+    $_SESSION['registered']="registered";
+ 
+
   echo "<script> alert('INFORMATION COMPLETED'); 
-  window.location.href = 'myntra.html';
+
+  window.location.href = 'session.php';
   </script>";
     // header ("location:myntra.html");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
+
 
 // Close the database connection
 mysqli_close($conn);

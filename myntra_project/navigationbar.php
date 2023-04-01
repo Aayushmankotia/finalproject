@@ -33,35 +33,35 @@
                 <span class="dropspan">
                   <ul class="dropdown-menu">
                     <h5 class="green_heading">Topwear</h5>
-                    <li><a href="men.html">T-Shirts</a></li>
-                    <li><a href="men.html">Casual Shirts</a></li>
-                    <li><a href="men.html">Formal Shirts</a></li>
-                    <li><a href="men.html">Jackets</a></li>
-                    <li><a href="men.html">Rain Jackets</a></li>
-                    <li><a href="men.html">Jackets</a></li>
+                    <li><a href="men.php">T-Shirts</a></li>
+                    <li><a href="men.php">Casual Shirts</a></li>
+                    <li><a href="men.php">Formal Shirts</a></li>
+                    <li><a href="men.php">Jackets</a></li>
+                    <li><a href="men.php">Rain Jackets</a></li>
+                    <li><a href="men.php">Jackets</a></li>
                   </ul>
                 </span>
                 <span class='dropspan'>
                   <ul class="dropdown-menu">
                     <h5 class="green_heading">Bottomwear</h5>
-                    <li><a href="men.html">Jeans</a></li>
-                    <li><a href="men.html">Casual Trousers</a></li>
-                    <li><a href="men.html">Formal Trousers</a></li>
-                    <li><a href="men.html">Jeans</a></li>
-                    <li><a href="men.html">Shorts</a></li>
-                    <li><a href="men.html">Track Pants & Joggers</a></li>
+                    <li><a href="men.php">Jeans</a></li>
+                    <li><a href="men.php">Casual Trousers</a></li>
+                    <li><a href="men.php">Formal Trousers</a></li>
+                    <li><a href="men.php">Jeans</a></li>
+                    <li><a href="men.php">Shorts</a></li>
+                    <li><a href="men.php">Track Pants & Joggers</a></li>
 
                   </ul>
                 </span>
                 <span class='dropspan'>
                   <ul class="dropdown-menu">
                     <h5 class="green_heading">Footwear</h5>
-                    <li><a href="men.html">Formal Shoes</a></li>
-                    <li><a href="men.html">Sports Shoes</a></li>
-                    <li><a href="men.html">Sneakers</a></li>
-                    <li><a href="men.html">Sandals & Floaters</a></li>
-                    <li><a href="men.html">Flip Flops</a></li>
-                    <li><a href="men.html">Socks</a></li>
+                    <li><a href="men.php">Formal Shoes</a></li>
+                    <li><a href="men.php">Sports Shoes</a></li>
+                    <li><a href="men.php">Sneakers</a></li>
+                    <li><a href="men.php">Sandals & Floaters</a></li>
+                    <li><a href="men.php">Flip Flops</a></li>
+                    <li><a href="men.php">Socks</a></li>
 
                   </ul>
                 </span>
@@ -76,24 +76,24 @@
                 <span class='dropspan'>
                   <ul class="dropdown-menu">
                     <h5 class="yellow_heading">Indian & Fusion Wear</h5>
-                    <li><a href="women.html">Kurtas & Suits</a></li>
-                    <li><a href="women.html">Kurtis, Tunics & Tops</a></li>
-                    <li><a href="women.html">Sarees</a></li>
-                    <li><a href="women.html">Ethnic Wear</a></li>
-                    <li><a href="women.html">Skirts & Palazzos</a></li>
-                    <li><a href="women.html">Jackets</a></li>
+                    <li><a href="women.php">Kurtas & Suits</a></li>
+                    <li><a href="women.php">Kurtis, Tunics & Tops</a></li>
+                    <li><a href="women.php">Sarees</a></li>
+                    <li><a href="women.php">Ethnic Wear</a></li>
+                    <li><a href="women.php">Skirts & Palazzos</a></li>
+                    <li><a href="women.php">Jackets</a></li>
                   </ul>
                 </span>
 
                 <span class='dropspan'>
                   <ul class="dropdown-menu">
                     <h5 class="yellow_heading">Western Wear</h5>
-                    <li><a href="women.html">Dresses</a></li>
-                    <li><a href="women.html">Tops</a></li>
-                    <li><a href="women.html">Tshirts</a></li>
-                    <li><a href="women.html">Jeans</a></li>
-                    <li><a href="women.html">Jackets & Coats</a></li>
-                    <li><a href="women.html">Sweaters</a></li>
+                    <li><a href="women.php">Dresses</a></li>
+                    <li><a href="women.php">Tops</a></li>
+                    <li><a href="women.php">Tshirts</a></li>
+                    <li><a href="women.php">Jeans</a></li>
+                    <li><a href="women.php">Jackets & Coats</a></li>
+                    <li><a href="women.php">Sweaters</a></li>
                   </ul>
                 </span>
 
@@ -103,42 +103,42 @@
 
             <!-- orange dropdown section  -->
             <div class="orange">
-              <a class='link orangedrop' href="kids.html">KIDS</a>
+              <a class='link orangedrop' href="kids.php">KIDS</a>
 
               <section class="hidden_menu_orange hidden_menu">
                 <span class='dropspan'>
                   <ul class="dropdown-menu">
                     <h5 class="orange_heading">boys cloths</h5>
-                    <li><a href="kids.html">T-Shirts</a></li>
-                    <li><a href="kids.html">Casual Shirts</a></li>
-                    <li><a href="kids.html">Jeans</a></li>
-                    <li><a href="kids.html">pent</a></li>
-                    <li><a href="kids.html">Casual Trousers</a></li>
-                    <li><a href="kids.html">Formal Trousers</a></li>
+                    <li><a href="kids.php">T-Shirts</a></li>
+                    <li><a href="kids.php">Casual Shirts</a></li>
+                    <li><a href="kids.php">Jeans</a></li>
+                    <li><a href="kids.php">pent</a></li>
+                    <li><a href="kids.php">Casual Trousers</a></li>
+                    <li><a href="kids.php">Formal Trousers</a></li>
                   </ul>
                 </span>
 
                 <span class='dropspan'>
                   <ul class="dropdown-menu">
                     <h5 class="orange_heading">girls cloths</h5>
-                    <li><a href="kids.html">Dresses</a></li>
-                    <li><a href="kids.html">Tops</a></li>
-                    <li><a href="kids.html">Tshirts</a></li>
-                    <li><a href="kids.html">Jeans</a></li>
-                    <li><a href="kids.html">Shrugs</a></li>
-                    <li><a href="kids.html">Sweaters</a></li>
+                    <li><a href="kids.php">Dresses</a></li>
+                    <li><a href="kids.php">Tops</a></li>
+                    <li><a href="kids.php">Tshirts</a></li>
+                    <li><a href="kids.php">Jeans</a></li>
+                    <li><a href="kids.php">Shrugs</a></li>
+                    <li><a href="kids.php">Sweaters</a></li>
                   </ul>
                 </span>
 
                 <span class='dropspan'>
                   <ul class="dropdown-menu">
                     <h5 class="orange_heading">footware</h5>
-                    <li><a href="kids.html">Casual Shoes</a></li>
-                    <li><a href="kids.html">Formal Shoes</a></li>
-                    <li><a href="kids.html">Sports Shoes</a></li>
-                    <li><a href="kids.html">heels</a></li>
-                    <li><a href="kids.html">sandels</a></li>
-                    <li><a href="kids.html">school shoes</a></li>
+                    <li><a href="kids.php">Casual Shoes</a></li>
+                    <li><a href="kids.php">Formal Shoes</a></li>
+                    <li><a href="kids.php">Sports Shoes</a></li>
+                    <li><a href="kids.php">heels</a></li>
+                    <li><a href="kids.php">sandels</a></li>
+                    <li><a href="kids.php">school shoes</a></li>
                   </ul>
                 </span>
               </section>

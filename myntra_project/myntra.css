@@ -374,6 +374,7 @@ footer{
   margin-top: 60px;
 }
 .flex_foot{
+  position: relative;
   margin :100px auto;
   padding:40px;
   width:60%;

@@ -125,17 +125,15 @@ function test($data)
     <form class="mainform" action="#" method="POST" id="forms" name="myForm" enctype="multipart/form-data">
         <label for="p_name">Product Name:</label>
         <input type="text" id="p_name" name="p_name" required><br><br>
-<!-- 
-        <label for="p_category">Product Category:</label>
-        <input type="text" id="p_category" name="p_category" required><br><br> -->
+
 
         <label for="category">Product Category:</label>
-<select id="category" name="p_category">
-    <option value="KID">KIDS</option>
-  <option value="MEN">MEN</option>
-  <option value="WOMEN">WOMEN</option>
- 
-</select>
+        <select id="category" name="p_category">
+            <option value="KID">KIDS</option>
+            <option value="MEN">MEN</option>
+            <option value="WOMEN">WOMEN</option>
+
+        </select>
 
         <label for="p_price">Product Price:</label>
         <input type="text" id="p_price" name="p_price" required><br><br>
