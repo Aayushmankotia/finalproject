@@ -30,7 +30,34 @@ session_start();
     if (!isset($phone)) {
         header('location:logoutscreen.php');
     }
-    ;
+
+    if (isset($_GET['product_id'])) {
+        $product_id = mysqli_real_escape_string($conn, $_GET['product_id']);
+        
+        $sql = "DELETE FROM cart WHERE product_id = '$product_id'";
+        
+        if ($conn->query($sql) === TRUE) {
+            // deletion successful
+        } else {
+            echo "Error deleting record: ";
+        }
+       
+    
+    }
+
+    // if (isset($_POST['DELETE'])) {
+    //     echo$_SESSION['product_id'] ;
+
+    //     $query = "DELETE FROM cart WHERE product_id = '$product_id'";
+    //     echo $query;
+    //     // Execute query
+    //     if ($conn->query($query) === TRUE) {
+    //         echo "Record deleted successfully";
+    //     } else {
+    //         echo "Error deleting record: " . $conn->error;
+    //     }
+    // }
+ 
 
     echo $_SESSION['phone'];
     echo $_SESSION['name'];
@@ -97,18 +124,7 @@ session_start();
                         $total_sum += $total;
                         $product_qty += $product_quantity;
 
-                        if (isset($_POST['DELETE'])) {
-                            echo$_SESSION['product_id'] ;
-        
-                            $query = "DELETE FROM cart WHERE product_id = '$product_id'";
-                            echo $query;
-                            // Execute query
-                            if ($conn->query($query) === TRUE) {
-                                echo "Record deleted successfully";
-                            } else {
-                                echo "Error deleting record: " . $conn->error;
-                            }
-                        }
+                        
 
                         ?>
 
@@ -128,16 +144,19 @@ session_start();
                                     </h3>
                                     <b>₹:
                                         <!-- fetch the product price -->
-                                        <?php echo $row['product_price']; ?>
+                                        <?php echo $row['product_price']; 
+                                        
+                                        ?>
                                     </b>
                                     <?php echo "<span class='green'>(" . $row['product_quantity'] . ")</span>";
-                                    echo "<input type='submit' value='DELETE' name='DELETE'>";
+                                    // echo "<input type='submit' value='DELETE' name='DELETE'>";
+
+                                    
+                                    
+                                    echo "<div class = 'red'>".'<a href="cart.php?product_id='. $row['product_id'] .'" > DELETE </a>'."</div>";
 
 
                                     ?>
-
-
-
 
                         </section>
 
@@ -149,7 +168,7 @@ session_start();
                     echo '<p class="empty">no products added yet!</p>';
                 }
 
-                echo $total_sum;
+                // echo $total_sum;
 
                
                 ?>
@@ -158,15 +177,19 @@ session_start();
             </div>
         </div>
         <div class="total">
+            <img class ="shopcart" src="images/bag.jpg">
             <h3 class='grand_total'> GRAND TOTAL</h3>
             <HR>
-            <div class="productnum"> WELCOME
-                <?php echo "<span class='green'>(" . $_SESSION['phone'] . ")</span>"; ?>
-            </div>
+            <!-- <div class="productnum"> WELCOME and HERE IS YOUR GRAND TOTAL
+                
+            </div> -->
             <div class="productnum"> NUMBERS OF PRODUCT
                 <?php echo "<span class='green'>(" . $product_qty . ")</span>"; ?>
             </div>
-            <a href='contactdetails.php'><button>CONTINUE</button></a>
+            <div class="productnum"> TOTAL PRICE : 
+                <?php echo "<span class='green'>(" . $total_sum . ")</span>"; ?>
+            </div>
+            <a class="continuebtn" href='contactdetails.php'>CONTINUE</a>
 
 
         </div>
