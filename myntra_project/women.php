@@ -24,6 +24,7 @@
   @include 'slider.php';
 
   echo $u_id = $_SESSION['u_id'];
+  echo $_SESSION['user_name'];
   ?>
   <!-- main box which hold full page   -->
   <div class="big_box">
@@ -111,8 +112,7 @@
     $insert_cart = mysqli_query($conn, "INSERT INTO cart (u_id, product_id, product_name, product_price, product_image, product_category, product_quantity) VALUES ('$u_id', '$product_id', '$product_name', '$product_price', '$product_image', '$product_category', '$product_quantity')") or die('query failed');
 
   
-    $insert_cart;
-    echo '<p class="success">Item added to cart!</p>';
+ 
   }
   ?>
 

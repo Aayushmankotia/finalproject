@@ -6,7 +6,7 @@ include 'configer.php';
 
 
 
-$nameerr = $emailerr = $passerr = $phoneerr = $occupationerr = $cityerr = $pin_codeerr = $cpasserr = null;
+$nameerr = $emailerr = $passerr = $phoneerr  = null;
 
 
 $flag = TRUE;
@@ -71,6 +71,7 @@ $password = md5($_POST['pass']);
 // $password = "#" . password_hash($_POST["pass"], PASSWORD_DEFAULT);
 
 // SQL query to insert user data into table
+if($flag){
 $sql = "INSERT INTO users (role_id, phone, user_name, email, pass, created, updated) VALUES ('$role_id', '$phone', '$user_name', '$email', '$password', NOW(), NOW())";
  
 // Execute the SQL statement
@@ -90,6 +91,7 @@ if (mysqli_query($conn, $sql)) {
 
 // Close the database connection
 mysqli_close($conn);
+}
 }
 ?>
 

@@ -104,15 +104,13 @@
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
-    $product_category = $_POST['product_category']; 
+    $product_category = $_POST['product_category'];
     $product_quantity = $_POST['product_quantity'];
 
     // insert data into cart table
     $insert_cart = mysqli_query($conn, "INSERT INTO cart (u_id, product_id, product_name, product_price, product_image, product_category, product_quantity) VALUES ('$u_id', '$product_id', '$product_name', '$product_price', '$product_image', '$product_category', '$product_quantity')") or die('query failed');
 
-  
-    $insert_cart;
-    echo '<p class="success">Item added to cart!</p>';
+
   }
   ?>
 

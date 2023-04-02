@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,6 +20,22 @@
     @include 'navigationbar.php';
   
     echo $_SESSION['u_id'];
+    echo"<br>";
+    echo  $_SESSION['user_name'] ;
+    echo"<br>";
+    echo $_SESSION['phone'];
+    echo"<br>";
+    echo $_SESSION['registered'];
+    echo"<br>";
+    echo $_SESSION['u_id'];
+    echo"<br>";
+    echo  $_SESSION['user_name'] ;
+    echo"<br>";
+    echo $_SESSION['phone'];
+    echo"<br>";
+    echo $_SESSION['registered'];
+    echo"<br>";
+
     
      ?>
 

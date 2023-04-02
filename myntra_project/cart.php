@@ -23,35 +23,35 @@ session_start();
     // navigationbar.php file is include here for navigation bar 
     
 
-
+    echo $_SESSION['u_id'];
 
     $phone = $_SESSION['phone'];
 
     if (!isset($phone)) {
         header('location:logoutscreen.php');
         echo "hi there";
-    
+
     }
-        @include 'navigationbar.php';
-   
+    // @include 'navigationbar.php';
+    
 
     if (isset($_GET['product_id'])) {
         $product_id = mysqli_real_escape_string($conn, $_GET['product_id']);
-        
+
         $sql = "DELETE FROM cart WHERE product_id = '$product_id'";
-        
+
         if ($conn->query($sql) === TRUE) {
             // deletion successful
         } else {
             echo "Error deleting record: ";
         }
-       
-    
+
+
     }
 
     // if (isset($_POST['DELETE'])) {
     //     echo$_SESSION['product_id'] ;
-
+    
     //     $query = "DELETE FROM cart WHERE product_id = '$product_id'";
     //     echo $query;
     //     // Execute query
@@ -61,37 +61,18 @@ session_start();
     //         echo "Error deleting record: " . $conn->error;
     //     }
     // }
- 
-
+    
+    echo $u_id = $_SESSION['u_id'];
+    echo "<br>";
+    echo $_SESSION['user_name'];
+    echo "<br>";
     echo $_SESSION['phone'];
-    echo $_SESSION['name'];
+    echo "<br>";
+    echo $_SESSION['registered'];
+    echo "<br>";
 
 
-    $sql = "SELECT * FROM users WHERE phone = '$phone'";
 
-
-
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_num_rows($result);
-
-
-    if ($row === 1) {
-        while ($row = mysqli_fetch_array($result)) {
-
-            echo "<br>";
-            $_SESSION['u_id'] = $id = $row['u_id'];
-
-            echo $_SESSION['role_id'] = $role_id = $row['role_id'];
-            echo $_SESSION['u_name'] = $u_name = $row['user_name'];
-            echo $_SESSION['email'] = $email = $row['email'];
-            $_SESSION['pass'] = $pass = $row['pass'];
-            $_SESSION['phone'] = $phone = $row['phone'];
-            $_SESSION['registered'] = $id;
-
-            // echo "dtfyghjk" . $_SESSION['u_name'];
-        }
-
-    }
 
     ?>
     <div class="big_box_flex">
@@ -101,7 +82,7 @@ session_start();
             <div class="maincontainer">
 
                 <?php
-                $sql = "SELECT * FROM cart WHERE u_id = '$id'";
+                $sql = "SELECT * FROM cart WHERE u_id = '$u_id'";
 
 
 
@@ -112,10 +93,8 @@ session_start();
                 if ($row >= 1) {
                     while ($row = mysqli_fetch_array($result)) {
 
-                      
-                        $_SESSION['cart_id '] = $cart_id = $row['cart_id '];
-                        $_SESSION['u_id'] = $id = $row['u_id'];
 
+                        $_SESSION['cart_id '] = $cart_id = $row['cart_id '];
                         $_SESSION['product_id'] = $product_id = $row['product_id'];
                         $_SESSION['product_name'] = $product_name = $row['product_name'];
                         $_SESSION['product_price'] = $product_price = $row['product_price'];
@@ -128,7 +107,7 @@ session_start();
                         $total_sum += $total;
                         $product_qty += $product_quantity;
 
-                        
+
 
                         ?>
 
@@ -148,16 +127,16 @@ session_start();
                                     </h3>
                                     <b>₹:
                                         <!-- fetch the product price -->
-                                        <?php echo $row['product_price']; 
-                                        
+                                        <?php echo $row['product_price'];
+
                                         ?>
                                     </b>
                                     <?php echo "<span class='green'>(" . $row['product_quantity'] . ")</span>";
                                     // echo "<input type='submit' value='DELETE' name='DELETE'>";
+                            
 
-                                    
-                                    
-                                    echo "<div class = 'red'>".'<a href="cart.php?product_id='. $row['product_id'] .'" > DELETE </a>'."</div>";
+
+                                    echo "<div class = 'red'>" . '<a href="cart.php?product_id=' . $row['product_id'] . '" > DELETE </a>' . "</div>";
 
 
                                     ?>
@@ -173,15 +152,15 @@ session_start();
                 }
 
                 // echo $total_sum;
+                
 
-               
                 ?>
 
 
             </div>
         </div>
         <div class="total">
-            <img class ="shopcart" src="images/bag.jpg">
+            <img class="shopcart" src="images/bag.jpg">
             <h3 class='grand_total'> GRAND TOTAL</h3>
             <HR>
             <!-- <div class="productnum"> WELCOME and HERE IS YOUR GRAND TOTAL
@@ -190,7 +169,7 @@ session_start();
             <div class="productnum"> NUMBERS OF PRODUCT
                 <?php echo "<span class='green'>(" . $product_qty . ")</span>"; ?>
             </div>
-            <div class="productnum"> TOTAL PRICE : 
+            <div class="productnum"> TOTAL PRICE :
                 <?php echo "<span class='green'>(" . $total_sum . ")</span>"; ?>
             </div>
             <a class="continuebtn" href='contactdetails.php'>CONTINUE</a>
