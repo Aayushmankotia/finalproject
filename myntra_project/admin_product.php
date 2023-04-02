@@ -297,7 +297,10 @@ table {
 					echo "<td>" . $row["p_name"] . "</td>";
 					echo "<td>" . $row["p_category"] . "</td>";
 					echo "<td>" . $row["p_price"] . "</td>";
-					echo "<td><img src='".$row['avatar'] . "' width='100' height='100'></td>";
+               ?>
+              
+					<td><img src="uploads/<?php echo $row['avatar']; ?>" width='100' height='100'></td>
+               <?php
 					echo "<td><button onclick='editProduct(" . $row["p_id"] . ")'>Update</button> <button onclick='deleteProduct(" . $row["p_id"] . ")'>Delete</button></td>";
 					echo "</tr>";
 				}

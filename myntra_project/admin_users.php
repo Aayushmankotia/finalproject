@@ -30,23 +30,18 @@ mysqli_close($conn);
 	body {
 	    background-color: #f5f5f5;
 	    font-family: Arial, sans-serif;
-	   ; /* Add a margin of 100px from the top */
-	}
+    }
 
-	.container {
-	     /* Remove the margin from the top and add a margin of 0 from the sides */
-	    max-width: 80%;
-	    padding: 20px;
-	    background-color: #fff;
-	    border-radius: 5px;
-	    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	}
-
-	.user_list {
-	    font-size: 36px;
-	
-	    text-align: center;
-	}
+    .border_box{
+        
+        width:70%;
+        margin:0% auto;
+    }
+    .borderbox{
+        font-size:30px;
+        margin-top:10% ;
+        text-align:center;
+    }
 
 	table {
 	    border-collapse: collapse;
@@ -102,9 +97,9 @@ mysqli_close($conn);
 
 </head>
 <body>
-
-	<div class="container">
-    <div class="user_list">user_list</div>
+<div class= "borderbox ">user_list</div>
+	<div class= "border_box">
+    
     <table>
     <thead>
         <tr>

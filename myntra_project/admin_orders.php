@@ -20,11 +20,16 @@
 </head>
 <style>
     table {
-        margin-top:90px; 
+        margin:140px auto; 
   border-collapse: collapse;
-  width: 100%;
+  width: 80%;
+  
 }
-
+caption{
+    COLOR:red;
+    font-size:xx-large;
+    margin-bottom:30px;
+}
 thead {
   background-color: #ddd;
 }
@@ -52,6 +57,7 @@ tr:hover {
     </style>
     
 <table>
+    <<caption> ALL ORDERS </caption>
   <thead>
     <tr>
       <th>Order ID</th>
