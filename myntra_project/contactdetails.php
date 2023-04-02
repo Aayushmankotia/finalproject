@@ -1,3 +1,6 @@
+<?php
+session_start();    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,32 +18,135 @@
 // Establish a connection to the database
 include 'configer.php';
 
+// echo $_SESSION['u_name'];
+// echo $_SESSION['phone'];
+
+function test($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return ($data);
+    }
+    echo $myphone = $_SESSION['phone'];
+    echo $u_id = $_SESSION['u_id'];
+
+    $check = "SELECT *FROM addresses WHERE phone = '$myphone' ";
+    $check_result = mysqli_query($conn, $check);
+
+         if (mysqli_num_rows($check_result) == 1) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $_SESSION['a_id'] =$row["a_id"] . "<br>";
+                $_SESSION['name'] = $row["name"] . "<br>";
+                $_SESSION['phone'] = $row["phone"] . "<br>";
+                $_SESSION['pincode'] =$row["pincode"] . "<br>";
+                $_SESSION['address']=$row["address"] . "<br>";
+                $_SESSION['city']=$row["city"] . "<br>";
+                $_SESSION['state']= $row["state"] . "<br><br>";
+            }
+            header("Location:order.php");
+        }
+
+    $nameerr = $phoneerr = $pin_codeerr = null;
+
+
+    $flag = TRUE;
+
+
+
 if (isset($_POST['submit'])){
 
     
 
     // Retrieve the form data using the POST method
-    $name = $_POST["name"];
-    $phone = $_POST["phone"];
-    $pincode = $_POST["pincode"];
+    
+ // name validation
+ if (empty($_POST["name"])) {
+    $nameerr = "**REQUIRED FIELD NAME ";
+    $flag = false;
+} elseif
+(!preg_match("/^[A-Z]*$/", $_POST['name'])) {
+    $nameerr = "CAPITAL LETTERS ONLY ";
+    $flag = false;
+} else {
+    $name = test($_POST['name']);
+}
+// name validation ends^^^^^
+$phone = test($_POST['phone']);
+if (!preg_match('/^[0-9]{10}+$/', $_POST['phone'])) {
+    $phoneerr = "INVALID PHONE NUMBER ";
+    $flag = false;
+} else {
+
+    $check = "SELECT *FROM users WHERE phone = '$phone' ";
+    $check_result = mysqli_query($conn, $check);
+
+    if (mysqli_num_rows($check_result) < 1) {
+        $phoneerr = "DOESN'T EXIST !!";
+        $flag = false;
+    } else {
+        $check = "SELECT *FROM addresses WHERE phone = '$phone' ";
+    $check_result = mysqli_query($conn, $check);
+
+         if (mysqli_num_rows($check_result) == 1) {
+            $phoneerr = "ALREADY EXIST !!";
+            $flag = false;
+       
+        }
+        else {
+    $phone = test($_POST['phone']);
+        }
+    }
+}
+if (!preg_match("/^[0-9]{6}+$/", $_POST['pincode'])) {
+    $pin_codeerr = "PIN-CODE SHOULD BE OF 6 CHARACTERS  ";
+    $flag = false;
+} else {
+    // echo $pin;
+    $pincode = test($_POST['pincode']);
+}
+
     $address = $_POST["address"];
     $city = $_POST["city"];
     $state = $_POST["state"];
 
     // sql query to insert location data into table
-    $sql = "INSERT INTO addresses (name, phone, pincode, address, city, state)
-            VALUES ('$name', '$phone', '$pincode', '$address', '$city', '$state')";
+
+    IF($flag){
+    $sql = "INSERT INTO addresses (u_id, name, phone, pincode, address, city, state)
+            VALUES ('$u_id','$name', '$phone', '$pincode', '$address', '$city', '$state')";
 
 // Execute the SQL statement
     if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+        header("Location:order.php");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 
-    // Close the database connection
-    mysqli_close($conn);
+
+
+} 
 }
+
+// Perform the SELECT query
+$sql = "SELECT * FROM addresses WHERE phone= '$phone'";
+$result = mysqli_query($conn, $sql);
+
+// Check if there are any results
+if (mysqli_num_rows($result) > 0) {
+    // Loop through the results and print each row
+    while ($row = mysqli_fetch_assoc($result)) {
+        $_SESSION['a_id'] =$row["a_id"] . "<br>";
+        $_SESSION['name'] = $row["name"] . "<br>";
+        $_SESSION['phone'] = $row["phone"] . "<br>";
+        $_SESSION['pincode'] =$row["pincode"] . "<br>";
+        $_SESSION['address']=$row["address"] . "<br>";
+        $_SESSION['city']=$row["city"] . "<br>";
+        $_SESSION['state']= $row["state"] . "<br><br>";
+    }
+}
+// Close the database connection
+mysqli_close($conn);
 ?>
 <!-- html form is created below -->
 
@@ -59,7 +165,7 @@ if (isset($_POST['submit'])){
             </div>
 
             <div class="inputdivision textcenter">    
-                <input class="input" type="tel" name="phone" placeholder="Mobile No*" >  
+                <input class="input" value ="<?php echo $_SESSION['phone']; ?>" type="tel" name="phone" placeholder="Mobile No*" >  
             </div>
 
             <div class="inputdivision">

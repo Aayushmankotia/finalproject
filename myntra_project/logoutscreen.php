@@ -25,7 +25,7 @@
             <h3 class="headinglogin"><B>PLEASE LOG IN</B></h3>
         </div>
         <div class='myntraimg'>
-            <img class='loginimage' src='uploads/AdobeStock_295656659_Preview.jpeg' alt= ''>
+            <img class='loginimage' src='images/AdobeStock_295656659_Preview.jpeg' alt= ''>
         </div>
         <div class="textcenter">
            <a href="login.php"> <button class="blue">LOGIN</button></a>

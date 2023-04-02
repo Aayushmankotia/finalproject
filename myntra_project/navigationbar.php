@@ -157,7 +157,7 @@
             </div>
 
             <div class="profile_div">
-              <a class="profile anchor_margin" href="#profile">
+              <a class="profile anchor_margin" href="#profile" alt='PROFILE'>
                 <i class="fa fa-user-circle-o "></i>
               </a>
               
@@ -171,7 +171,7 @@
             </div>
 
             <div class="cart_div">
-              <a class="cart anchor_margin" href="cart.php">
+              <a class="cart anchor_margin" href="cart.php" alt='CART'>
                 <i class="fa fa-cart-plus "></i></a>
             </div>
           </div>

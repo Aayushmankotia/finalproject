@@ -21,7 +21,7 @@ session_start();
 
     require 'configer.php';
     // navigationbar.php file is include here for navigation bar 
-    @include 'navigationbar.php';
+    
 
 
 
@@ -29,7 +29,11 @@ session_start();
 
     if (!isset($phone)) {
         header('location:logoutscreen.php');
+        echo "hi there";
+    
     }
+        @include 'navigationbar.php';
+   
 
     if (isset($_GET['product_id'])) {
         $product_id = mysqli_real_escape_string($conn, $_GET['product_id']);
@@ -84,7 +88,7 @@ session_start();
             $_SESSION['phone'] = $phone = $row['phone'];
             $_SESSION['registered'] = $id;
 
-            echo "dtfyghjk" . $_SESSION['u_name'];
+            // echo "dtfyghjk" . $_SESSION['u_name'];
         }
 
     }
@@ -108,7 +112,7 @@ session_start();
                 if ($row >= 1) {
                     while ($row = mysqli_fetch_array($result)) {
 
-                        echo "<br>";
+                      
                         $_SESSION['cart_id '] = $cart_id = $row['cart_id '];
                         $_SESSION['u_id'] = $id = $row['u_id'];
 

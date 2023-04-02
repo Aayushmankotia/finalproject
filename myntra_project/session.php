@@ -16,7 +16,7 @@ $sql = "SELECT * FROM users WHERE phone = '$phone'";
             while ($row = mysqli_fetch_array($result)) {
              
              
-            echo $_SESSION['u_id'] = $id = $row['u_id'];
+            echo $_SESSION['u_id'] = $u_id = $row['u_id'];
             echo $_SESSION['role_id'] = $role_id = $row['role_id'];
             echo $_SESSION['name'] =  $name = $row['user_name'];
            echo  $_SESSION['email'] = $email = $row['email'];
