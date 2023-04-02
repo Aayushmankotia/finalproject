@@ -19,22 +19,15 @@ session_start();
     // navigationbar file is include here for navigation bar 
     @include 'navigationbar.php';
   
-    echo $_SESSION['u_id'];
-    echo"<br>";
-    echo  $_SESSION['user_name'] ;
-    echo"<br>";
-    echo $_SESSION['phone'];
-    echo"<br>";
-    echo $_SESSION['registered'];
-    echo"<br>";
-    echo $_SESSION['u_id'];
-    echo"<br>";
-    echo  $_SESSION['user_name'] ;
-    echo"<br>";
-    echo $_SESSION['phone'];
-    echo"<br>";
-    echo $_SESSION['registered'];
-    echo"<br>";
+   
+ $_SESSION['u_id'];
+   
+ $_SESSION['user_name'] ;
+   
+ $_SESSION['phone'];
+    
+   $_SESSION['registered'];
+
 
     
      ?>

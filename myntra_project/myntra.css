@@ -443,3 +443,28 @@ h4{
   color:white;
 }
 /* styling for the brand banner section   */
+
+/* styling for the admin_header.php */
+.navigation_top{
+  display:flex;
+  justify-content: space-evenly;
+  align-items:center;
+  height:40px;
+  height: 70px;
+font-size: 20px;
+
+}
+.anchor{
+  display:flex;
+  justify-content: space-evenly;
+  width:40%;
+  align-items:center;
+
+}
+.logo{
+  font-size: 30px;
+}
+span{
+  color:#e92f70;
+}
+/* styling for the admin_header.php */

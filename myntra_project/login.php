@@ -44,7 +44,7 @@ echo "<br>";
                echo  $_SESSION['user_name'] = $user_name = $row['user_name'];
                echo $_SESSION['phone'] = $phone = $row['phone'];
                echo $_SESSION['registered'] = $u_id;
-
+              echo $_SESSION['role_id']= $row['role_id'];
 
             }
             if ($_SESSION['role_id'] == 1) {
