@@ -81,7 +81,7 @@
 			echo "<label for='p_price'>Product Price:</label>";
 			echo "<input class='productinput' type='text' id='p_price' name='p_price' value='" . $row["p_price"] . "' required><br><br>";
 			echo "<label for='avatar'>Avatar:</label>";
-			echo "<img src='" . $row["avatar"] . "' width='100' height='100'><br>";
+			echo "<img src='uploads/" . $row["avatar"] . "' width='100' height='100'><br>";
 			echo "<input class='productinput' type='file' placeholder='IMAGE URL' name='avatar' id='avatar'><br><br>";
 			echo "<input class='btn' type='submit' name='submit' value='UPDATE'>";
 			echo "</form>";

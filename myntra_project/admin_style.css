@@ -1,132 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
-
-
-.logoimg{
-   width:40px;
-   height:40px;
-}
-
-:root{
-   --pink:#e84393;
-   --red:#c0392b;
-   --orange:#f39c12;
-   --black:#333;
-   --white:#fff;
-   --light-color:#666;
-   --light-white:#ccc;
-   --light-bg:#f5f5f5;
-   --border:.2rem solid var(--black);
-   --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
-}
 
 *{
-   font-size:12px;
-   font-family: 'Rubik', sans-serif;
-   margin:0; padding:0;
-   box-sizing: border-box;
-   outline: none; border:none;
-   text-decoration: none;
-   transition:all .2s linear;
+  
+   margin:0;
+   padding:0;
 }
-
-
-.header{
-   font-size: 16px;
-   position: sticky;
-   top:0; left:0; right:0;
-   z-index: 1000;
-   background-color: var(--white);
-   box-shadow: var(--box-shadow);
-}
-
-.header .flex{
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   padding:2rem;
-   max-width: 1200px;
-   margin:0 auto;
-   position: relative;
-}
-
-.header .flex .account-box{
-   position: absolute;
-   top:120%; right:2rem;
-   width: 33rem;
-   border-radius: .5rem;
-   box-shadow: var(--box-shadow);
-   background-color: var(--white);
-   padding:2rem;
+.add_product {
+   font-size: xx-large;
+   margin-top: 120px;
    text-align: center;
-   border:var(--border);
-   display: none;
-   animation: fadeIn .2s linear;
+   color: #e51a3e;
 }
 
-.header .flex .account-box.active{
-   display: inline-block;
+.mainform {
+   width: 500px;
+   margin: 50px auto;
+   font-family: Arial, sans-serif;
+   font-size: 16px;
+   border: solid black 2px;
+   padding: 20px;
 }
 
-.header .flex .account-box p{
-   padding-bottom: 1rem;
-   font-size: 2rem;
-   color:var(--light-color);
-   line-height: 1.5;
+label {
+   display: block;
+   margin-bottom: 10px;
+   font-weight: bold;
 }
 
-.header .flex .account-box p span{
-   color:var(--pink);
+.productinput {
+   padding: 10px;
+   border-radius: 5px;
+   border: none;
+   width: 100%;
+   margin-bottom: 20px;
+   box-sizing: border-box;
+   background-color: #f4f4f4;
 }
 
-.header .flex .account-box div{
-   font-size: 2rem;
-   margin-top: 2rem;
-   color:var(--light-color);
+select {
+   padding: 10px;
+   border-radius: 5px;
+   border: none;
+   width: 100%;
+   margin-bottom: 20px;
+   box-sizing: border-box;
+   background-color: #f4f4f4;
 }
 
-.header .flex .account-box div a{
-   color:var(--orange);
+.sub {
+   text-align: center;
+   margin-top: 30px;
 }
 
-.header .flex .account-box div a:hover{
-   text-decoration: underline;
-}
-
-.header .flex .icons div{
-   font-size: 2.5rem;
-   margin-left: 1.7rem;
+.btn {
+   background-color: #4CAF50;
+   color: white;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
    cursor: pointer;
-   color:var(--black);
+   font-size: 16px;
 }
 
-.header .flex .icons div:hover{
-   color:var(--pink);
+.btn:hover {
+   background-color: #3e8e41;
 }
 
-.header .flex .navbar a{
-   margin:0 1rem;
-   font-size: 2rem;
-   color:var(--light-color);
+table {
+   border-collapse: collapse;
+   width: 70%;
+   margin: 0px auto;
 }
 
-.header .flex .navbar a:hover{
-   text-decoration: underline;
-   color:var(--pink);
+h2 {
+   width: 60%;
+   margin:60px auto;
+   text-align: center;
 }
 
-.header .flex .logo{
-   font-size: 2.5rem;
-   color:var(--black);
+th,
+td {
+   text-align: left;
+   padding: 8px;
 }
 
-.header .flex .logo span{
-   font-size: 24px;
-   color:var(--pink);
+tr:nth-child(even) {
+   background-color: #f2f2f2;
 }
 
-#menu-btn{
-   display: none;
+th {
+   background-color: #4CAF50;
+   color: white;
 }
 
+button {
+   background-color: #008CBA;
+   color: white;
+   padding: 8px 16px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
 
- 
+button:hover {
+   background-color: #006080;
+}
+.margin-top_table{
+margin-top:120px;
+}
+  .main_division_profile {
+        margin: 100px auto 0 auto;
+        width: 80%;
+        border: solid red 2px;
+        /* height: 200px; */
+    }
+
+    .blackdivision {
+        height: 80px;
+        background-image: linear-gradient(to bottom right, orange, red, yellow);
+        text-align: center;
+        font-size: xx-large;
+        color: white;
+        font-weight: 900;
+        padding-top: 20px;
+
+    }
+
+
+    .flexclass {
+        display: flex;
+        margin-top: 40px;
+        justify-content: space-evenly;
+        text-align: center;
+        align-items: center;
+        height: 200px;
+    }
+
+    .flexboxes {
+        margin: 0px auto;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+
+        background: red;
+        display: flex;
+        font-size: xx-large;
+        color: white;
+        gap: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flexcontainerbox {
+        width: 280px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .cont_div {
+
+        font-size: 25px;
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+        color: orangered;
+        font-weight: 600;
+    }

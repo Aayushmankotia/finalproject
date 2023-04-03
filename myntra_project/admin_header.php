@@ -13,7 +13,7 @@
 
             </div>
             <div class="anchor">
-               <a href="admin_page.php">home</a>
+               <a href="admin_page.php">category</a>
                <a href="admin_product.php">products</a>
                <a href="admin_orders.php">orders</a>
                <a href="admin_users.php">users</a>

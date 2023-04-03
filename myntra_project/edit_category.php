@@ -63,57 +63,124 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    <title>Edit Category</title>
 </head>
 <style>
-    /* Style the form elements */
-form {
-  max-width: 500px;
-  margin: 40px auto;
-}
+	.add_product_div {
+		margin: 90px auto;
+		width: 500px;
+		font-size: 30px;
 
-label {
-  display: block;
-  margin-bottom: 5px;
-}
 
-input[type="text"] {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+	}
 
-input[type="submit"] {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+	.add_product {
+		text-align: center;
+		color: #e51a3e;
+	}
 
-input[type="submit"]:hover {
-  background-color: #3e8e41;
-}
+	.mainform {
+		width: 500px;
+		margin: 50px auto;
+		font-family: Arial, sans-serif;
+		font-size: 16px;
+		border: solid black 2px;
+		padding: 20px;
+	}
 
-/* Style the heading */
-h2 {
-  text-align: center;
-  margin-top: 150px;
-  margin-bottom: 30px;
-}
+	label {
+		display: block;
+		margin-bottom: 10px;
+		font-weight: bold;
+	}
 
-    </style>
+	.productinput {
+		padding: 10px;
+		border-radius: 5px;
+		border: none;
+		width: 100%;
+		margin-bottom: 20px;
+		box-sizing: border-box;
+		background-color: #f4f4f4;
+	}
+
+	select {
+		padding: 10px;
+		border-radius: 5px;
+		border: none;
+		width: 100%;
+		margin-bottom: 20px;
+		box-sizing: border-box;
+		background-color: #f4f4f4;
+	}
+
+	.sub {
+		text-align: center;
+		margin-top: 30px;
+	}
+
+	.btn {
+		background-color: #4CAF50;
+		color: white;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 16px;
+	}
+
+	.btn:hover {
+		background-color: #3e8e41;
+	}
+
+	table {
+		border-collapse: collapse;
+		width: 70%;
+		margin: 0px auto;
+	}
+
+	h2 {
+		width: 100%;
+		text-align: center;
+	}
+
+	th,
+	td {
+		text-align: left;
+		padding: 8px;
+	}
+
+	tr:nth-child(even) {
+		background-color: #f2f2f2;
+	}
+
+	th {
+		background-color: #4CAF50;
+		color: white;
+	}
+
+	button {
+		background-color: #008CBA;
+		color: white;
+		padding: 8px 16px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background-color: #006080;
+	}
+</style>
 <body>
-  <h2>Edit Category</h2>
-  <form method="POST">
+<div class="add_product_div">
+<div class="add_product"> Edit Category</div>
+ 
+  <form  class="mainform" action="#" method="POST">
     <label for="category">Category:</label><br>
-    <input type="text" id="category" name="category" value="<?php echo $category; ?>"><br><br>
+    <input class="productinput" type="text" id="category" name="category" value="<?php echo $category; ?>"><br><br>
     <label for="category_type">Category Type:</label><br>
-    <input type="text" id="category_type" name="category_type" value="<?php echo $category_type; ?>"><br><br>
+    <input class="productinput" type="text" id="category_type" name="category_type" value="<?php echo $category_type; ?>"><br><br>
     <label for="category_name">Category Name:</label><br>
-    <input type="text" id="category_name" name="category_name" value="<?php echo $category_name; ?>"><br><br>
-    <input type="submit" value="Update">
+    <input class="productinput" type="text" id="category_name" name="category_name" value="<?php echo $category_name; ?>"><br><br>
+    <input class="productinput" type="submit" value="Update">
   </form>
 </body>
 </html>

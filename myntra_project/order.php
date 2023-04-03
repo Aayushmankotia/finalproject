@@ -89,7 +89,7 @@ if (isset($_POST['order'])) {
   </script>";
 
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo "Error: " . $sql  . mysqli_error($conn);
     }
 
     // Close the database connection

@@ -177,11 +177,13 @@ width: 50%;
   background: #f5f6f7;
   height: 40px;
   border-radius: 40px;
+  margin:0px;
 }
 
 .searchBox:hover > .searchInput {
-  width: 540px;
+  width: 520px;
   padding-left:22px;
+  margin:0px;
 }
 
 .searchBox:hover > .searchButton {
@@ -468,3 +470,63 @@ span{
   color:#e92f70;
 }
 /* styling for the admin_header.php */
+/* sxdcfgvhuji************************************************* */
+.main_division_profile {
+  margin: 100px auto 0 auto;
+  width: 80%;
+  border: solid red 2px;
+  /* height: 200px; */
+}
+
+.blackdivision {
+  height: 80px;
+  background-image: linear-gradient(to bottom right, orange, red, yellow);
+  text-align: center;
+  font-size: xx-large;
+  color: white;
+  font-weight: 900;
+  padding-top: 20px;
+
+}
+
+
+.flexclass {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  height: 200px;
+}
+
+.flexboxes {
+  margin: 0px auto;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+
+  background: red;
+  display: flex;
+  font-size: xx-large;
+  color: white;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexcontainerbox {
+  width: 280px;
+  text-align: center;
+  padding: 20px;
+}
+
+.cont_div {
+
+  font-size: 25px;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  color: orangered;
+  font-weight: 600;
+}

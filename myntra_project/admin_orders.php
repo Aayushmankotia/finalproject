@@ -12,52 +12,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="myntra.css">
+    <link rel="stylesheet" href="admin_style.css">
     <!-- font awesome cdn link  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <title>UPLOADS</title>
    
 </head>
-<style>
-    table {
-        margin:140px auto; 
-  border-collapse: collapse;
-  width: 80%;
-  
-}
-caption{
-    COLOR:red;
-    font-size:xx-large;
-    margin-bottom:30px;
-}
-thead {
-  background-color: #ddd;
-}
 
-th, td {
-  text-align: left;
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
-}
-
-tr:hover {
-  background-color: #f5f5f5;
-}
-
-.actions a {
-  color: #333;
-  text-decoration: none;
-  margin-right: 10px;
-}
-
-.actions a:hover {
-  color: #f00;
-}
-
-    </style>
     
-<table>
-    <<caption> ALL ORDERS </caption>
+<table class="margin-top_table">
+    <h2 class=' margin-top_table'> ALL ORDERS </h2>
   <thead>
     <tr>
       <th>Order ID</th>
@@ -68,7 +33,7 @@ tr:hover {
       <th>Address</th>
       <th>City</th>
       <th>State</th>
-      <th>Product Names</th>
+      <th>Product Names</th>  
       <th>Product Quantities</th>
       <th>Total Price</th>
      
