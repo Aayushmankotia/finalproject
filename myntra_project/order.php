@@ -86,7 +86,7 @@ if (isset($_POST['order'])) {
     if (mysqli_query($conn, $sql)) {
         
         echo "<script> alert('Order placed successfully'); 
-  window.location.href = 'logout.php';
+  window.location.href = 'myntra.php';
   </script>";
 
     } else {

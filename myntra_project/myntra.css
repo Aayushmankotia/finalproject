@@ -155,20 +155,34 @@ width: 50%;
 }
 .orange_heading{
   font-size:18px;
-  color:rgb(255, 49, 12);
+  color:rgb(53, 208, 255);
 }
 .drop_info
 {
-  font-size:14px;
+  font-size:20px;
   margin:5px;
 }
 .login_button{
-  border:solid black 1px;
-  background-color: #eeeeee;
+  border:solid rgb(48, 245, 252) 3px;
+  border-radius: 6px;
+  /* background-color: #eeeeee; */
   padding:4px;
   font-size:small;
-  margin-left:6px;
+  background-color: black;
+  color:rgb(45, 150, 248);
+ 
+  /* margin-left:6px; */
   
+}
+.profile_button{
+  text-align: center;
+  margin-top: 10px;
+
+}
+.cyantext{
+  color:#24deff;
+  font-size: larger;
+  font-weight: 700;
 }
 
 /*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,navigation searchbar */

@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +15,12 @@
   <title>firstpage</title>
 
 </head>
+<?php
+include "configer.php";
+
+$u_id = $_SESSION['u_id'];
+$phone = $_SESSION['phone']; 
+?>
 
 <body>
   <header>
@@ -167,10 +176,43 @@
             </a>
 
             <div class="drop_profile">
-              <h6 class="orange_heading">WELCOME</h6>
-              <p class="drop_info">To access account and manage orders</p><br>
-              <a class="login_button" href="login.php"> LOGIN/SIGNUP</a>
-              <a class="login_button" href="logout.php"> LOGout</a>
+                <?php
+                if(!isset($u_id)){
+                  echo "<h6 class='orange_heading'>WELCOME</h6>
+                  <p class='drop_info'>To access account and manage orders</p><br>
+                  <a class='login_button' href='login.php'> LOGIN/SIGNUP</a>";
+                  // echo"<div class='profile_button' ><a class='login_button' href='logout.php'> LOGOUT</a></div>";
+                  
+                }
+                else{
+                    $sql="SELECT * FROM users WHERE phone= '$phone'";
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_num_rows($result);
+                  echo "<span class='cyantext'>"."WELCOME-USER"."<span>"."<br>"."<br>";
+            
+                    if($row == 1) {
+                        while ($row = mysqli_fetch_array($result)) {
+            
+          
+            
+                            echo "ID : ".$_SESSION['u_id'] = $u_id = $row['u_id']; 
+                            echo"<br>";
+                           echo  "NAME : ".$_SESSION['user_name'] = $user_name = $row['user_name'];
+                           echo"<br>";
+                           echo "PHONE : ".$_SESSION['phone'] = $phone = $row['phone'];
+                           echo"<br>";
+                          echo "EMAIL : ".$_SESSION['email']= $row['email'];
+                          echo"<br>";
+
+                          echo "<div class='profile_button' ><a class='login_button' href='logout.php'> LOGOUT</a></div>";
+                        }
+                        }
+                }
+                
+                
+                ?>
+
+              
             </div>
 
           </div>

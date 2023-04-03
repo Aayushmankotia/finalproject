@@ -4,7 +4,9 @@ session_start();
 // Establish a connection to the database
 include 'configer.php';
 
-if (isset($_SESSION['state'])) {
+
+$state = $_SESSION['state'];
+if (isset($state)) {
     // header ("Location :order.php");
     echo "<script> 
     window.location.href = 'order.php';
@@ -181,19 +183,19 @@ mysqli_close($conn);
             </div>
 
             <div class="inputdivision  textcenter">
-                <input class="input" type="text" name="pincode" placeholder="Pin Code*">
+                <input class="input" value="<?php echo $_SESSION['pincode']; ?>" type="text" name="pincode" placeholder="Pin Code*">
             </div>
 
             <div class="inputdivision  textcenter">
-                <input class="input" type="text" name="address" placeholder="address*">
+                <input class="input" value="<?php echo $_SESSION['address']; ?>" type="text" name="address" placeholder="address*">
             </div>
 
             <div class="inputdivision textcenter">
-                <input class="input" type="text" name="city" placeholder="City">
+                <input class="input" value="<?php echo $_SESSION['city']; ?>" type="text" name="city" placeholder="City">
             </div>
 
             <div class="inputdivision textcenter">
-                <input class="input" type="text" name="state" placeholder="State">
+                <input class="input" value="<?php echo $_SESSION['state']; ?>" type="text" name="state" placeholder="State">
             </div>
 
             <div class="inputdivision  textcenter">

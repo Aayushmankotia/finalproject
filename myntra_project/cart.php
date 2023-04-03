@@ -34,7 +34,7 @@ session_start();
 
     }
     @include 'navigationbar.php';
-    
+
 
     if (isset($_GET['product_id'])) {
         $product_id = mysqli_real_escape_string($conn, $_GET['product_id']);
@@ -149,7 +149,12 @@ session_start();
                     }
                 } else {
 
-                    echo '<p class="empty">no products added yet!</p>';
+                    echo "<script> alert('CART IS EMPTY '); 
+
+                        window.location.href = 'myntra.php';
+                        </script>";
+
+
                 }
 
                 // echo $total_sum;
