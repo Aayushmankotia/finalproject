@@ -88,6 +88,10 @@ nav {
   border-bottom-width: 4px;
   border-bottom-style: solid;
 }
+.marginauto{
+  margin-top:4.5%;
+}
+
 a{
 text-decoration: none;
 color: black;
@@ -171,17 +175,17 @@ width: 50%;
 
 .searchBox {
   position: relative;
-  top: 25%;
-  right: 14%;
+  margin-right: 120px;
   transform: translate(-0%,-50%);
   background: #f5f6f7;
   height: 40px;
   border-radius: 40px;
-  margin:0px;
+
 }
 
+
 .searchBox:hover > .searchInput {
-  width: 520px;
+  width: 400px;
   padding-left:22px;
   margin:0px;
 }
@@ -530,3 +534,20 @@ span{
   color: orangered;
   font-weight: 600;
 }
+/* ////////////////////////////////////////// */
+
+/* pagination button css  */
+
+.paginationbtn{
+  
+  margin-top: 22px;
+  text-align: center;
+}
+.block{
+   border:solid black 2px;
+   padding:15px;
+   border-radius: 6px;
+}
+
+
+/* pagination button css ends  */

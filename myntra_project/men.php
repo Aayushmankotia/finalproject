@@ -1,3 +1,7 @@
+<?php
+  session_start();
+  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +19,7 @@
 
   <!-- navigation section start -->
   <?php
-  session_start();
+ 
 
   include 'configer.php';
   // navigationbar.php file is include here for navigation bar 
@@ -23,7 +27,7 @@
   // slider.php file is include here for slider 
   @include 'slider.php';
 
-  echo $u_id = $_SESSION['u_id'];
+ $u_id = $_SESSION['u_id'];
   ?>
   <!-- main box which hold full page   -->
   <div class="big_box">
@@ -97,6 +101,10 @@
   </div>
   <?php
   if (isset($_POST['add_to_cart'])) {
+
+    if(!isset($_SESSION['phone'])){
+      header("Location:login.php");
+    }
 
     // post data
     $u_id = $_POST['u_id'];

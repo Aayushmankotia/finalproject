@@ -1,9 +1,12 @@
 .maincontainer{
-display:flex;
+padding: 34px;
+border: solid black 2px;
+display: flex;
 justify-content: start;
-gap:2%;
-flex-wrap:wrap;
-text-align: center; 
+gap: 2%;
+flex-wrap: wrap;
+text-align: center;
+
 }
 
 *{
@@ -73,8 +76,14 @@ text-align: center;
 
 }
 .red{
-    color:red;
-    border:solid red 2px;
+    width: 100px;
+    padding: 4px;
+    border-radius: 15px;
+    margin: 26px auto;
+    color: #d81e1e;
+    border: solid red 2px;
+    background-color: white;
+
 }
 .hiddenbtn{
    margin:auto;

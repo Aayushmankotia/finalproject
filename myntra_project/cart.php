@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,14 +26,14 @@ session_start();
 
     echo $_SESSION['u_id'];
 
-    $phone = $_SESSION['phone'];
+    echo $phone = $_SESSION['phone'];
 
     if (!isset($phone)) {
         header('location:logoutscreen.php');
-        echo "hi there";
+
 
     }
-    // @include 'navigationbar.php';
+    @include 'navigationbar.php';
     
 
     if (isset($_GET['product_id'])) {
@@ -62,15 +63,15 @@ session_start();
     //     }
     // }
     
-    echo $u_id = $_SESSION['u_id'];
-    echo "<br>";
-    echo $_SESSION['user_name'];
-    echo "<br>";
-    echo $_SESSION['phone'];
-    echo "<br>";
-    echo $_SESSION['registered'];
-    echo "<br>";
-
+    $u_id = $_SESSION['u_id'];
+    // echo "<br>";
+    $_SESSION['user_name'];
+    // echo "<br>";
+    $_SESSION['phone'];
+    // echo "<br>";
+    $_SESSION['registered'];
+    // echo "<br>";
+    
 
 
 

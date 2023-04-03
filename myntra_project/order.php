@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "configer.php";
+@include 'navigationbar.php';
 
 $u_id = $_SESSION['u_id'];
 
