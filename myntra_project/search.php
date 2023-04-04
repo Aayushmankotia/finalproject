@@ -65,22 +65,28 @@ $totalPages = ceil($totalProducts / $productsPerPage);
 			
 		</tr>
         <?php
+
+
 while ($row = mysqli_fetch_assoc($result)) {
-    
-
-
-    echo "<tr>";
-    echo "<td>" . $row["p_id"] . "</td>";
-    echo "<td>" . $row["p_name"] . "</td>";
-    echo "<td>" . $row["p_category"] . "</td>";
-    echo "<td>" . $row["p_price"] . "</td>";
+    $category = $row["p_category"];
+    $productId = $row["p_id"];
+    $productName = $row["p_name"];
+    $productPrice = $row["p_price"];
+    $avatar = $row['avatar'];
 ?>
-
-    <td><img src="uploads/<?php echo $row['avatar']; ?>" width='100' height='100'></td>
-<?php
- echo "</tr>";
  
-}
+  <tr class='hoverred' onclick="window.location='<?php echo ($category === 'MEN' ? 'men.php' : ($category === 'WOMEN' ? 'women.php' :  ($category === 'KID' ? 'kids.php' : 'myntra.php'))) . '?id=' . $productId; ?>'">
+
+    <td><?php echo $productId; ?></td>
+    <td><?php echo $productName; ?></td>
+    <td><?php echo $category; ?></td>
+    <td><?php echo $productPrice; ?></td>
+    <td><img src='uploads/<?php echo $avatar; ?>' width='100' height='100'></td>
+  </tr>
+
+    <?php
+}   
+
 echo "</table>";
 // output pagination links
 if ($totalPages > 1) {

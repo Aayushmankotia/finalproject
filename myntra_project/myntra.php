@@ -70,7 +70,7 @@ session_start();
     </div>
     
     <?php 
-    echo $_SESSION['role_id'];
+    $_SESSION['role_id'];
     ?>
 
     <!-- this is code for slider -->

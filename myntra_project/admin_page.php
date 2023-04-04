@@ -1,18 +1,22 @@
 <?php
 
 session_start();
+
+// connection with database established using configer.php file //
 @include 'configer.php';
 
+//  admin nevigation bar is include by admin_header.php
 @include 'admin_header.php';
 
 $admin = $_SESSION['admin'];
+// admin session is create when the admin login by using mobile number 
 
+// this page can open if the admin session is created 
+// otherwise redirect to the login page 
 if (!isset($admin)) {
    header('location:login.php');
 }
 ;
-
-
 
 // Check if form was submitted
 if (isset($_POST['submit'])) {
@@ -51,8 +55,8 @@ if (isset($_POST['submit'])) {
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
    <!-- custom admin css file link  -->
-   <link rel="stylesheet" href="style/myntra.css">
-   <link rel="stylesheet" href="style/admin_style.css">
+   <link rel="stylesheet" href="./style/myntra.css">
+   <link rel="stylesheet" href="./style/admin_style.css">
 
 </head>
 

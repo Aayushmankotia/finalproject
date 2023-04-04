@@ -2,13 +2,14 @@
 session_start();
 @include 'configer.php';
 
- @include 'admin_header.php'; 
+@include 'admin_header.php';
 
 $admin = $_SESSION['admin'];
 
-if(!isset($admin)){
-   header('location:login.php');
-};
+if (!isset($admin)) {
+  header('location:login.php');
+}
+;
 
 // Check if the category ID is provided in the URL
 if (isset($_GET['id'])) {
@@ -53,28 +54,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="style/myntra.css">
-   <link rel="stylesheet" href="style/edit.css">
-    <!-- font awesome cdn link  -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-   <title>Edit Category</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/myntra.css">
+  <link rel="stylesheet" href="style/edit.css">
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Edit Category</title>
 </head>
+
 <body>
-<div class="add_product_div">
-<div class="add_product"> Edit Category</div>
- 
-  <form  class="mainform" action="#" method="POST">
-    <label for="category">Category:</label><br>
-    <input class="productinput" type="text" id="category" name="category" value="<?php echo $category; ?>"><br><br>
-    <label for="category_type">Category Type:</label><br>
-    <input class="productinput" type="text" id="category_type" name="category_type" value="<?php echo $category_type; ?>"><br><br>
-    <label for="category_name">Category Name:</label><br>
-    <input class="productinput" type="text" id="category_name" name="category_name" value="<?php echo $category_name; ?>"><br><br>
-    <input class="productinput" type="submit" value="Update">
-  </form>
+  <div class="add_product_div">
+    <div class="add_product"> Edit Category</div>
+
+    <form class="mainform" action="#" method="POST">
+      <label for="category">Category:</label><br>
+      <input class="productinput" type="text" id="category" name="category" value="<?php echo $category; ?>"><br><br>
+      <label for="category_type">Category Type:</label><br>
+      <input class="productinput" type="text" id="category_type" name="category_type"
+        value="<?php echo $category_type; ?>"><br><br>
+      <label for="category_name">Category Name:</label><br>
+      <input class="productinput" type="text" id="category_name" name="category_name"
+        value="<?php echo $category_name; ?>"><br><br>
+      <input class="productinput" type="submit" value="Update">
+    </form>
 </body>
+
 </html>

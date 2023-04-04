@@ -166,3 +166,6 @@ margin-top:120px;
         color: orangered;
         font-weight: 600;
     }
+    .hoverred:hover{
+      border:red 2px solid;
+    }

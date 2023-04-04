@@ -27,7 +27,7 @@
   // slider.php file is include here for slider 
   @include 'slider.php';
 
- $u_id = $_SESSION['u_id'];
+  $u_id = $_SESSION['u_id'];
   ?>
   <!-- main box which hold full page   -->
   <div class="big_box">
@@ -100,12 +100,20 @@
 
   </div>
   <?php
+  $phone= $_SESSION['phone'];
   if (isset($_POST['add_to_cart'])) {
 
-    if(!isset($_SESSION['phone'])){
-      header("Location:login.php");
-    }
+    if(!isset($phone)){
 
+      echo "<script> alert('please login to add items in cart ! '); 
+
+      window.location.href = 'login.php';
+      </script>";
+
+
+      // header("Location:login.php");
+    }
+    else{
     // post data
     $u_id = $_POST['u_id'];
     $product_id = $_POST['product_id'];
@@ -117,7 +125,7 @@
 
     // insert data into cart table
     $insert_cart = mysqli_query($conn, "INSERT INTO cart (u_id, product_id, product_name, product_price, product_image, product_category, product_quantity) VALUES ('$u_id', '$product_id', '$product_name', '$product_price', '$product_image', '$product_category', '$product_quantity')") or die('query failed');
-
+    }
 
   }
   ?>

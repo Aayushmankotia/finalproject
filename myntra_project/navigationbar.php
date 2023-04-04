@@ -19,7 +19,7 @@ session_start();
 include "configer.php";
 
 $u_id = $_SESSION['u_id'];
-$phone = $_SESSION['phone']; 
+$phone = $_SESSION['phone'];
 ?>
 
 <body>
@@ -31,14 +31,14 @@ $phone = $_SESSION['phone'];
         <div class="container">
           <div>
             <!-- logo image  -->
-            <a href=""><img class="logoimg"
+            <a href="myntra.php"><img class="logoimg"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-eqlSHJPKwe1riVNwVsJh_2e6KsKBmEmOX87ht807tQ&s"
                 alt="LOGO"></a>
           </div>
           <!-- green background dropdown  -->
           <div class="green">
 
-            <a class="link greendrop" href="#MEN">MEN</a>
+            <a class="link greendrop" href="men.php">MEN</a>
             <section class="hidden_menu_green hidden_menu">
               <span class="dropspan">
                 <ul class="dropdown-menu">
@@ -81,7 +81,7 @@ $phone = $_SESSION['phone'];
 
           <!-- yellow dropdown section -->
           <div class="yellow">
-            <a class='link yellowdrop ' href="#WOMEN">WOMEN</a>
+            <a class='link yellowdrop ' href="women.php">WOMEN</a>
             <section class="hidden_menu_yellow hidden_menu">
               <span class='dropspan'>
                 <ul class="dropdown-menu">
@@ -158,17 +158,17 @@ $phone = $_SESSION['phone'];
         <div class="container2"><!--this container using flex box-->
 
           <!-- search bar section  -->
-           <form  class="marginauto" action="search.php" method="GET">
+          <form class="marginauto" action="search.php" method="GET">
             <div class="searchBox">
-             
+
               <input class="searchInput" type="text" name="search" placeholder="SEARCH FOR PRODUCTS ">
               <button class="searchButton" href="#">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
-            
+
             </div>
-              </form>
-        
+          </form>
+
 
           <div class="profile_div">
             <a class="profile anchor_margin" href="#profile" alt='PROFILE'>
@@ -176,43 +176,42 @@ $phone = $_SESSION['phone'];
             </a>
 
             <div class="drop_profile">
-                <?php
-                if(!isset($u_id)){
-                  echo "<h6 class='orange_heading'>WELCOME</h6>
+              <?php
+              if (!isset($u_id)) {
+                echo "<h6 class='orange_heading'>WELCOME</h6>
                   <p class='drop_info'>To access account and manage orders</p><br>
                   <a class='login_button' href='login.php'> LOGIN/SIGNUP</a>";
-                  // echo"<div class='profile_button' ><a class='login_button' href='logout.php'> LOGOUT</a></div>";
-                  
-                }
-                else{
-                    $sql="SELECT * FROM users WHERE phone= '$phone'";
-                    $result = mysqli_query($conn, $sql);
-                    $row = mysqli_num_rows($result);
-                  echo "<span class='cyantext'>"."WELCOME-USER"."<span>"."<br>"."<br>";
-            
-                    if($row == 1) {
-                        while ($row = mysqli_fetch_array($result)) {
-            
-          
-            
-                            echo "ID : ".$_SESSION['u_id'] = $u_id = $row['u_id']; 
-                            echo"<br>";
-                           echo  "NAME : ".$_SESSION['user_name'] = $user_name = $row['user_name'];
-                           echo"<br>";
-                           echo "PHONE : ".$_SESSION['phone'] = $phone = $row['phone'];
-                           echo"<br>";
-                          echo "EMAIL : ".$_SESSION['email']= $row['email'];
-                          echo"<br>";
-
-                          echo "<div class='profile_button' ><a class='login_button' href='logout.php'> LOGOUT</a></div>";
-                        }
-                        }
-                }
-                
-                
-                ?>
-
+                // echo"<div class='profile_button' ><a class='login_button' href='logout.php'> LOGOUT</a></div>";
               
+              } else {
+                $sql = "SELECT * FROM users WHERE phone= '$phone'";
+                $result = mysqli_query($conn, $sql);
+                $row = mysqli_num_rows($result);
+                echo "<span class='cyantext'>" . "WELCOME-USER" . "<span>" . "<br>" . "<br>";
+
+                if ($row == 1) {
+                  while ($row = mysqli_fetch_array($result)) {
+
+
+
+                    echo "ID : " . $_SESSION['u_id'] = $u_id = $row['u_id'];
+                    echo "<br>";
+                    echo "NAME : " . $_SESSION['user_name'] = $user_name = $row['user_name'];
+                    echo "<br>";
+                    echo "PHONE : " . $_SESSION['phone'] = $phone = $row['phone'];
+                    echo "<br>";
+                    echo "EMAIL : " . $_SESSION['email'] = $row['email'];
+                    echo "<br>";
+
+                    echo "<div class='profile_button' ><a class='login_button' href='logout.php'> LOGOUT</a></div>";
+                  }
+                }
+              }
+
+
+              ?>
+
+
             </div>
 
           </div>

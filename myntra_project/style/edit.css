@@ -1,11 +1,9 @@
 .add_product_div {
-    margin: 90px auto;
+    margin: 120px auto;
     width: 500px;
     font-size: 30px;
 
-
 }
-
 .add_product {
     text-align: center;
     color: #e51a3e;
@@ -72,7 +70,8 @@ table {
 }
 
 h2 {
-    width: 100%;
+    width: 80%;
+    margin-top:40px ;
     text-align: center;
 }
 

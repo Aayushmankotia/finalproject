@@ -49,9 +49,15 @@ echo "<br>";
             }
             if ($_SESSION['role_id'] == 1) {
                 $_SESSION['admin'] = 'admin';
-                header("Location:admin_page.php");
+
+                echo "<script> alert('WELCOME ADMIN'); 
+                window.location.href = 'admin_page.php';
+                </script>";
+               
             } else {
-                header("Location:myntra.php");
+                echo "<script> alert('WELCOME BACK USER'); 
+  window.location.href = 'myntra.php';
+  </script>";
             }
 
 
