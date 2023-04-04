@@ -57,118 +57,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="myntra.css">
+   <link rel="stylesheet" href="style/myntra.css">
+   <link rel="stylesheet" href="style/edit.css">
     <!-- font awesome cdn link  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
    <title>Edit Category</title>
 </head>
-<style>
-	.add_product_div {
-		margin: 90px auto;
-		width: 500px;
-		font-size: 30px;
-
-
-	}
-
-	.add_product {
-		text-align: center;
-		color: #e51a3e;
-	}
-
-	.mainform {
-		width: 500px;
-		margin: 50px auto;
-		font-family: Arial, sans-serif;
-		font-size: 16px;
-		border: solid black 2px;
-		padding: 20px;
-	}
-
-	label {
-		display: block;
-		margin-bottom: 10px;
-		font-weight: bold;
-	}
-
-	.productinput {
-		padding: 10px;
-		border-radius: 5px;
-		border: none;
-		width: 100%;
-		margin-bottom: 20px;
-		box-sizing: border-box;
-		background-color: #f4f4f4;
-	}
-
-	select {
-		padding: 10px;
-		border-radius: 5px;
-		border: none;
-		width: 100%;
-		margin-bottom: 20px;
-		box-sizing: border-box;
-		background-color: #f4f4f4;
-	}
-
-	.sub {
-		text-align: center;
-		margin-top: 30px;
-	}
-
-	.btn {
-		background-color: #4CAF50;
-		color: white;
-		padding: 10px 20px;
-		border: none;
-		border-radius: 5px;
-		cursor: pointer;
-		font-size: 16px;
-	}
-
-	.btn:hover {
-		background-color: #3e8e41;
-	}
-
-	table {
-		border-collapse: collapse;
-		width: 70%;
-		margin: 0px auto;
-	}
-
-	h2 {
-		width: 100%;
-		text-align: center;
-	}
-
-	th,
-	td {
-		text-align: left;
-		padding: 8px;
-	}
-
-	tr:nth-child(even) {
-		background-color: #f2f2f2;
-	}
-
-	th {
-		background-color: #4CAF50;
-		color: white;
-	}
-
-	button {
-		background-color: #008CBA;
-		color: white;
-		padding: 8px 16px;
-		border: none;
-		border-radius: 4px;
-		cursor: pointer;
-	}
-
-	button:hover {
-		background-color: #006080;
-	}
-</style>
 <body>
 <div class="add_product_div">
 <div class="add_product"> Edit Category</div>

@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Edit Product</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style/myntra.css">
+   <link rel="stylesheet" href="style/edit.css">
+    <!-- font awesome cdn link  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <title>Edit Product</title>
 </head>
 <style>
-		body {
+		/* body {
 			font-family: Arial, sans-serif;
 			background-color: #f2f2f2;
 		}
@@ -52,7 +59,7 @@
 		img {
 			margin-bottom: 10px;
 		}
-	</style>
+	</style> */
 <body>
 	<h2>Edit Product</h2>
 	<?php
