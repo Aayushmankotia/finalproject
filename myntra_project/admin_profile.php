@@ -81,7 +81,7 @@ mysqli_close($conn);
 </head>
 
 <style>
-   
+
 </style>
 
 
@@ -101,8 +101,6 @@ mysqli_close($conn);
                 TOTA USERS
             </div>
         </div>
-
-
 
         <div class="flexcontainerbox">
             <div class="flexboxes">
@@ -125,7 +123,6 @@ mysqli_close($conn);
         <div class="flexcontainerbox">
             <div class="flexboxes">
                 <?php echo $cartcount; ?>
-
             </div>
             <div class="cont_div">
                 ITEMS IN CART

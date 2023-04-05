@@ -1,7 +1,7 @@
 <!-- footer section  -->
 <footer>
       <div class="flex_foot">
-        <div class="shoping">
+        <div class="shoping bottom_margin">
           <!-- shoping catagories  -->
           <h3>ONLINE SHOPPING</h3>
 
@@ -15,7 +15,7 @@
         </div>
 
         <!-- polic section  -->
-        <div class="policies">
+        <div class="policies bottom_margin">
           <h3>CUSTOMER POLICES</h3>
           <ul>
             <li> <a class='linklocation' href=""> Contact Us</a></li>
@@ -30,7 +30,7 @@
         </div>
 
         <!-- keep in touch section  -->
-        <div class="footer_top">
+        <div class="footer_top bottom_margin">
           <h3>KEEP IN TOUCH</h3>
 
           <!-- font-awesome icons are used  -->
@@ -53,7 +53,7 @@
         </div>
 
         <!-- section for policies  -->
-        <div class="policies">
+        <div class="policies bottom_margin">
           <h3>USEFUL LINKS</h3>
 
           <ul>
@@ -71,7 +71,7 @@
       </div>
       <hr>
       <!-- section for popular searches  -->
-      <div class="popular_searches">
+      <div class="popular_searches bottom_margin">
         <h3>POPULAR SEARCHES</h3>
         <a class='linklocation' href="">Makeup | </a>
         <a class='linklocation' href=""> Dresses For Girls |</a>

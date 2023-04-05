@@ -1,22 +1,27 @@
 <?php
 
-
-
-
+// session is started here 
 session_start();
 
+// admin session is fetched here 
 $admin = $_SESSION['admin'];
 
+// if admin session is not created redirect to login.php 
 if (!isset($admin)) {
-   header('location:login.php');
+    header('location:login.php');
 }
 ;
 
+// navigation bar for admin section 
 @include 'admin_header.php';
 
-echo $_SESSION['u_id'];
 
+// user id session is called 
+$_SESSION['u_id'];
+
+// database connection is called 
 include 'configer.php';
+
 
 if (isset($_POST['submit'])) {
 
@@ -131,110 +136,115 @@ function test($data)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="style/myntra.css">
     <link rel="stylesheet" href="style/admin_style.css">
     <!-- font awesome cdn link  -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <title>UPLOADS</title>
-   
+
 </head>
 
 
 <body>
-<div class="add_product_div"> <div class="add_product"> ADD PRODUCTS</div>
-<form class="mainform" action="#" method="POST" id="forms" name="myForm" enctype="multipart/form-data">
-        <label for="p_name">Product Name:</label>
-        <input class = "productinput" type="text" id="p_name" name="p_name" required><br><br>
+    <div class="add_product_div">
+        <div class="add_product"> ADD PRODUCTS</div>
+        <form class="mainform" action="#" method="POST" id="forms" name="myForm" enctype="multipart/form-data">
+            <label for="p_name">Product Name:</label>
+            <input class="productinput" type="text" id="p_name" name="p_name" required><br><br>
 
 
-        <label for="category">Product Category:</label>
-        <select id="category" name="p_category">
-            <option value="KID">KIDS</option>
-            <option value="MEN">MEN</option>
-            <option value="WOMEN">WOMEN</option>
+            <label for="category">Product Category:</label>
+            <select id="category" name="p_category">
+                <option value="KID">KIDS</option>
+                <option value="MEN">MEN</option>
+                <option value="WOMEN">WOMEN</option>
 
-        </select>
+            </select>
 
-        <label for="p_price">Product Price:</label>
-        <input class = "productinput" type="text" id="p_price" name="p_price" required><br><br>
+            <label for="p_price">Product Price:</label>
+            <input class="productinput" type="text" id="p_price" name="p_price" required><br><br>
 
 
-        <tr>
-            <td>
-                <label for="avatar"> AVATAR </label>
-            </td>
-            <td>
-                <input class = "productinput" class='file' type="file" placeholder="IMAGE URL" name="avatar" id="avatar">
+            <tr>
+                <td>
+                    <label for="avatar"> AVATAR </label>
+                </td>
+                <td>
+                    <input class="productinput" class='file' type="file" placeholder="IMAGE URL" name="avatar"
+                        id="avatar">
 
-                <?php echo "<span>" . $imgerror . "</span>"; ?>
-            </td>
+                    <?php echo "<span>" . $imgerror . "</span>"; ?>
+                </td>
 
-        </tr>
-        <div class="sub">
-            <input class = "productinput" class="btn" type="submit" name="submit" value="SUBMIT">
-        </div>
-</form>
-</div>
+            </tr>
+            <div class="sub">
+                <input class="productinput" class="btn" type="submit" name="submit" value="SUBMIT">
+            </div>
+        </form>
+    </div>
 
-</head>
-<body>
-	<h2>Product Table</h2>
-	<table>
-		<tr>
-			<th>ID</th>
-			<th>Product Name</th>
-			<th>Category</th>
-			<th>Price</th>
-			<th>Avatar</th>
-			<th>Action</th>
-		</tr>
-		<?php
+    </head>
 
-			// Fetch data from table
-			$sql = "SELECT * FROM product";
-			$result = mysqli_query($conn, $sql);
+    <body>
+        <h2>Product Table</h2>
+        <!-- heading for product table  -->
 
-			if (mysqli_num_rows($result) > 0) {
-				// Output data of each row
-				while($row = mysqli_fetch_assoc($result)) {
-					echo "<tr>";
-					echo "<td>" . $row["p_id"] . "</td>";
-					echo "<td>" . $row["p_name"] . "</td>";
-					echo "<td>" . $row["p_category"] . "</td>";
-					echo "<td>" . $row["p_price"] . "</td>";
-               ?>
-              
-					<td><img src="uploads/<?php echo $row['avatar']; ?>" width='100' height='100'></td>
-               <?php
-					echo "<td><button onclick='editProduct(" . $row["p_id"] . ")'>Update</button> 
+        <table>
+            <!-- fetch and show data in the table format    -->
+            <tr>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Avatar</th>
+                <th>Action</th>
+            </tr>
+            <?php
+
+            // Fetch data from table
+            $sql = "SELECT * FROM product";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                // Output data of each row
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $row["p_id"] . "</td>";
+                    echo "<td>" . $row["p_name"] . "</td>";
+                    echo "<td>" . $row["p_category"] . "</td>";
+                    echo "<td>" . $row["p_price"] . "</td>";
+                    ?>
+
+                    <td><img src="uploads/<?php echo $row['avatar']; ?>" width='100' height='100'></td>
+                    <?php
+                    echo "<td><button onclick='editProduct(" . $row["p_id"] . ")'>Update</button> 
                     <button onclick='deleteProduct(" . $row["p_id"] . ")'>Delete</button></td>";
-					echo "</tr>";
-				}
-			} else {
-				echo "0 results";
-			}
+                    echo "</tr>";
+                }
+            } else {
+                echo "0 results";
+            }
 
-			mysqli_close($conn);
-		?>
-	</table>
+            mysqli_close($conn);
+            ?>
+        </table>
 
-	<script>
-		function editProduct(id) {
-			window.location.href = "edit_product.php?p_id=" + id;
-		}
+        <script>  
+        // script for update and delete buttons 
+            function editProduct(id) {
+                window.location.href = "edit_product.php?p_id=" + id;
+            }
 
-		function deleteProduct(id) {
-			if (confirm("Are you sure you want to delete this product?")) {
-				window.location.href = "delete_product.php?p_id=" + id;
-			}
-		}
-	</script>
+            function deleteProduct(id) {
+                if (confirm("Are you sure you want to delete this product?")) {
+                    window.location.href = "delete_product.php?p_id=" + id;
+                }
+            }
+        </script>
 
 
-</body>
+    </body>
 
 </html>
-
-

@@ -170,12 +170,12 @@ mysqli_close($conn);
             </div>
             <div class="inputdivision textcenter">
                 <input class="input" type="text" value="<?php echo $_SESSION['user_name']; ?>" name="name"
-                    placeholder="PLACE ORDER WITH NEW NAME ">
+                    placeholder="PLACE ORDER WITH NEW NAME "> <span> <?php echo $nameerr; ?></span>
             </div>
 
             <div class="inputdivision textcenter">
                 <input class="input" value="<?php echo $_SESSION['phone']; ?>" type="tel" name="phone"
-                    placeholder="Mobile No*">
+                    placeholder="Mobile No*"> <span> <?php echo $phoneerr; ?></span>
             </div>
 
             <div class="inputdivision">
@@ -183,19 +183,23 @@ mysqli_close($conn);
             </div>
 
             <div class="inputdivision  textcenter">
-                <input class="input" value="<?php echo $_SESSION['pincode']; ?>" type="text" name="pincode" placeholder="Pin Code*">
+                <input class="input" value="<?php echo $_SESSION['pincode']; ?>" type="text" name="pincode"
+                    placeholder="Pin Code*"><span> <?php echo $pin_codeerr; ?></span>
             </div>
 
             <div class="inputdivision  textcenter">
-                <input class="input" value="<?php echo $_SESSION['address']; ?>" type="text" name="address" placeholder="address*">
+                <input class="input" value="<?php echo $_SESSION['address']; ?>" type="text" name="address"
+                    placeholder="address*">
             </div>
 
             <div class="inputdivision textcenter">
-                <input class="input" value="<?php echo $_SESSION['city']; ?>" type="text" name="city" placeholder="City">
+                <input class="input" value="<?php echo $_SESSION['city']; ?>" type="text" name="city"
+                    placeholder="City">
             </div>
 
             <div class="inputdivision textcenter">
-                <input class="input" value="<?php echo $_SESSION['state']; ?>" type="text" name="state" placeholder="State">
+                <input class="input" value="<?php echo $_SESSION['state']; ?>" type="text" name="state"
+                    placeholder="State">
             </div>
 
             <div class="inputdivision  textcenter">

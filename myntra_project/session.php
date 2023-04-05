@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'configer.php';
+
 $phone=$_SESSION['phone'];
 
 
@@ -27,8 +28,7 @@ $sql = "SELECT * FROM users WHERE phone = '$phone'";
            
           
             }
-           
-          
+
               header("Location:myntra.php");
             }
         

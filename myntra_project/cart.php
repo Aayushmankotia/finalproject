@@ -51,7 +51,7 @@ session_start();
     }
 
     // if (isset($_POST['DELETE'])) {
-    //     echo$_SESSION['product_id'] ;
+    //     echo $_SESSION['product_id'] ;
     
     //     $query = "DELETE FROM cart WHERE product_id = '$product_id'";
     //     echo $query;

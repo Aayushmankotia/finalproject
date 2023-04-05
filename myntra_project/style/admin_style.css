@@ -1,9 +1,11 @@
 
+/* css styling for admin pannel  */
 *{
-  
    margin:0;
    padding:0;
 }
+
+
 .add_product {
    font-size: xx-large;
    margin-top: 120px;
@@ -105,23 +107,23 @@ button:hover {
    background-color: #006080;
 }
 .margin-top_table{
-margin-top:120px;
+   margin-top:120px;
 }
-  .main_division_profile {
-        margin: 100px auto 0 auto;
-        width: 80%;
-        border: solid red 2px;
+.main_division_profile {
+   margin: 100px auto 0 auto;
+   width: 80%;
+   border: solid red 2px;
         /* height: 200px; */
     }
 
-    .blackdivision {
-        height: 80px;
-        background-image: linear-gradient(to bottom right, orange, red, yellow);
-        text-align: center;
-        font-size: xx-large;
-        color: white;
-        font-weight: 900;
-        padding-top: 20px;
+.blackdivision {
+   height: 80px;
+   background-image: linear-gradient(to bottom right, orange, red, yellow);
+   text-align: center;
+   font-size: xx-large;
+   color: white;
+   font-weight: 900;
+   padding-top: 20px;
 
     }
 

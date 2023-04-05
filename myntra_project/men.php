@@ -93,9 +93,6 @@
 
     // @include 'footer.php';
     
-
-
-
     ?>
 
   </div>
@@ -128,6 +125,8 @@
     }
 
   }
+
+  @include 'footer.php';
   ?>
 
 

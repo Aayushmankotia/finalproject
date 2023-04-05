@@ -212,7 +212,7 @@ $phone = $_SESSION['phone'];
                 // echo"<div class='profile_button' ><a class='login_button' href='logout.php'> LOGOUT</a></div>";
               
               } else {
-                $sql = "SELECT * FROM users WHERE phone= '$phone'";
+                $sql = "SELECT * FROM users WHERE u_id= '$u_id'";
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_num_rows($result);
                 echo "<span class='cyantext'>" . "WELCOME-USER" . "<span>" . "<br>" . "<br>";

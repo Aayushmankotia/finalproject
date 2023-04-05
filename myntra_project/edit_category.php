@@ -1,11 +1,17 @@
 <?php
+
+// session start here 
 session_start();
+
+// include file configer.php to connect with database 
 @include 'configer.php';
 
+// navigation-bar for admin pannel 
 @include 'admin_header.php';
 
 $admin = $_SESSION['admin'];
 
+// redireact to login.php 
 if (!isset($admin)) {
   header('location:login.php');
 }
@@ -70,6 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="add_product_div">
     <div class="add_product"> Edit Category</div>
 
+    <!-- form for edit category  -->
     <form class="mainform" action="#" method="POST">
       <label for="category">Category:</label><br>
       <input class="productinput" type="text" id="category" name="category" value="<?php echo $category; ?>"><br><br>

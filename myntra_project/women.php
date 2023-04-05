@@ -1,6 +1,6 @@
 <?php
-  session_start();
-  ?>
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@
 
   <!-- navigation section start -->
   <?php
- 
+
 
   include 'configer.php';
   // navigationbar.php file is include here for navigation bar 
@@ -100,10 +100,10 @@
 
   </div>
   <?php
-  $phone= $_SESSION['phone'];
+  $phone = $_SESSION['phone'];
   if (isset($_POST['add_to_cart'])) {
 
-    if(!isset($phone)){
+    if (!isset($phone)) {
 
       echo "<script> alert('please login to add items in cart ! '); 
 
@@ -112,24 +112,25 @@
 
 
       // header("Location:login.php");
-    }
-    else{
-    // post data
-    $u_id = $_POST['u_id'];
-    $product_id = $_POST['product_id'];
-    $product_name = $_POST['product_name'];
-    $product_price = $_POST['product_price'];
-    $product_image = $_POST['product_image'];
-    $product_category = $_POST['product_category'];
-    $product_quantity = $_POST['product_quantity'];
+    } else {
+      // post data
+      $u_id = $_POST['u_id'];
+      $product_id = $_POST['product_id'];
+      $product_name = $_POST['product_name'];
+      $product_price = $_POST['product_price'];
+      $product_image = $_POST['product_image'];
+      $product_category = $_POST['product_category'];
+      $product_quantity = $_POST['product_quantity'];
 
-    // insert data into cart table
-    $insert_cart = mysqli_query($conn, "INSERT INTO cart (u_id, product_id, product_name, product_price, product_image, product_category, product_quantity) VALUES ('$u_id', '$product_id', '$product_name', '$product_price', '$product_image', '$product_category', '$product_quantity')") or die('query failed');
+      // insert data into cart table
+      $insert_cart = mysqli_query($conn, "INSERT INTO cart (u_id, product_id, product_name, product_price, product_image, product_category, product_quantity) VALUES ('$u_id', '$product_id', '$product_name', '$product_price', '$product_image', '$product_category', '$product_quantity')") or die('query failed');
     }
 
   }
-  ?>
 
+  @include 'footer.php';
+
+  ?>
 
 
 </body>

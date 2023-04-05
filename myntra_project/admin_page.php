@@ -1,5 +1,6 @@
 <?php
 
+// session start here 
 session_start();
 
 // connection with database established using configer.php file //
@@ -39,9 +40,6 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,39 +60,44 @@ if (isset($_POST['submit'])) {
 
 <body>
 
+   <!-- body is stared here -->
+
    <div class="add_product_div">
-   <div class="add_product"> Add Category</div>
+      <!-- main div is started here  -->
 
+      <div class="add_product"> Add Category</div>
+      <!-- this is heading div for category -->
+
+      <!-- form is created  -->
       <form class="mainform" action="#" method="post">
-         <label for="category">Category:</label>
 
+         <label for="category">Category:</label>
+         <!-- label tag is used here  -->
+
+         <!-- select tag for the category  -->
          <select name="category" id="category" required>
             <option value="kids">KIDS</option>
             <option value="women">WOMEN</option>
             <option value="men">MEN</option>
-
-
          </select>
 
+         <!-- input type category type  -->
          <label for="category_type">Category Type:</label>
          <input class="productinput" type="text" id="category_type" name="category_type"><br><br>
 
+         <!-- input type category name-->
          <label for="category_name">Category Name:</label>
          <input class="productinput" type="text" id="category_name" name="category_name"><br><br>
+
+         <!-- submit button  -->
          <div class="sub">
             <input class="productinput" type="submit" name="submit" value="Add">
          </div>
+
       </form>
    </div>
 
-
-
-
-
-
    <?php
-
-
 
    // Fetch categories from database
    $sql = "SELECT * FROM categories";
@@ -102,13 +105,14 @@ if (isset($_POST['submit'])) {
 
    ?>
 
-
-
-
    <h2>Categories</h2>
+   <!-- heading tag  -->
+
+   <!-- table for category to show data in a table format  -->
    <table>
       <thead>
          <tr>
+            <!-- row for table head  -->
             <th>ID</th>
             <th>Category</th>
             <th>Category Type</th>
@@ -125,7 +129,7 @@ if (isset($_POST['submit'])) {
             echo "<td>" . $row['category'] . "</td>";
             echo "<td>" . $row['category_type'] . "</td>";
             echo "<td>" . $row['category_name'] . "</td>";
-         
+
             echo "<td><a href='edit_category.php?id=" . $row['c_id'] . "'><i class='fas fa-edit'></i></a> <a href='delete_category.php?id=" . $row['c_id'] . "'><i class='fas fa-trash'></i></a></td>";
             echo "</tr>";
          }

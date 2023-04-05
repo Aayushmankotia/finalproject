@@ -38,13 +38,13 @@ if (isset($_POST['submit'])) {
         if ($row === 1) {
             while ($row = mysqli_fetch_array($result)) {
 
-echo "<br>";
+                echo "<br>";
 
                 echo $_SESSION['u_id'] = $u_id = $row['u_id'];
-               echo  $_SESSION['user_name'] = $user_name = $row['user_name'];
-               echo $_SESSION['phone'] = $phone = $row['phone'];
-               echo $_SESSION['registered'] = $u_id;
-              echo $_SESSION['role_id']= $row['role_id'];
+                echo $_SESSION['user_name'] = $user_name = $row['user_name'];
+                echo $_SESSION['phone'] = $phone = $row['phone'];
+                echo $_SESSION['registered'] = $u_id;
+                echo $_SESSION['role_id'] = $row['role_id'];
 
             }
             if ($_SESSION['role_id'] == 1) {
@@ -53,18 +53,18 @@ echo "<br>";
                 echo "<script> alert('WELCOME ADMIN'); 
                 window.location.href = 'admin_page.php';
                 </script>";
-               
+
             } else {
                 echo "<script> alert('WELCOME BACK USER'); 
-  window.location.href = 'myntra.php';
-  </script>";
+                        window.location.href = 'myntra.php';
+                        </script>";
             }
 
 
         } else {
             echo "<script> alert('COMPLETED YOUR SIGNUP'); 
-  window.location.href = 'registration.php';
-  </script>";
+                    window.location.href = 'registration.php';
+                    </script>";
 
         }
 

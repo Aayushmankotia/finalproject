@@ -1,8 +1,14 @@
 <?php
+// session started here 
 session_start();
+
+// connection establish
 include "configer.php";
+
+// navigation bar included 
 @include 'navigationbar.php';
 
+// sessions called 
 $u_id = $_SESSION['u_id'];
 
 $_SESSION['user_name'];
@@ -10,24 +16,17 @@ $_SESSION['user_name'];
 $_SESSION['phone'];
 
 $_SESSION['registered'];
-
-
-
 $_SESSION['u_id'];
-
-
 $_SESSION['pincode'];
 $_SESSION['address'];
 $_SESSION['city'];
 $_SESSION['state'];
 
+// sql query to select data from the cart table 
 $sql = "SELECT * FROM cart WHERE u_id = '$u_id'";
-
-
 
 $result = mysqli_query($conn, $sql);
 $row = mysqli_num_rows($result);
-
 
 if ($row >= 1) {
     while ($row = mysqli_fetch_array($result)) {
@@ -42,9 +41,7 @@ if ($row >= 1) {
 
         $product_quantities += $row['product_quantity'];
 
-
     }
-
 }
 
 $_SESSION['product_quantity'] = $product_quantities;
@@ -61,11 +58,7 @@ $_SESSION['product_quantities'] = $product_quantities;
 
 if (isset($_POST['order'])) {
 
-    $quary ="DELETE * FROM cart WHERE u_id = '$u_id'";
-    if (mysqli_query($conn, $sql)){
-        echo" your order is on your way ";
-
-    }
+   
     // Get the values from the form
     $u_id = $_SESSION['u_id'];
     $name = $_POST["name"];
@@ -84,13 +77,16 @@ if (isset($_POST['order'])) {
 
     // Execute the query
     if (mysqli_query($conn, $sql)) {
-        
+        // $quary = "DELETE * FROM cart WHERE u_id = '$u_id'";
+        // want to delete cart items from card when order is placed
+      
+
         echo "<script> alert('Order placed successfully'); 
-  window.location.href = 'myntra.php';
+  window.location.href = 'session.php';
   </script>";
 
     } else {
-        echo "Error: " . $sql  . mysqli_error($conn);
+        echo "Error: " . $sql . mysqli_error($conn);
     }
 
     // Close the database connection
@@ -99,79 +95,21 @@ if (isset($_POST['order'])) {
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/myntra.css">
+    <link rel="stylesheet" href="style/order.css">
+
     <title>Order Page</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            font-weight: bold;
-        }
-
-        input[type="hidden"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            display: block;
-            margin: 0 auto;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #0069d9;
-        }
-
-        .full_div {
-            width: 420px;
-
-            padding: 20px;
-            margin: 110px auto 20px auto;
-        }
-
-        .blue {
-            color: blue;
-        }
-    </style>
+</head>
+<style>
+  
+</style>
 </head>
 
 <body>

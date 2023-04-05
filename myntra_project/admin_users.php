@@ -22,19 +22,22 @@ mysqli_close($conn);
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- css styling is used here  -->
 	<link rel="stylesheet" href="style/myntra.css">
 	<link rel="stylesheet" href="style/admin_style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 	<title>User List</title>
-
-
 </head>
 
 <body>
 
+<!-- heading tag is used for user list  -->
 <h2 class="margin-top_table">USER's LIST</h2>
 	<table>
+
+	<!-- fetch data and present in the form of table  -->
 		<thead>
 			<tr>
 				<th>User ID</th>
@@ -48,6 +51,8 @@ mysqli_close($conn);
 			</tr>
 		</thead>
 		<tbody>
+
+		<!-- while loop is used to fetch data in the associating  -->
 			<?php while ($row = mysqli_fetch_assoc($result)): ?>
 				<tr>
 					<td>
