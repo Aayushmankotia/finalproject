@@ -37,11 +37,17 @@ nav {
 .hidden_menu{
   width:40%;
   height:300px;
-  line-height:30px;
+  line-height:26px;
   position: absolute;
   z-index:1;
-  display:none;
+  display:block;
 
+}
+td{
+  padding:0px 34px;
+}
+.green_heading{
+  width:150px;
 }
 
 /* background color css for dropdown content  */

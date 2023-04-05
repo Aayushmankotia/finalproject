@@ -40,41 +40,45 @@ $phone = $_SESSION['phone'];
 
             <a class="link greendrop" href="men.php">MEN</a>
             <section class="hidden_menu_green hidden_menu">
+
+              <!-- //sxdfcgvbhjnkmljnhbgvfcdx -->
+              <?php
+
+              include 'configer.php';
+              $sql = "SELECT * FROM categories WHERE category = 'MEN' ORDER BY category_type, category_name";
+              $result = mysqli_query($conn, $sql);
+
+              // Group categories by category type and name
+              $grouped_categories = array();
+              while ($row = mysqli_fetch_assoc($result)) {
+                $category_type = $row['category_type'];
+                $category_name = $row['category_name'];
+                if (!isset($grouped_categories[$category_type])) {
+                  $grouped_categories[$category_type] = array();
+                }
+                $grouped_categories[$category_type][] = $category_name;
+              }
+              ?>
+
               <span class="dropspan">
                 <ul class="dropdown-menu">
-                  <h5 class="green_heading">Topwear</h5>
-                  <li><a href="men.php">T-Shirts</a></li>
-                  <li><a href="men.php">Casual Shirts</a></li>
-                  <li><a href="men.php">Formal Shirts</a></li>
-                  <li><a href="men.php">Jackets</a></li>
-                  <li><a href="men.php">Rain Jackets</a></li>
-                  <li><a href="men.php">Jackets</a></li>
-                </ul>
-              </span>
-              <span class='dropspan'>
-                <ul class="dropdown-menu">
-                  <h5 class="green_heading">Bottomwear</h5>
-                  <li><a href="men.php">Jeans</a></li>
-                  <li><a href="men.php">Casual Trousers</a></li>
-                  <li><a href="men.php">Formal Trousers</a></li>
-                  <li><a href="men.php">Jeans</a></li>
-                  <li><a href="men.php">Shorts</a></li>
-                  <li><a href="men.php">Track Pants & Joggers</a></li>
 
+                  <?php
+                  // Display categories in a table grouped by category type and name
+                  echo "<table style='border:solid red 2px;'>";
+                  echo '<tr>';
+                  foreach ($grouped_categories as $category_type => $category_names) {
+                    echo "<td>";
+                    echo "<h5 class='green_heading'>" . $category_type . '</h5><br>';
+                    foreach ($category_names as $category_name) {
+                      echo '<a href="men.php?name=' . $category_name . '">' . $category_name . '</a><br>';
+                    }
+                    echo '</td>';
+                  }
+                  echo '</tr>';
+                  echo '</table>';
+                  ?>
                 </ul>
-              </span>
-              <span class='dropspan'>
-                <ul class="dropdown-menu">
-                  <h5 class="green_heading">Footwear</h5>
-                  <li><a href="men.php">Formal Shoes</a></li>
-                  <li><a href="men.php">Sports Shoes</a></li>
-                  <li><a href="men.php">Sneakers</a></li>
-                  <li><a href="men.php">Sandals & Floaters</a></li>
-                  <li><a href="men.php">Flip Flops</a></li>
-                  <li><a href="men.php">Socks</a></li>
-
-                </ul>
-              </span>
             </section>
           </div>
           <!-- green dropdown ends  -->
@@ -83,29 +87,51 @@ $phone = $_SESSION['phone'];
           <div class="yellow">
             <a class='link yellowdrop ' href="women.php">WOMEN</a>
             <section class="hidden_menu_yellow hidden_menu">
-              <span class='dropspan'>
-                <ul class="dropdown-menu">
-                  <h5 class="yellow_heading">Indian & Fusion Wear</h5>
-                  <li><a href="women.php">Kurtas & Suits</a></li>
-                  <li><a href="women.php">Kurtis, Tunics & Tops</a></li>
-                  <li><a href="women.php">Sarees</a></li>
-                  <li><a href="women.php">Ethnic Wear</a></li>
-                  <li><a href="women.php">Skirts & Palazzos</a></li>
-                  <li><a href="women.php">Jackets</a></li>
-                </ul>
-              </span>
+
+              <?php
+
+              include 'configer.php';
+              $sql = "SELECT * FROM categories WHERE category = 'W0MEN' ORDER BY category_type, category_name";
+              echo $sql;
+
+              $result = mysqli_query($conn, $sql);
+
+              // Group categories by category type and name
+              $grouped_categories = array();
+              while ($row = mysqli_fetch_assoc($result)) {
+                $category_typey = $row['category_type'];
+                $category_namey = $row['category_name'];
+                if (!isset($grouped_categories[$category_typey])) {
+                  $grouped_categories[$category_typey] = array();
+                }
+                $grouped_categories[$category_typey][] = $category_namey;
+              }
+              ?>
+
+
 
               <span class='dropspan'>
                 <ul class="dropdown-menu">
-                  <h5 class="yellow_heading">Western Wear</h5>
-                  <li><a href="women.php">Dresses</a></li>
-                  <li><a href="women.php">Tops</a></li>
-                  <li><a href="women.php">Tshirts</a></li>
-                  <li><a href="women.php">Jeans</a></li>
-                  <li><a href="women.php">Jackets & Coats</a></li>
-                  <li><a href="women.php">Sweaters</a></li>
+
+
+
+                  <?php
+                  // Display categories in a table grouped by category type and name
+                  echo "<table style='border:solid red 2px;'>";
+                  echo '<tr>';
+                  foreach ($grouped_categories as $category_typey => $category_names) {
+                    echo "<td>";
+                    echo "<h5 class='yellow_heading'>" . $category_typey . '</h5><br>';
+                    foreach ($category_names as $category_namey) {
+                      echo '<a href="women.php?name=' . $category_namey . '">' . $category_namey . '</a><br>';
+                    }
+                    echo '</td>';
+                  }
+                  echo '</tr>';
+                  echo '</table>';
+                  ?>
                 </ul>
-              </span>
+
 
             </section>
           </div>
@@ -116,41 +142,43 @@ $phone = $_SESSION['phone'];
             <a class='link orangedrop' href="kids.php">KIDS</a>
 
             <section class="hidden_menu_orange hidden_menu">
-              <span class='dropspan'>
-                <ul class="dropdown-menu">
-                  <h5 class="orange_heading">boys cloths</h5>
-                  <li><a href="kids.php">T-Shirts</a></li>
-                  <li><a href="kids.php">Casual Shirts</a></li>
-                  <li><a href="kids.php">Jeans</a></li>
-                  <li><a href="kids.php">pent</a></li>
-                  <li><a href="kids.php">Casual Trousers</a></li>
-                  <li><a href="kids.php">Formal Trousers</a></li>
-                </ul>
-              </span>
+              <?php
+              include 'configer.php';
+              $sql = "SELECT * FROM categories WHERE category = 'KID' ORDER BY category_type, category_name";
+              echo $sql;
+              $result = mysqli_query($conn, $sql);
+            
 
+              // Group categories by category type and name
+              $grouped_categories = array();
+              while ($row = mysqli_fetch_assoc($result)) {
+                $category_typey = $row['category_type'];
+                $category_namey = $row['category_name'];
+                if (!isset($grouped_categories[$category_typey])) {
+                  $grouped_categories[$category_typey] = array();
+                }
+                $grouped_categories[$category_typey][] = $category_namey;
+              }
+              ?>
               <span class='dropspan'>
                 <ul class="dropdown-menu">
-                  <h5 class="orange_heading">girls cloths</h5>
-                  <li><a href="kids.php">Dresses</a></li>
-                  <li><a href="kids.php">Tops</a></li>
-                  <li><a href="kids.php">Tshirts</a></li>
-                  <li><a href="kids.php">Jeans</a></li>
-                  <li><a href="kids.php">Shrugs</a></li>
-                  <li><a href="kids.php">Sweaters</a></li>
+                  <?php
+                  // Display categories in a table grouped by category type and name
+                  echo "<table style='border:solid red 2px;'>";
+                  echo '<tr>';
+                  foreach ($grouped_categories as $category_typey => $category_names) {
+                    echo "<td>";
+                    echo "<h5 class='orange_heading'>" . $category_typey . '</h5><br>';
+                    foreach ($category_names as $category_namey) {
+                      echo '<a href="kids.php?name=' . $category_namey . '">' . $category_namey . '</a><br>';
+                    }
+                    echo '</td>';
+                  }
+                  echo '</tr>';
+                  echo '</table>';
+                  ?>
                 </ul>
-              </span>
 
-              <span class='dropspan'>
-                <ul class="dropdown-menu">
-                  <h5 class="orange_heading">footware</h5>
-                  <li><a href="kids.php">Casual Shoes</a></li>
-                  <li><a href="kids.php">Formal Shoes</a></li>
-                  <li><a href="kids.php">Sports Shoes</a></li>
-                  <li><a href="kids.php">heels</a></li>
-                  <li><a href="kids.php">sandels</a></li>
-                  <li><a href="kids.php">school shoes</a></li>
-                </ul>
-              </span>
             </section>
           </div>
           <!-- orange section ends  -->

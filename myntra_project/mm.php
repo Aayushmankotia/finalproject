@@ -14,7 +14,17 @@ while ($row = mysqli_fetch_assoc($result)) {
     }
     $grouped_categories[$category_type][] = $category_name;
 }
+?>
 
+
+ <div class="green">
+
+<a class="link greendrop" href="men.php">MEN</a>
+<section class="hidden_menu_green hidden_menu">
+  <span class="dropspan">
+    <ul class="dropdown-menu">
+
+<?php
 // Display categories in a table grouped by category type and name
 echo '<table>';
 echo '<tr>';
@@ -31,19 +41,8 @@ echo '</table>';
 
 
 
-// <div class="green">
 
-// <a class="link greendrop" href="men.php">MEN</a>
-// <section class="hidden_menu_green hidden_menu">
-//   <span class="dropspan">
-//     <ul class="dropdown-menu">
-//       <h5 class="green_heading">Topwear</h5>
-//       <li><a href="men.php">T-Shirts</a></li>
-//       <li><a href="men.php">Casual Shirts</a></li>
-//       <li><a href="men.php">Formal Shirts</a></li>
-//       <li><a href="men.php">Jackets</a></li>
-//       <li><a href="men.php">Rain Jackets</a></li>
-//       <li><a href="men.php">Jackets</a></li>
+
 //     </ul>
 //   </span>
 //   <span class='dropspan'>
