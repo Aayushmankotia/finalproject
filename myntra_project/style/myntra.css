@@ -20,8 +20,8 @@ nav {
 .dropspan{
   padding-top:30px;
   position: relative;
-  width:247px;
-  display:inline-block;
+  width:647px;
+  display:block;
   
 }
 .loginimage{
@@ -37,14 +37,14 @@ nav {
 .hidden_menu{
   width:40%;
   height:300px;
-  line-height:26px;
+  line-height:29px;
   position: absolute;
   z-index:1;
-  display:block;
+  display:none;
 
 }
-td{
-  padding:0px 34px;
+.tabledata{
+  padding:0px 10px;
 }
 .green_heading{
   width:150px;

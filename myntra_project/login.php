@@ -91,7 +91,7 @@ echo "<br>";
 <body>
 
     <?php
-    // @include 'navigationbar.php';
+    @include 'navigationbar.php';
     ?>
     <!-- header section ends  -->
     <!-- html form is created below -->

@@ -65,10 +65,10 @@ $phone = $_SESSION['phone'];
 
                   <?php
                   // Display categories in a table grouped by category type and name
-                  echo "<table style='border:solid red 2px;'>";
+                  echo "<table >";
                   echo '<tr>';
                   foreach ($grouped_categories as $category_type => $category_names) {
-                    echo "<td>";
+                    echo "<td class='tabledata'>";
                     echo "<h5 class='green_heading'>" . $category_type . '</h5><br>';
                     foreach ($category_names as $category_name) {
                       echo '<a href="men.php?name=' . $category_name . '">' . $category_name . '</a><br>';
@@ -90,21 +90,21 @@ $phone = $_SESSION['phone'];
 
               <?php
 
-              include 'configer.php';
-              $sql = "SELECT * FROM categories WHERE category = 'W0MEN' ORDER BY category_type, category_name";
-              echo $sql;
+             
+              $sql = "SELECT * FROM categories WHERE category = 'WOMEN' ORDER BY category_type, category_name";
+           
 
               $result = mysqli_query($conn, $sql);
 
               // Group categories by category type and name
               $grouped_categories = array();
               while ($row = mysqli_fetch_assoc($result)) {
-                $category_typey = $row['category_type'];
-                $category_namey = $row['category_name'];
-                if (!isset($grouped_categories[$category_typey])) {
-                  $grouped_categories[$category_typey] = array();
+                $category_type = $row['category_type'];
+                $category_name = $row['category_name'];
+                if (!isset($grouped_categories[$category_type])) {
+                  $grouped_categories[$category_type] = array();
                 }
-                $grouped_categories[$category_typey][] = $category_namey;
+               $grouped_categories[$category_type][] = $category_name;
               }
               ?>
 
@@ -117,13 +117,13 @@ $phone = $_SESSION['phone'];
 
                   <?php
                   // Display categories in a table grouped by category type and name
-                  echo "<table style='border:solid red 2px;'>";
+                  echo "<table>";
                   echo '<tr>';
-                  foreach ($grouped_categories as $category_typey => $category_names) {
-                    echo "<td>";
-                    echo "<h5 class='yellow_heading'>" . $category_typey . '</h5><br>';
-                    foreach ($category_names as $category_namey) {
-                      echo '<a href="women.php?name=' . $category_namey . '">' . $category_namey . '</a><br>';
+                  foreach ($grouped_categories as $category_type => $category_names) {
+                    echo "<td class='tabledata'>";
+                    echo "<h5 class='yellow_heading'>" . $category_type . '</h5><br>';
+                    foreach ($category_names as $category_name) {
+                      echo '<a href="women.php?name=' . $category_name . '">' . $category_name . '</a><br>';
                     }
                     echo '</td>';
                   }
@@ -143,11 +143,11 @@ $phone = $_SESSION['phone'];
 
             <section class="hidden_menu_orange hidden_menu">
               <?php
-              include 'configer.php';
-              $sql = "SELECT * FROM categories WHERE category = 'KID' ORDER BY category_type, category_name";
-              echo $sql;
-              $result = mysqli_query($conn, $sql);
             
+              $sql = "SELECT * FROM categories WHERE category = 'KIDS' ORDER BY category_type, category_name";
+          
+              $result = mysqli_query($conn, $sql);
+
 
               // Group categories by category type and name
               $grouped_categories = array();
@@ -164,10 +164,10 @@ $phone = $_SESSION['phone'];
                 <ul class="dropdown-menu">
                   <?php
                   // Display categories in a table grouped by category type and name
-                  echo "<table style='border:solid red 2px;'>";
+                  echo "<table>";
                   echo '<tr>';
                   foreach ($grouped_categories as $category_typey => $category_names) {
-                    echo "<td>";
+                    echo "<td class='tabledata'>";
                     echo "<h5 class='orange_heading'>" . $category_typey . '</h5><br>';
                     foreach ($category_names as $category_namey) {
                       echo '<a href="kids.php?name=' . $category_namey . '">' . $category_namey . '</a><br>';
@@ -231,6 +231,7 @@ $phone = $_SESSION['phone'];
                     echo "EMAIL : " . $_SESSION['email'] = $row['email'];
                     echo "<br>";
 
+                    echo "<div class='profile_button' ><a class='login_button' href='user_update.php'>UPDATE</a></div>";
                     echo "<div class='profile_button' ><a class='login_button' href='logout.php'> LOGOUT</a></div>";
                   }
                 }
