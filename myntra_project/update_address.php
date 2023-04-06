@@ -132,14 +132,14 @@ if (isset($_POST['submit'])) {
             </div>
             <div class="inputdivision textcenter">
                 <input class="input" type="text" value="<?php echo $_SESSION['user_name']; ?>" name="name"
-                    placeholder="PLACE ORDER WITH NEW NAME "> <span>
+                    placeholder="PLACE ORDER WITH NEW NAME " required> <span>
                     <?php echo $nameerr; ?>
                 </span>
             </div>
 
             <div class="inputdivision textcenter">
                 <input class="input" value="<?php echo $_SESSION['phone']; ?>" type="tel" name="phone"
-                    placeholder="Mobile No*"> <span>
+                    placeholder="Mobile No*" required> <span>
                     <?php echo $phoneerr; ?>
                 </span>
             </div>
@@ -150,28 +150,28 @@ if (isset($_POST['submit'])) {
 
             <div class="inputdivision  textcenter">
                 <input class="input" value="<?php echo $_SESSION['pincode']; ?>" type="text" name="pincode"
-                    placeholder="Pin Code*"><span>
+                    placeholder="Pin Code*" required><span>
                     <?php echo $pin_codeerr; ?>
                 </span>
             </div>
 
             <div class="inputdivision  textcenter">
                 <input class="input" value="<?php echo $_SESSION['address']; ?>" type="text" name="address"
-                    placeholder="address*">
+                    placeholder="address*" required>
             </div>
 
             <div class="inputdivision textcenter">
                 <input class="input" value="<?php echo $_SESSION['city']; ?>" type="text" name="city"
-                    placeholder="City">
+                    placeholder="City" required>
             </div>
 
             <div class="inputdivision textcenter">
                 <input class="input" value="<?php echo $_SESSION['state']; ?>" type="text" name="state"
-                    placeholder="State">
+                    placeholder="State" required>
             </div>
 
             <div class="inputdivision  textcenter">
-                <input class="input redbackground" type="submit" name="submit" value="UPDATE ADDRESS">
+                <input class="input redbackground" type="submit" name="submit" value="UPDATE ADDRESS" required>
             </div>
 
 

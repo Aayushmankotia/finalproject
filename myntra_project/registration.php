@@ -66,8 +66,14 @@ $email = test($_POST['email']);
         //email validation end
 
 
+        if (empty($_POST["pass"])) {
+            $passerr = "**SET PASSWORD ";
+            $flag = false;}
+            else{
 
-$password = md5($_POST['pass']);
+            
+               $password = md5($_POST['pass']);
+            }
 // $password = "#" . password_hash($_POST["pass"], PASSWORD_DEFAULT);
 
 // SQL query to insert user data into table
@@ -140,21 +146,21 @@ mysqli_close($conn);
                 </div>
 
                 <div class="inputdivision textcenter"> 
-                    <input class="input" type="password" name="pass" placeholder="Create Password*" >
+                    <input class="input" type="password" name="pass" placeholder="Create Password*" required ><span><?php echo $passerr ?></span>
                 </div>
 
                 <div class="inputdivision textcenter"> 
-                    <input class="input" type="text" name="user_name" placeholder="Name*" >
+                    <input class="input" type="text" name="user_name" placeholder="Name*" required ><span><?php echo $nameerr ?></span>
                 </div>
     
                 <div class="inputdivision textcenter">    
-                    <input class="input" type="email" name="email" placeholder="Email(optional)" >  
+                    <input class="input" type="email" name="email" placeholder="Email(optional)" required>  <span><?php echo $emailerr ?></span>
                 </div>
     
                 <div class="inputdivision">
                     <label class="secondlabel" for="gender">Select Gender: 
-                    <input class="radiobuttons" type="radio" name="gender" value="Male" id="gender">Male
-                    <input class="radiobuttons" type="radio" name="gender" value="Female" id="gender" > Female
+                    <input class="radiobuttons" type="radio" name="gender" value="Male" id="gender" required>Male
+                    <input class="radiobuttons" type="radio" name="gender" value="Female" id="gender" required> Female
                 </label>  
                 </div>
     
