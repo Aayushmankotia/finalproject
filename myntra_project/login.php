@@ -2,6 +2,8 @@
 
 session_start();
 include 'configer.php';
+
+// authuntication is set 
 if (isset($_SESSION['registered']) || $_SESSION['registered']) {
     header('Location: myntra.php');
     exit;
@@ -9,6 +11,9 @@ if (isset($_SESSION['registered']) || $_SESSION['registered']) {
 
 
 $phoneerr = null;
+// error messesge store in $phoneerr
+
+
 $flag = TRUE;
 
 if (isset($_POST['submit'])) {
@@ -24,9 +29,13 @@ if (isset($_POST['submit'])) {
         $phone = $_POST['phone'];
     }
 
+    // phone session is created 
     echo $_SESSION['phone'] = $phone;
-    echo "<br>";
+
+
+
     if ($flag) {
+        // sql query to fetch users data 
         $sql = "SELECT * FROM users WHERE phone = '$phone'";
         echo $sql;
 
@@ -36,17 +45,21 @@ if (isset($_POST['submit'])) {
 
 
         if ($row === 1) {
+
+            // while loop to fetch data in the form of data 
             while ($row = mysqli_fetch_array($result)) {
 
-                echo "<br>";
+                // fetch data and store in the session 
 
-                echo $_SESSION['u_id'] = $u_id = $row['u_id'];
-                echo $_SESSION['user_name'] = $user_name = $row['user_name'];
-                echo $_SESSION['phone'] = $phone = $row['phone'];
-                echo $_SESSION['registered'] = $u_id;
-                echo $_SESSION['role_id'] = $row['role_id'];
+                $_SESSION['u_id'] = $u_id = $row['u_id'];
+                $_SESSION['user_name'] = $user_name = $row['user_name'];
+                $_SESSION['phone'] = $phone = $row['phone'];
+                $_SESSION['registered'] = $u_id;
+                $_SESSION['role_id'] = $row['role_id'];
 
             }
+
+            //  if role id is mathched then redirect to admin page 
             if ($_SESSION['role_id'] == 1) {
                 $_SESSION['admin'] = 'admin';
 
@@ -55,6 +68,8 @@ if (isset($_POST['submit'])) {
                 </script>";
 
             } else {
+
+                // otherwise redirect to myntra.php 
                 echo "<script> alert('WELCOME BACK USER'); 
                         window.location.href = 'myntra.php';
                         </script>";
@@ -62,6 +77,8 @@ if (isset($_POST['submit'])) {
 
 
         } else {
+
+            // othwise complete your registration 
             echo "<script> alert('COMPLETED YOUR SIGNUP'); 
                     window.location.href = 'registration.php';
                     </script>";
@@ -70,6 +87,7 @@ if (isset($_POST['submit'])) {
 
     }
 
+    // close connection 
     mysqli_close($conn);
 }
 ?>

@@ -56,18 +56,25 @@ $_SESSION['u_id'];
 
 $_SESSION['product_quantities'] = $product_quantities;
 
+function test($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return ($data);
+    }
+
 if (isset($_POST['order'])) {
 
    
     // Get the values from the form
     $u_id = $_SESSION['u_id'];
-    $name = $_POST["name"];
-    $phone = $_POST["phone"];
-    $pincode = $_POST["pincode"];
-    $address = $_POST["address"];
-    $city = $_POST["city"];
-    $state = $_POST["state"];
-    $product_names = $_POST["products"];
+    $name = test($_POST["name"]);
+    $phone = test($_POST["phone"]);
+    $pincode = test($_POST["pincode"]);
+    $address = test($_POST["address"]);
+    $city = test($_POST["city"]);
+    $state = test($_POST["state"]);
     $product_quantities = $_POST["quantity"];
     $total_price = $_POST["price"];
 
@@ -77,7 +84,7 @@ if (isset($_POST['order'])) {
 
     // Execute the query
     if (mysqli_query($conn, $sql)) {
-        // $quary = "DELETE * FROM cart WHERE u_id = '$u_id'";
+        $quary = "DELETE FROM cart WHERE u_id = '$u_id'";
         // want to delete cart items from card when order is placed
       
 
@@ -119,7 +126,7 @@ if (isset($_POST['order'])) {
                 <?php echo $_SESSION['user_name']; ?></h1>
             <h3>YOUR ADDRESS</h3>
             <b> PHONE </b> =
-            <?php echo $_SESSION['phone']; ?>
+            <?php echo $_SESSION['phone']; ?><br>
             PIN_CODE :
             <?php echo $_SESSION['pincode']; ?>
             ADDRESS :

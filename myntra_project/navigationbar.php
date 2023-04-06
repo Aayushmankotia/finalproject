@@ -28,7 +28,7 @@ $phone = $_SESSION['phone'];
     <nav>
       <!-- main division  -->
       <div class="container1">
-        <div class="container">
+        <div class="container0">
           <div>
             <!-- logo image  -->
             <a href="myntra.php"><img class="logoimg"

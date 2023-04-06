@@ -17,29 +17,28 @@ function test($data)
 {
     $data = trim($data);
     $data = stripslashes($data);
-    $data = htmlspecialchars($data);
     return ($data);
 }
 
 $myphone = $_SESSION['phone'];
 $u_id = $_SESSION['u_id'];
 
-//     $check = "SELECT *FROM addresses WHERE phone = '$myphone' ";
-//     $check_result = mysqli_query($conn, $check);
-// echo $check;
-// echo $check_result;
-//          if (mysqli_num_rows($check_result) == 1) {
-//             while ($row = mysqli_fetch_assoc($result)) {
-//                 $_SESSION['a_id'] =$row["a_id"] . "<br>";
-//                 $_SESSION['name'] = $row["name"] . "<br>";
-//                 $_SESSION['phone'] = $row["phone"] . "<br>";
-//                 $_SESSION['pincode'] =$row["pincode"] . "<br>";
-//                 $_SESSION['address']=$row["address"] . "<br>";
-//                 $_SESSION['city']=$row["city"] . "<br>";
-//                echo  $_SESSION['state']= $row["state"] . "<br><br>";
-//             }
-//             header("Location:order.php");
-//         }
+$check = "SELECT *FROM addresses WHERE phone = '$myphone' ";
+$check_result = mysqli_query($conn, $check);
+echo $check;
+echo $check_result;
+if (mysqli_num_rows($check_result) == 1) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $_SESSION['a_id'] = $row["a_id"] . "<br>";
+        $_SESSION['name'] = $row["name"] . "<br>";
+        $_SESSION['phone'] = $row["phone"] . "<br>";
+        $_SESSION['pincode'] = $row["pincode"] . "<br>";
+        $_SESSION['address'] = $row["address"] . "<br>";
+        $_SESSION['city'] = $row["city"] . "<br>";
+        echo $_SESSION['state'] = $row["state"] . "<br><br>";
+    }
+    header("Location:order.php");
+}
 
 $nameerr = $phoneerr = $pin_codeerr = null;
 
@@ -170,12 +169,16 @@ mysqli_close($conn);
             </div>
             <div class="inputdivision textcenter">
                 <input class="input" type="text" value="<?php echo $_SESSION['user_name']; ?>" name="name"
-                    placeholder="PLACE ORDER WITH NEW NAME "> <span> <?php echo $nameerr; ?></span>
+                    placeholder="PLACE ORDER WITH NEW NAME "> <span>
+                    <?php echo $nameerr; ?>
+                </span>
             </div>
 
             <div class="inputdivision textcenter">
                 <input class="input" value="<?php echo $_SESSION['phone']; ?>" type="tel" name="phone"
-                    placeholder="Mobile No*"> <span> <?php echo $phoneerr; ?></span>
+                    placeholder="Mobile No*"> <span>
+                    <?php echo $phoneerr; ?>
+                </span>
             </div>
 
             <div class="inputdivision">
@@ -184,7 +187,9 @@ mysqli_close($conn);
 
             <div class="inputdivision  textcenter">
                 <input class="input" value="<?php echo $_SESSION['pincode']; ?>" type="text" name="pincode"
-                    placeholder="Pin Code*"><span> <?php echo $pin_codeerr; ?></span>
+                    placeholder="Pin Code*"><span>
+                    <?php echo $pin_codeerr; ?>
+                </span>
             </div>
 
             <div class="inputdivision  textcenter">
