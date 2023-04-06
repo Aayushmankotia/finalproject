@@ -28,15 +28,15 @@ session_start();
     
    $_SESSION['registered'];
 
-
-    
+    // include file for slider 
+   @include 'slider.php';
      ?>
 
     <!-- slider html code  -->
-    <div class="slideshow-container">
+    <!-- <div class="slideshow-container"> -->
 
       <!-- images are added for the slider  -->
-      <div class="mySlides fade">
+      <!-- <div class="mySlides fade">
         <img class="slideimg" src="images/banner-1.webp">
       </div>
 
@@ -57,17 +57,17 @@ session_start();
       </div>
     </div>
 
-    <br>
+    <br> -->
 
     <!-- nevigation dots  -->
-    <div style="text-align:center">
+    <!-- <div style="text-align:center">
       <span class="dot"></span>
       <span class="dot"></span>
       <span class="dot"></span>
       <span class="dot"></span>
       <span class="dot"></span>
 
-    </div>
+    </div> -->
     
     <?php 
     $_SESSION['role_id'];
@@ -105,7 +105,7 @@ session_start();
       <!-- this section holds the best deals for customers  -->
       <section class="deals">
 
-        <a href="">
+        <a href="women.php">
           <article class="division5 division ">
             <img
               src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/5d1b7ad3-c3ed-4ef9-a654-18231743d3cd1651484798059-Anouk-Inddus.jpg"
@@ -113,7 +113,7 @@ session_start();
           </article>
         </a>
 
-        <a href="">
+        <a href="women.php">
           <article class="division1 division">
             <img
               src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/f7575784-edbf-411f-acc0-51891ea7f4331651484798329-Inddus-_Varanga.jpg""
@@ -121,7 +121,7 @@ session_start();
           </article>
         </a>
 
-        <a href="">
+        <a href="women.php">
           <article class="division2 division">
             <img
               src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/ce40419d-6408-404e-9320-96e41aee1b791651484798300-Hrx-_Puma_-_More.jpg""
@@ -129,7 +129,7 @@ session_start();
           </article>
         </a>
 
-        <a href="">
+        <a href="men.php">
           <article class="division3 division">
             <img
               src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/764761e7-c505-459e-92a2-6c4387f9e2511651484798319-Hush_Puppies-_Arrow.jpg"
@@ -137,7 +137,7 @@ session_start();
           </article>
         </a>
 
-        <a href="#check">
+        <a href="men.php">
 
           <article class="division4 division">
             <img
@@ -154,28 +154,28 @@ session_start();
 
       <section class="catagories">
         <section class="flexcircles">
-          <a href="">
+          <a href="women.php">
             <article class="box">
               <img src="images/fassion.jpg" alt="product" class="productimg">
               <div class="productname">GIRL TOPS</div>
             </article>
           </a>
 
-          <a href="">
+          <a href="men.php">
             <article class="box">
               <img src="images/menroyal.jpg" alt="product" class="productimg">
               <div class="productname">SHERWANI</div>
             </article>
           </a>
 
-          <a href="">
+          <a href="men.php">
             <article class="box">
               <img src="images/mblackcoat.jpg" alt="product" class="productimg">
               <div class="productname">COAT-PANT</div>
             </article>
           </a>
 
-          <a href="">
+          <a href="women.php">
             <article class="box">
               <img src="images/lady.jpg" alt="product" class="productimg">
               <div class="productname">DRESSES</div>
@@ -183,31 +183,31 @@ session_start();
           </a>
           <!-- </section>
           <section class="flexcircles"> -->
-          <a href="">
+          <a href="men.php">
             <article class="box">
               <img src="images/nike.jpg" alt="product" class="productimg">
               <div class="productname">SHOE</div>
             </article>
           </a>
 
-          <a href="">
+          <a href="women.php">
             <article class="box">
               <img src="images/wladybagsbrown.jpg" alt="product" class="productimg">
               <div class="productname">LADIES-BAGS</div>
             </article>
           </a>
 
-          <a href="">
+          <a href="men.php">
             <article class="box">
               <img src="images/mformalshirtsmultiple.jpg" alt="product" class="productimg">
               <div class="productname">SHIRT</div>
             </article>
           </a>
 
-          <a href="">
+          <a href="kids.php">
             <article class="box">
               <img src="images/kcutedress.jpg" alt="product" class="productimg">
-              <div class="productname"> TEEN WEAR</div>
+              <div class="productname"> KIDS WEAR</div>
             </article>
           </a>
         </section>
@@ -220,7 +220,7 @@ session_start();
     @include 'footer.php';
     ?>
     <!-- footer ends  -->
-    <script>
+    <!-- <script>
 let slideIndex = 0;
 showSlides();
 
@@ -240,7 +240,7 @@ function showSlides() {
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
-</script>
+</script> -->
 
   </body>
 </html>

@@ -11,6 +11,7 @@
 
 h1 {
     text-align: center;
+    margin:16px;
 }
 
 .form-group {
@@ -57,11 +58,21 @@ input[type="submit"]:hover {
 
 .full_div {
     width: 420px;
-
     padding: 20px;
     margin: 110px auto 20px auto;
+    line-height: 30px;
 }
 
 .blue {
     color: blue;
+    
+}
+.update_address{
+    padding:8px;
+    background :#007bff;
+    color:aliceblue;
+    margin:25px auto;
+}
+h3{
+    margin-top:20px;
 }

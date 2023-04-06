@@ -1,17 +1,16 @@
 <?php
 session_start();
 
-// Establish a connection to the database
-include 'configer.php';
 
-$state = $_SESSION['state'];
-if (isset($state)) {
-    // header ("Location :order.php");
-    echo "<script> 
-    window.location.href = 'order.php';
-    </script>";
+
+include "configer.php"; 
+
+@include 'navigationbar.php';
+
+$u_id = $_SESSION['u_id'];
+if(!isset($u_id)){
+    header("Location:login.php");
 }
-
 
 function test($data)
 {
@@ -20,30 +19,15 @@ function test($data)
     return ($data);
 }
 
-echo $myphone = $_SESSION['phone'];
-echo $u_id = $_SESSION['u_id'];
+$_SESSION['user_name'];
+$_SESSION['phone'];
+$_SESSION['registered'];
+$_SESSION['u_id'];
+$_SESSION['pincode'];
+$_SESSION['address'];
+$_SESSION['city'];
+$_SESSION['state'];
 
-$check = "SELECT * FROM addresses WHERE phone = '$myphone' ";
-$check_result = mysqli_query($conn, $check);
-
-
-
-
-if(mysqli_num_rows($check_result) == 1) {
-
-echo "hi";
-    while ($row = mysqli_fetch_assoc($check_result)) {
-        $_SESSION['a_id'] = $row["a_id"] ;
-        $_SESSION['name'] = $row["name"];
-      echo  $_SESSION['phone'] = $row["phone"];
-        $_SESSION['pincode'] = $row["pincode"];
-        $_SESSION['address'] = $row["address"];
-        $_SESSION['city'] = $row["city"];
-        echo $_SESSION['state'] = $row["state"];
-    }
-    header("Location:order.php");
-}   
-else{
 $nameerr = $phoneerr = $pin_codeerr = null;
 
 
@@ -82,16 +66,9 @@ if (isset($_POST['submit'])) {
             $phoneerr = "DOESN'T EXIST !!";
             $flag = false;
         } else {
-            $check = "SELECT *FROM addresses WHERE phone = '$phone' ";
-            $check_result = mysqli_query($conn, $check);
-
-            if (mysqli_num_rows($check_result) == 1) {
-                $phoneerr = "ALREADY EXIST !!";
-                $flag = false;
-
-            } else {
+           
                 $phone = test($_POST['phone']);
-            }
+            
         }
     }
     if (!preg_match("/^[0-9]{6}+$/", $_POST['pincode'])) {
@@ -109,11 +86,14 @@ if (isset($_POST['submit'])) {
     // sql query to insert location data into table
 
     if ($flag) {
-        $sql = "INSERT INTO addresses (u_id, name, phone, pincode, address, city, state)
-            VALUES ('$u_id','$name', '$phone', '$pincode', '$address', '$city', '$state')";
+        $sql = "UPDATE addresses 
+        SET name = '$name', phone = '$phone', pincode = '$pincode', address = '$address', city = '$city', state = '$state'
+        WHERE u_id = '$u_id'";
+
 
         // Execute the SQL statement
         if (mysqli_query($conn, $sql)) {
+            header("Location:order.php");
 
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -124,29 +104,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
-// Perform the SELECT query
-$sql = "SELECT * FROM addresses WHERE phone= '$phone'";
-$result = mysqli_query($conn, $sql);
-
-// Check if there are any results
-if (mysqli_num_rows($result) > 0) {
-    // Loop through the results and print each row
-    while ($row = mysqli_fetch_assoc($result)) {
-        $_SESSION['a_id'] = $row["a_id"] . "<br>";
-        $_SESSION['name'] = $row["name"] . "<br>";
-        $_SESSION['phone'] = $row["phone"] . "<br>";
-        $_SESSION['pincode'] = $row["pincode"] . "<br>";
-        $_SESSION['address'] = $row["address"] . "<br>";
-        $_SESSION['city'] = $row["city"] . "<br>";
-        $_SESSION['state'] = $row["state"] . "<br><br>";
-    }
-    header("Location:order.php");
-}
-}
-// Close the database connection
-mysqli_close($conn);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -213,7 +171,7 @@ mysqli_close($conn);
             </div>
 
             <div class="inputdivision  textcenter">
-                <input class="input redbackground" type="submit" name="submit" value="ADD ADDRESS">
+                <input class="input redbackground" type="submit" name="submit" value="UPDATE ADDRESS">
             </div>
 
 
