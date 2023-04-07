@@ -15,6 +15,7 @@ session_start();
   <title>firstpage</title>
 
 </head>
+
 <?php
 include "configer.php";
 
@@ -90,9 +91,9 @@ $phone = $_SESSION['phone'];
 
               <?php
 
-             
+
               $sql = "SELECT * FROM categories WHERE category = 'WOMEN' ORDER BY category_type, category_name";
-           
+
 
               $result = mysqli_query($conn, $sql);
 
@@ -104,7 +105,7 @@ $phone = $_SESSION['phone'];
                 if (!isset($grouped_categories[$category_type])) {
                   $grouped_categories[$category_type] = array();
                 }
-               $grouped_categories[$category_type][] = $category_name;
+                $grouped_categories[$category_type][] = $category_name;
               }
               ?>
 
@@ -143,9 +144,9 @@ $phone = $_SESSION['phone'];
 
             <section class="hidden_menu_orange hidden_menu">
               <?php
-            
+
               $sql = "SELECT * FROM categories WHERE category = 'KIDS' ORDER BY category_type, category_name";
-          
+
               $result = mysqli_query($conn, $sql);
 
 
@@ -231,6 +232,7 @@ $phone = $_SESSION['phone'];
                     echo "EMAIL : " . $_SESSION['email'] = $row['email'];
                     echo "<br>";
 
+                    echo "<div class='profile_button' ><a class='login_button' href='my_orders.php'>ORDERS</a></div>";
                     echo "<div class='profile_button' ><a class='login_button' href='user_update.php'>UPDATE</a></div>";
                     echo "<div class='profile_button' ><a class='login_button' href='logout.php'> LOGOUT</a></div>";
                   }
@@ -246,9 +248,28 @@ $phone = $_SESSION['phone'];
           </div>
 
           <div class="cart_div">
+            <?php
+
+            $u_id = $_SESSION['u_id'];
+            $sql = "SELECT count(*) FROM cart WHERE u_id = '$u_id'";
+
+
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_num_rows($result);
+
+
+            echo $count = $row["count"];
+            ?>
+            <span> </span>
             <a class="cart anchor_margin" href="cart.php" alt='CART'>
               <i class="fa fa-cart-plus "></i></a>
           </div>
+          <div class="">
+         
+          <button id="dark-mode-btn">dark/light</button>
+          
+          </div>
+
         </div>
       </div>
     </nav>
@@ -258,5 +279,16 @@ $phone = $_SESSION['phone'];
   </header>
   <!-- header section ends  -->
 </body>
+<script>
+  const darkModeBtn = document.getElementById("dark-mode-btn");
+const body = document.getElementsByTagName("body")[0];
+
+darkModeBtn.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+  const mainContainer = document.querySelector(".main_container");
+  mainContainer.classList.toggle("dark-mode");
+ 
+});
+  </script> 
 
 </html>

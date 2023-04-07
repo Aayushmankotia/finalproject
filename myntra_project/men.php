@@ -50,7 +50,9 @@
             <form action="" method="POST" class="">
 
               <!-- fetch image and show here   -->
-              <img src="uploads/<?php echo $fetch_products['avatar']; ?>" alt="" class="productimage">
+              <!-- <img src="uploads/<?php echo $fetch_products['avatar']; ?>" alt="" class="productimage"> -->
+              <a href="view_product.php?id=<?php echo $fetch_products['p_id']; ?>"><img src="uploads/<?php echo $fetch_products['avatar']; ?>" alt="" class="productimage"></a>
+     
               <div class="price">
 
                 <h3>

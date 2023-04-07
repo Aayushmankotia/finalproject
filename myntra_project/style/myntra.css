@@ -2,7 +2,35 @@
   margin: 0%;
   box-sizing: border-box;
   font-family: Verdana, sans-serif; 
+
 }
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+#dark-mode-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #05031a;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.dark-mode {
+  background: #07051a;
+  color: rgb(10, 58, 189);
+}
+
+
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+
+
+
 
 /* navigation css styling  */
 nav {
@@ -13,6 +41,7 @@ nav {
   box-shadow: 0px 2px 9px 2px rgb(226, 226, 226);
   z-index: 2;
 }
+
  .anchor_margin{
   margin-right:100px;
 
@@ -208,6 +237,8 @@ width: 50%;
   width: 400px;
   padding-left:22px;
   margin:0px;
+  
+
 }
 
 .searchBox:hover > .searchButton {
@@ -216,12 +247,14 @@ color : #1512d4;
 }
 
 .searchButton {
-  color: rgb(217, 34, 241);
+  font-size: 38px;
+  border:none;
+  color: rgb(6 6 6);
   float: right;
-  width: 56px;
+  width: 0px;
   height: 40px;
   border-radius: 50%;
-  background: #2f3640;
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -237,10 +270,34 @@ color : #1512d4;
   color: rgb(245, 9, 9);
   font-size: 16px;
   transition: 0.4s;
-  line-height: 40px;
-  width: 80px;
-  
-  padding-left: 10px;
+  /* line-height: 0px; */
+  padding-top:12px;
+  width: 0px;
+  padding-left: 0px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 36%;
+  width: auto;
+  margin-bottom: 10px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
 
 @media screen and (max-width: 620px) {
@@ -293,6 +350,7 @@ margin-right:14px;
   animation-name: fade;
   animation-duration: 1.2s;
 }
+
 
 @keyframes fade {
   from {opacity: .1} 
