@@ -231,10 +231,11 @@ $phone = $_SESSION['phone'];
                     echo "<br>";
                     echo "EMAIL : " . $_SESSION['email'] = $row['email'];
                     echo "<br>";
-
+                    echo "<section class='flexbutton'>";
                     echo "<div class='profile_button' ><a class='login_button' href='my_orders.php'>ORDERS</a></div>";
                     echo "<div class='profile_button' ><a class='login_button' href='user_update.php'>UPDATE</a></div>";
-                    echo "<div class='profile_button' ><a class='login_button' href='logout.php'> LOGOUT</a></div>";
+                    echo "<div class='profile_button' ><a class=' profile_button_red login_button' href='logout.php'> LOGOUT</a></div>";
+                    echo "</section>";
                   }
                 }
               }
@@ -251,26 +252,37 @@ $phone = $_SESSION['phone'];
             <?php
 
             $u_id = $_SESSION['u_id'];
-            $sql = "SELECT count(*) FROM cart WHERE u_id = '$u_id'";
+            $sql = "SELECT COUNT(*) as count_value FROM cart WHERE u_id = '$u_id'";
 
-
+            // execute the query
             $result = mysqli_query($conn, $sql);
-            $row = mysqli_num_rows($result);
 
+            // fetch the result as an associative array
+            $row = mysqli_fetch_assoc($result);
 
-            echo $count = $row["count"];
+            // get the count value from the array
+            $count_value = $row['count_value'];
+
+            // display the count value
+            
+
             ?>
-            <span> </span>
+
+            <span class="reddot">
+              <?php echo $count_value; ?>
+            </span>
             <a class="cart anchor_margin" href="cart.php" alt='CART'>
               <i class="fa fa-cart-plus "></i></a>
           </div>
-          <div class="">
-         
-          <button id="dark-mode-btn">dark/light</button>
-          
-          </div>
 
         </div>
+        <div class="">
+
+          <button id="dark-mode-btn">dark/light</button>
+
+        </div>
+
+      </div>
       </div>
     </nav>
     <!-- navigation section ends  -->
@@ -281,14 +293,14 @@ $phone = $_SESSION['phone'];
 </body>
 <script>
   const darkModeBtn = document.getElementById("dark-mode-btn");
-const body = document.getElementsByTagName("body")[0];
+  const body = document.getElementsByTagName("body")[0];
 
-darkModeBtn.addEventListener("click", () => {
-  body.classList.toggle("dark-mode");
-  const mainContainer = document.querySelector(".main_container");
-  mainContainer.classList.toggle("dark-mode");
- 
-});
-  </script> 
+  darkModeBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    const mainContainer = document.querySelector(".main_container");
+    mainContainer.classList.toggle("dark-mode");
+
+  });
+</script>
 
 </html>

@@ -19,6 +19,7 @@
    font-family: Arial, sans-serif;
    font-size: 16px;
    border: solid black 2px;
+   
    padding: 20px;
 }
 
@@ -110,15 +111,23 @@ button:hover {
    margin-top:120px;
 }
 .main_division_profile {
-   margin: 100px auto 0 auto;
-   width: 80%;
-   border: solid red 2px;
-        /* height: 200px; */
+   margin: 90px auto 0 auto;
+   width: 100%;
+   border: solid rgb(255, 255, 255) 2px;
+   box-shadow:
+   0 0 .5rem #fff,
+   inset 0 0 .5rem #fff,
+   0 0 2rem #08f,
+   inset 0 0 2rem #08f,
+   0 0 4rem #08f,
+   inset 0 0 4rem #08f;        
+   
+       
     }
 
 .blackdivision {
-   height: 80px;
-   background-image: linear-gradient(to bottom right, orange, red, yellow);
+   height: 120px;
+   background: black;
    text-align: center;
    font-size: xx-large;
    color: white;
@@ -142,16 +151,25 @@ button:hover {
         height: 100px;
         width: 100px;
         border-radius: 50%;
-
-        background: red;
+        background: rgb(255, 255, 255);
         display: flex;
         font-size: xx-large;
-        color: white;
+        color: #08f;
         gap: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
+        box-shadow:
+        0 0 .5rem #fff,
+        inset 0 0 .5rem #fff,
+        0 0 2rem #08f,
+        inset 0 0 2rem #08f,
+        0 0 4rem #08f,
+        inset 0 0 4rem #08f;        
+        } 
+        
+       
+    
 
     .flexcontainerbox {
         width: 280px;
@@ -165,9 +183,33 @@ button:hover {
         margin-top: 20px;
         width: 100%;
         text-align: center;
-        color: orangered;
+        color: #08f; 
         font-weight: 600;
     }
     .hoverred:hover{
       border:red 2px solid;
+    }
+    .admininfo{
+      width:30%;
+      /* border:solid black 2px; */
+      line-height: 40px;
+      margin: 30px auto;
+      padding:20px;
+     
+     
+
+    }
+    .admincenter{
+      text-align: center;
+    }
+    .imgz{
+      width:190px;
+      height:190px;
+      border-radius: 50%;
+    }
+    .logoutbtn{
+      padding:10px;
+      border:solid red 2px;
+      color :red;
+      border-radius:9px;
     }

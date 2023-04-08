@@ -93,8 +93,9 @@ if (isset($_POST['submit'])) {
 
         // Execute the SQL statement
         if (mysqli_query($conn, $sql)) {
-            header("Location:order.php");
-
+            echo "<script> alert('ADDRESS IS UPDATED '); 
+            window.location.href = 'contactdetails.php';
+            </script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }

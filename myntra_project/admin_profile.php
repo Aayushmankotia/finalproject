@@ -92,18 +92,29 @@ mysqli_close($conn);
         </div>
     </div>
 
+    <div class="admininfo admincenter ">
+        <div class="adminimage admincenter">
+            <img src="images/Z" alt="avatar" class="imgz">
+        </div>
+        <div class="admincenter"> <?php echo $user_name ; ?></div>
+        <div class="admincenter">PHONE : <?php echo $phone ; ?></div>
+        <div class="admincenter">EMAIL :  <?php echo $email ; ?></div>
+        <div class="admincenter"><a class="logoutbtn" href="logout.php"> " LOGOUT "</a></div>
+
+    </div>
+
     <div class="flexclass">
         <div class="flexcontainerbox">
-            <div class="flexboxes">
+            <div class="flexboxes cyanneon">
                 <?php echo $usercount; ?>
             </div>
             <div class="cont_div">
-                TOTA USERS
+                TOTAL USERS
             </div>
         </div>
 
         <div class="flexcontainerbox">
-            <div class="flexboxes">
+            <div class="flexboxes orangeneon">
                 <?php echo $productcount; ?>
             </div>
             <div class="cont_div">
@@ -111,7 +122,7 @@ mysqli_close($conn);
             </div>
         </div>
 
-        <div class="flexcontainerbox">
+        <div class="flexcontainerbox orangeneon">
             <div class="flexboxes">
                 <?php echo $ordercount; ?>
             </div>
@@ -120,7 +131,7 @@ mysqli_close($conn);
             </div>
         </div>
 
-        <div class="flexcontainerbox">
+        <div class="flexcontainerbox orangeneon">
             <div class="flexboxes">
                 <?php echo $cartcount; ?>
             </div>
@@ -129,6 +140,7 @@ mysqli_close($conn);
             </div>
         </div>
     </div>
+    
 
 
 </body>

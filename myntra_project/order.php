@@ -62,13 +62,11 @@ function test($data)
     }
 
 if (isset($_POST['order'])) {
+    
     $quary ="DELETE FROM cart WHERE u_id = '$u_id'";
    
-    if (mysqli_query($conn, $sql)){
-        echo" your order is on your way ";
-      
+    if (mysqli_query($conn, $quary)){
 
-    }
     // Get the values from the form
     $u_id = $_SESSION['u_id'];
     $name = $_POST["name"];
@@ -98,6 +96,7 @@ if (isset($_POST['order'])) {
 
     // Close the database connection
     mysqli_close($conn);
+}
 }
 
 ?>

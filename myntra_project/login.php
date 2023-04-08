@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION['admin'] = 'admin';
 
                 echo "<script> alert('WELCOME ADMIN'); 
-                window.location.href = 'admin_page.php';
+                window.location.href = 'admin_profile.php';
                 </script>";
 
             } else {
