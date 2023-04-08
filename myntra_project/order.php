@@ -8,6 +8,19 @@ include "configer.php";
 // navigation bar included 
 @include 'navigationbar.php';
 
+ $phone = $_SESSION['phone'];
+
+//  if not authenticated redirect to logoutscreen.php 
+if (!isset($phone)) {
+    header('location:logoutscreen.php');
+}
+
+$u_id = $_SESSION['u_id'];
+if(!isset($u_id)){
+    header("Location:login.php");
+}
+
+
 // sessions called 
 $u_id = $_SESSION['u_id'];
 $_SESSION['user_name'];
@@ -18,6 +31,8 @@ $_SESSION['pincode'];
 $_SESSION['address'];
 $_SESSION['city'];
 $_SESSION['state'];
+
+
 
 // sql query to select data from the cart table 
 $sql = "SELECT * FROM cart WHERE u_id = '$u_id'";
@@ -53,13 +68,7 @@ $_SESSION['u_id'];
 
 $_SESSION['product_quantities'] = $product_quantities;
 
-function test($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return ($data);
-    }
+
 
 if (isset($_POST['order'])) {
     
@@ -145,42 +154,27 @@ if (isset($_POST['order'])) {
 
         <div class="container">
             <h1>PLACE ORDER</h1>
+
+            <!-- form to insert data into the order table  -->
             <form action="#" method="post">
-
-
+                
                 <input value="<?php echo $_SESSION['user_name'];?>" type="hidden" id="name" name="name" required>
-
-
 
                 <input value="<?php echo $_SESSION['phone'];?>" type="hidden" id="phone" name="phone" required>
 
-
-
                 <input value="<?php echo $_SESSION['pincode'];?>" type="hidden" id="pincode" name="pincode" required>
-
-
 
                 <input value="<?php echo $_SESSION['address'];?>" type="hidden" id="address" name="address" required>
 
-
-
                 <input value="<?php echo $_SESSION['city'];?>" type="hidden" id="city" name="city" required>
 
-
-
                 <input value="<?php echo $_SESSION['state'];?>" type="hidden" id="state" name="state" required>
-
-
 
                 <input value="<?php echo $_SESSION['product_names'];?>" type="hidden" id="product" name="products"
                     required>
 
-
-
                 <input value="<?php echo $_SESSION['product_quantities'];?>" type="hidden" id="quantity"
                     name="quantity" required>
-
-
 
                 <input value="<?php echo $_SESSION['total_price'];?>" type="hidden" id="price" name="price" required>
 
@@ -192,5 +186,5 @@ if (isset($_POST['order'])) {
 
 </html>
 <?php
-// Check if the form is submitted
+
 

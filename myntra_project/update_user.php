@@ -15,6 +15,14 @@
     include 'configer.php';
     @include 'admin_header.php';
 
+    $admin = $_SESSION['admin'];
+
+    // redireact to login.php 
+    if (!isset($admin)) {
+        header('location:login.php');
+    }
+    ;
+
     // Check if form was submitted
     if (isset($_POST['submit'])) {
         $id = $_POST['id'];

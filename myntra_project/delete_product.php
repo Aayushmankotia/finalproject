@@ -1,6 +1,15 @@
 <?php
+session_start();
 // Connect to database
 include 'configer.php';
+
+
+$admin = $_SESSION['admin'];
+
+// open only when authenticated
+if(!isset($admin)){
+   header('location:login.php');
+};
 
 
 // Check if user ID was provided

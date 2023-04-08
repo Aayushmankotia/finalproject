@@ -2,7 +2,15 @@
 session_start();
 
 include 'configer.php';
- 
+
+echo $phone = $_SESSION['phone'];
+
+//  if not authenticated redirect to logoutscreen.php 
+if (!isset($phone)) {
+  header('location:logoutscreen.php');
+}
+
+
 $u_id = $_SESSION['u_id'];
 
 @include 'navigationbar.php';
@@ -33,7 +41,7 @@ $u_id = $_SESSION['u_id'];
       <!-- table headers is used here  -->
       <tr>
         <th>Order ID</th>
-        
+
         <th>Name</th>
         <th>Phone</th>
         <th>Pincode</th>
@@ -64,7 +72,7 @@ $u_id = $_SESSION['u_id'];
         while ($row = mysqli_fetch_assoc($result)) {
           echo "<tr>";
           echo "<td>" . $row["order_id"] . "</td>";
-       
+
           echo "<td>" . $row["name"] . "</td>";
           echo "<td>" . $row["phone"] . "</td>";
           echo "<td>" . $row["pincode"] . "</td>";

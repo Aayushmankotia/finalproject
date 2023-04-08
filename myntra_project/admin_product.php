@@ -231,8 +231,8 @@ function test($data)
             ?>
         </table>
 
-        <script>  
-        // script for update and delete buttons 
+        <script>
+            // script for update and delete buttons 
             function editProduct(id) {
                 window.location.href = "edit_product.php?p_id=" + id;
             }

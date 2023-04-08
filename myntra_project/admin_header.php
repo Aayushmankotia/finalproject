@@ -13,7 +13,6 @@
          <div>
             <!-- ADMINPANEL button  -->
             <a href="admin_page.php" class="logo">Admin<span>Panel</span></a>
-
          </div>
 
          <!-- navigation buttons  -->
@@ -24,18 +23,13 @@
             <a href="admin_users.php">users</a>
          </div>
 
-
          <!-- user fa fa icons  -->
          <a href="admin_profile.php">
             <div class="icons">
                <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
                <div id="user-btn" class="fas fa-user"></div>
             </div>
-            
          </a>
-
       </div>
-
-
    </header>
 </nav>

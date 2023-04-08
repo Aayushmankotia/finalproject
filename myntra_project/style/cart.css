@@ -1,6 +1,7 @@
 .maincontainer{
 padding: 34px;
-border: solid black 2px;
+
+background:gray;
 display: flex;
 justify-content: start;
 gap: 2%;
@@ -117,10 +118,11 @@ input {
     margin:6px;
 }
 .total{
-    
     margin-top: 7%;
+    position: fixed;
     width: 27%;
     text-align: center;
+    right: 57px;
     
 }
 .grand_total{

@@ -29,15 +29,9 @@ $_SESSION['city'];
 $_SESSION['state'];
 
 $nameerr = $phoneerr = $pin_codeerr = null;
-
-
 $flag = TRUE;
 
-
-
 if (isset($_POST['submit'])) {
-
-
 
     // Retrieve the form data using the POST method
 
@@ -99,9 +93,6 @@ if (isset($_POST['submit'])) {
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
-
-
-
     }
 }
 

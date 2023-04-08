@@ -265,7 +265,6 @@ $phone = $_SESSION['phone'];
 
             // display the count value
             
-
             ?>
 
             <span class="reddot">
@@ -291,6 +290,8 @@ $phone = $_SESSION['phone'];
   </header>
   <!-- header section ends  -->
 </body>
+
+<!-- script tag for the dark mode  -->
 <script>
   const darkModeBtn = document.getElementById("dark-mode-btn");
   const body = document.getElementsByTagName("body")[0];

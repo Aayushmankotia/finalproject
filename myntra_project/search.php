@@ -69,7 +69,6 @@ $totalPages = ceil($totalProducts / $productsPerPage);
         </tr>
         <?php
 
-
         while ($row = mysqli_fetch_assoc($result)) {
             $category = $row["p_category"];
             $productId = $row["p_id"];

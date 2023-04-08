@@ -1,7 +1,17 @@
 <?php
+session_start();
 // Connect to database
 include 'configer.php';
 @include 'admin_header.php';
+
+
+$admin = $_SESSION['admin'];
+
+// athuntication check  
+if (!isset($admin)) {
+    header('location:login.php');
+};
+
 // Fetch users data from database
 $sql = "SELECT * FROM users";
 $result = mysqli_query($conn, $sql);
@@ -33,11 +43,11 @@ mysqli_close($conn);
 
 <body>
 
-<!-- heading tag is used for user list  -->
-<h2 class="margin-top_table">USER's LIST</h2>
+	<!-- heading tag is used for user list  -->
+	<h2 class="margin-top_table">USER's LIST</h2>
 	<table>
 
-	<!-- fetch data and present in the form of table  -->
+		<!-- fetch data and present in the form of table  -->
 		<thead>
 			<tr>
 				<th>User ID</th>
@@ -52,7 +62,7 @@ mysqli_close($conn);
 		</thead>
 		<tbody>
 
-		<!-- while loop is used to fetch data in the associating  -->
+			<!-- while loop is used to fetch data in the associating  -->
 			<?php while ($row = mysqli_fetch_assoc($result)): ?>
 				<tr>
 					<td>

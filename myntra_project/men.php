@@ -70,7 +70,9 @@
                 <input type="hidden" name="product_price" value="<?php echo $fetch_products['p_price']; ?>">
                 <input type="hidden" name="product_image" value="<?php echo $fetch_products['avatar']; ?>">
                 <input type="hidden" name="product_category" value="<?php echo $fetch_products['p_category']; ?>"><br>
-                <input type="number" name="product_quantity" value="1" min="0" class="qty, btn"><br>
+                <label class="center"> QUANTITY :
+                  <input type="number" name="product_quantity" value="1" min="0" class="qty, btn">
+                </label>
                 <input type="submit" value="add to cart" name="add_to_cart" class="btn hiddenbtn">
               </div>
             </form>

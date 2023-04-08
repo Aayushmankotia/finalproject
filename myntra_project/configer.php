@@ -1,4 +1,4 @@
- <?php
+<?php
  
       // connection is created 
         $conn = mysqli_connect("localhost", "admin", "admin", "project");
@@ -12,4 +12,4 @@
         }
 
          
-        ?>
+?>

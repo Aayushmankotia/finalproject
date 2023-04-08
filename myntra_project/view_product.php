@@ -6,6 +6,9 @@ include 'configer.php';
 // navigationbar.php file is include here for navigation bar 
 @include 'navigationbar.php';
 
+$admin = $_SESSION['admin'];
+
+
 // check if product ID is set
 $u_id = $_SESSION['u_id'];
 if (isset($_GET['id'])) {
@@ -36,12 +39,14 @@ if (isset($_GET['id'])) {
             </title>
         </head>
         <style>
-            
+
         </style>
 
 
         <body>
             <section class="fullbody">
+
+            <!-- first div which fetch the product name , price ,category  -->
                 <div class="firstdivision">
                     <h1 class="bigheading">
                         <?php echo $fetch_product['p_name']; ?>
@@ -51,9 +56,11 @@ if (isset($_GET['id'])) {
                     </p>
                     <p class="p_text">Category:
                         <?php echo $fetch_product['p_category']; ?>
-                    </p >
+                    </p>
                     <img class="img_product" src="uploads/<?php echo $fetch_product['avatar']; ?>" alt="Product Image">
                 </div>
+
+                <!-- second div which insert data   -->
                 <div class="seconddivision">
                     <!-- add the "Add to Cart" button -->
                     <form action="#" method="post">
@@ -61,7 +68,7 @@ if (isset($_GET['id'])) {
                         <input type="hidden" name="product_id" value="<?php echo $fetch_product['p_id']; ?>">
                         <input type="hidden" name="product_name" value="<?php echo $fetch_product['p_name']; ?>">
                         <input type="hidden" name="product_price" value="<?php echo $fetch_product['p_price']; ?>">
-                        <input  type="hidden" name="product_image" value="<?php echo $fetch_product['avatar']; ?>">
+                        <input type="hidden" name="product_image" value="<?php echo $fetch_product['avatar']; ?>">
                         <input type="hidden" name="product_category" value="<?php echo $fetch_product['p_category']; ?>"><br>
                         <div class="centerr">
                             <label for="product_quantity">Quantity:</label>
@@ -86,6 +93,8 @@ if (isset($_GET['id'])) {
 }
 
 $phone = $_SESSION['phone'];
+
+// on button click 
 if (isset($_POST['add_to_cart'])) {
     if (!isset($phone)) {
         echo "<script> alert('Please login to add items in cart!'); 
@@ -104,10 +113,6 @@ if (isset($_POST['add_to_cart'])) {
         // insert data into cart table
         $insert_cart = mysqli_query($conn, "INSERT INTO cart (u_id, product_id, product_name, product_price, product_image, product_category, product_quantity) VALUES ('$u_id', '$product_id', '$product_name', '$product_price', '$product_image', '$product_category', '$product_quantity')") or die('query failed');
     }
-
-
-
 }
-
 
 ?>

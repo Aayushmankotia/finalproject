@@ -4,6 +4,12 @@ session_start();
 // Establish a connection to the database 
 include 'configer.php';
 
+echo $phone = $_SESSION['phone'];
+
+//  if not authenticated redirect to logoutscreen.php 
+if (!isset($phone)) {
+    header('location:logoutscreen.php');
+}
 
 
 $nameerr = $emailerr = $passerr = $phoneerr = null;
@@ -41,7 +47,7 @@ if (isset($_POST['create'])) {
 
 
 
-
+    //   validation for email 
     $email = test($_POST['email']);
     if (empty($_POST["email"])) {
         $emailerr = "*REQUIRED FIELD EMAIL";
@@ -121,14 +127,6 @@ if (isset($_POST['create'])) {
     @include 'navigationbar.php';
     ?>
     <!-- header section ends  -->
-
-    <!-- <div class="maindivisionforcentertheform">
-
-
-      </div>
-     
-
-      <section class="center"> -->
 
 
     <section class="center">

@@ -1,9 +1,10 @@
 <?php
+// session start here 
 session_start();
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+
 
 <head>
     <meta charset="UTF-8">
@@ -28,11 +29,12 @@ session_start();
 
     echo $phone = $_SESSION['phone'];
 
+    //  if not authenticated redirect to logoutscreen.php 
     if (!isset($phone)) {
         header('location:logoutscreen.php');
-
-
     }
+
+    // navigation bar is included 
     @include 'navigationbar.php';
 
 
@@ -46,34 +48,16 @@ session_start();
         } else {
             echo "Error deleting record: ";
         }
-
-
     }
 
-    // if (isset($_POST['DELETE'])) {
-    //     echo $_SESSION['product_id'] ;
-    
-    //     $query = "DELETE FROM cart WHERE product_id = '$product_id'";
-    //     echo $query;
-    //     // Execute query
-    //     if ($conn->query($query) === TRUE) {
-    //         echo "Record deleted successfully";
-    //     } else {
-    //         echo "Error deleting record: " . $conn->error;
-    //     }
-    // }
-    
+    // sessions are called 
     $u_id = $_SESSION['u_id'];
-    // echo "<br>";
+ 
     $_SESSION['user_name'];
-    // echo "<br>";
+
     $_SESSION['phone'];
-    // echo "<br>";
+
     $_SESSION['registered'];
-    // echo "<br>";
-    
-
-
 
     ?>
     <div class="big_box_flex">
@@ -85,15 +69,11 @@ session_start();
                 <?php
                 $sql = "SELECT * FROM cart WHERE u_id = '$u_id'";
 
-
-
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_num_rows($result);
 
-
                 if ($row >= 1) {
                     while ($row = mysqli_fetch_array($result)) {
-
 
                         $_SESSION['cart_id '] = $cart_id = $row['cart_id '];
                         $_SESSION['product_id'] = $product_id = $row['product_id'];
@@ -104,11 +84,9 @@ session_start();
                         $_SESSION['product_quantity'] = $product_quantity = $row['product_quantity'];
 
                         $total = $_SESSION['product_price'] * $_SESSION['product_quantity'];
-                        // print_r($arr) = array('$total');
+                    
                         $total_sum += $total;
                         $product_qty += $product_quantity;
-
-
 
                         ?>
 
@@ -135,33 +113,26 @@ session_start();
                                     <?php echo "<span class='green'>(" . $row['product_quantity'] . ")</span>";
                                     // echo "<input type='submit' value='DELETE' name='DELETE'>";
                             
-
-
                                     echo "<div class = 'red'>" . '<a href="cart.php?product_id=' . $row['product_id'] . '" > DELETE </a>' . "</div>";
 
-
                                     ?>
+                                </div>
+                            </form>
 
                         </section>
-
 
                         <?php
                     }
                 } else {
 
+                    // if there is no product in cart redirect to the myntra.php 
                     echo "<script> alert('CART IS EMPTY '); 
 
                         window.location.href = 'myntra.php';
                         </script>";
-
-
                 }
 
-                // echo $total_sum;
-                
-
                 ?>
-
 
             </div>
         </div>
@@ -179,7 +150,6 @@ session_start();
                 <?php echo "<span class='green'>(" . $total_sum . ")</span>"; ?>
             </div>
             <a class="continuebtn" href='contactdetails.php'>CONTINUE</a>
-
 
         </div>
 

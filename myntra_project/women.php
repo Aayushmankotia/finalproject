@@ -1,6 +1,6 @@
 <?php
-  session_start();
-  ?>
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@
 
   <!-- navigation section start -->
   <?php
- 
+
 
   include 'configer.php';
   // navigationbar.php file is include here for navigation bar 
@@ -51,8 +51,9 @@
 
               <!-- fetch image and show here   -->
               <!-- <img src="uploads/<?php echo $fetch_products['avatar']; ?>" alt="" class="productimage"> -->
-              <a href="view_product.php?id=<?php echo $fetch_products['p_id']; ?>"><img src="uploads/<?php echo $fetch_products['avatar']; ?>" alt="" class="productimage"></a>
-     
+              <a href="view_product.php?id=<?php echo $fetch_products['p_id']; ?>"><img
+                  src="uploads/<?php echo $fetch_products['avatar']; ?>" alt="" class="productimage"></a>
+
               <div class="price">
 
                 <h3>
@@ -70,7 +71,10 @@
                 <input type="hidden" name="product_price" value="<?php echo $fetch_products['p_price']; ?>">
                 <input type="hidden" name="product_image" value="<?php echo $fetch_products['avatar']; ?>">
                 <input type="hidden" name="product_category" value="<?php echo $fetch_products['p_category']; ?>"><br>
-                <input type="number" name="product_quantity" value="1" min="0" class="qty, btn"><br>
+
+                <label class="center"> QUANTITY :
+                  <input type="number" name="product_quantity" value="1" min="0" class="qty, btn">
+                </label>
                 <input type="submit" value="add to cart" name="add_to_cart" class="btn hiddenbtn">
               </div>
             </form>
@@ -99,10 +103,10 @@
 
   </div>
   <?php
-  $phone= $_SESSION['phone'];
+  $phone = $_SESSION['phone'];
   if (isset($_POST['add_to_cart'])) {
 
-    if(!isset($phone)){
+    if (!isset($phone)) {
 
       echo "<script> alert('please login to add items in cart ! '); 
 
@@ -111,19 +115,18 @@
 
 
       // header("Location:login.php");
-    }
-    else{
-    // post data
-    $u_id = $_POST['u_id'];
-    $product_id = $_POST['product_id'];
-    $product_name = $_POST['product_name'];
-    $product_price = $_POST['product_price'];
-    $product_image = $_POST['product_image'];
-    $product_category = $_POST['product_category'];
-    $product_quantity = $_POST['product_quantity'];
+    } else {
+      // post data
+      $u_id = $_POST['u_id'];
+      $product_id = $_POST['product_id'];
+      $product_name = $_POST['product_name'];
+      $product_price = $_POST['product_price'];
+      $product_image = $_POST['product_image'];
+      $product_category = $_POST['product_category'];
+      $product_quantity = $_POST['product_quantity'];
 
-    // insert data into cart table
-    $insert_cart = mysqli_query($conn, "INSERT INTO cart (u_id, product_id, product_name, product_price, product_image, product_category, product_quantity) VALUES ('$u_id', '$product_id', '$product_name', '$product_price', '$product_image', '$product_category', '$product_quantity')") or die('query failed');
+      // insert data into cart table
+      $insert_cart = mysqli_query($conn, "INSERT INTO cart (u_id, product_id, product_name, product_price, product_image, product_category, product_quantity) VALUES ('$u_id', '$product_id', '$product_name', '$product_price', '$product_image', '$product_category', '$product_quantity')") or die('query failed');
     }
 
   }

@@ -17,10 +17,7 @@ $phoneerr = null;
 $flag = TRUE;
 
 if (isset($_POST['submit'])) {
-
-
-    //     // Retrieve the form data using the POST method
-
+   // Retrieve the form data using the POST method
 
     if (!preg_match('/^[0-9]{10}+$/', $_POST['phone'])) {
         $phoneerr = "INVALID PHONE NUMBER ";
@@ -74,7 +71,6 @@ if (isset($_POST['submit'])) {
                         window.location.href = 'myntra.php';
                         </script>";
             }
-
 
         } else {
 
@@ -152,10 +148,6 @@ if (isset($_POST['submit'])) {
 
     </section>
     <!-- main section close  -->
-
-
-
-
 
 </body>
 

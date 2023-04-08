@@ -6,9 +6,9 @@
           <h3>ONLINE SHOPPING</h3>
 
           <ul>
-            <li> <a class='linklocation' href=""> Men</a></li>
-            <li> <a class='linklocation' href=""> Women</a></li>
-            <li> <a class='linklocation' href="">Kids </a></li>
+            <li> <a class='linklocation' href="men.php"> Men</a></li>
+            <li> <a class='linklocation' href="women.php"> Women</a></li>
+            <li> <a class='linklocation' href="kids.php">Kids </a></li>
 
           </ul>
 

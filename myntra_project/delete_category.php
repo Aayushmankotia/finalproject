@@ -4,6 +4,7 @@ session_start();
 
 $admin = $_SESSION['admin'];
 
+// open only when authenticated
 if(!isset($admin)){
    header('location:login.php');
 };

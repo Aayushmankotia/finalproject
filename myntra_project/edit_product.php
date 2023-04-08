@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+$admin = $_SESSION['admin'];
+
+// redireact to login.php 
+if (!isset($admin)) {
+  header('location:login.php');
+}
+;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,10 +24,10 @@
 </head>
 
 
-</style> 
+</style>
 
 <body>
-<h2 class='add_product_div'>Edit Product</h2>
+	<h2 class='add_product_div'>Edit Product</h2>
 	<?php
 	// Connect to databas
 	include 'configer.php';

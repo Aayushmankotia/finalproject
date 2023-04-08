@@ -5,36 +5,39 @@ session_start();
 
 @include 'admin_header.php';
 
-// $admin = $_SESSION['admin'];
+$admin = $_SESSION['admin'];
 
-// if (!isset($admin)) {
-//    header('location:login.php');
-// }
-// ;
+if (!isset($admin)) {
+    header('location:login.php');
+}
+;
 
 
 // Get the user's ID from the URL parameter
 $user_id = 1;
 
-
+// number of users registered 
 $result = mysqli_query($conn, "SELECT COUNT(*) AS `count` FROM `users`");
 $row = mysqli_fetch_array($result);
 $usercount = $row['count'];
 
 $_SESSION['usercount'] = $usercount;
 
+// number of total products 
 $result = mysqli_query($conn, "SELECT COUNT(*) AS `product` FROM `product`");
 $row = mysqli_fetch_array($result);
 $productcount = $row['product'];
 
 $_SESSION['productcount'] = $productcount;
 
+// number of total orders 
 $result = mysqli_query($conn, "SELECT COUNT(*) AS `orders` FROM `orders`");
 $row = mysqli_fetch_array($result);
 $ordercount = $row['orders'];
 
 $_SESSION['ordercount'] = $ordercount;
 
+// number of total cart 
 $result = mysqli_query($conn, "SELECT COUNT(*) AS `cart` FROM `cart`");
 $row = mysqli_fetch_array($result);
 $cartcount = $row['cart'];
@@ -60,7 +63,7 @@ if (mysqli_num_rows($result) > 0) {
     echo "User not found";
 }
 
-// 
+// database connection close  
 mysqli_close($conn);
 ?>
 <!DOCTYPE html>
@@ -80,29 +83,32 @@ mysqli_close($conn);
 
 </head>
 
-<style>
-
-</style>
-
-
 <body>
+    <!-- division hold the admin_profile banner -->
     <div class="main_division_profile">
         <div class="blackdivision">
             ADMIN-PROFILE
         </div>
     </div>
 
+    <!-- user info division  -->
     <div class="admininfo admincenter ">
         <div class="adminimage admincenter">
             <img src="images/Z" alt="avatar" class="imgz">
         </div>
-        <div class="admincenter"> <?php echo $user_name ; ?></div>
-        <div class="admincenter">PHONE : <?php echo $phone ; ?></div>
-        <div class="admincenter">EMAIL :  <?php echo $email ; ?></div>
+        <div class="admincenter">
+            <?php echo $user_name; ?>
+        </div>
+        <div class="admincenter">PHONE :
+            <?php echo $phone; ?>
+        </div>
+        <div class="admincenter">EMAIL :
+            <?php echo $email; ?>
+        </div>
         <div class="admincenter"><a class="logoutbtn" href="logout.php"> " LOGOUT "</a></div>
-
     </div>
 
+    <!-- flex container which show the dynamic data like total users, orders, products, cart items  -->
     <div class="flexclass">
         <div class="flexcontainerbox">
             <div class="flexboxes cyanneon">
@@ -140,9 +146,6 @@ mysqli_close($conn);
             </div>
         </div>
     </div>
-    
-
-
 </body>
 
 </html>
