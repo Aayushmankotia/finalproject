@@ -4,7 +4,9 @@ session_start();
 // Establish a connection to the database
 include 'configer.php';
 
-echo $phone = $_SESSION['phone'];
+ $phone = $_SESSION['phone'];
+
+@include 'navigationbar.php';
 
     //  if not authenticated redirect to logoutscreen.php 
     if (!isset($phone)) {
@@ -28,8 +30,8 @@ function test($data)
     return ($data);
 }
 
-echo $myphone = $_SESSION['phone'];
-echo $u_id = $_SESSION['u_id'];
+ $myphone = $_SESSION['phone'];
+$u_id = $_SESSION['u_id'];
 
 $check = "SELECT * FROM addresses WHERE phone = '$myphone' ";
 $check_result = mysqli_query($conn, $check);
@@ -123,6 +125,9 @@ if (mysqli_num_rows($check_result) == 1) {
 
             // Execute the SQL statement
             if (mysqli_query($conn, $sql)) {
+                echo "<script> 
+                window.location.href = 'order.php';
+                </script>";
 
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -141,13 +146,13 @@ if (mysqli_num_rows($check_result) == 1) {
     if (mysqli_num_rows($result) > 0) {
         // Loop through the results and print each row
         while ($row = mysqli_fetch_assoc($result)) {
-            $_SESSION['a_id'] = $row["a_id"] . "<br>";
-            $_SESSION['name'] = $row["name"] . "<br>";
-            $_SESSION['phone'] = $row["phone"] . "<br>";
-            $_SESSION['pincode'] = $row["pincode"] . "<br>";
-            $_SESSION['address'] = $row["address"] . "<br>";
-            $_SESSION['city'] = $row["city"] . "<br>";
-            $_SESSION['state'] = $row["state"] . "<br><br>";
+            $_SESSION['a_id'] = $row["a_id"] ;
+            $_SESSION['name'] = $row["name"];
+            $_SESSION['phone'] = $row["phone"];
+            $_SESSION['pincode'] = $row["pincode"];
+            $_SESSION['address'] = $row["address"];
+            $_SESSION['city'] = $row["city"];
+            $_SESSION['state'] = $row["state"];
         }
         header("Location:order.php");
     }

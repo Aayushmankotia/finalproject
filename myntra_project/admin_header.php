@@ -6,7 +6,7 @@
       <div class="navigation_top">
          <div>
             <!-- logo image  -->
-            <a href="./myntra.php"><img class="logoimg"
+            <a href="../myntra.php"><img class="logoimg"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-eqlSHJPKwe1riVNwVsJh_2e6KsKBmEmOX87ht807tQ&s"
                   alt="LOGO"></a>
          </div>

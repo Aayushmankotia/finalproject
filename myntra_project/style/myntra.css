@@ -8,9 +8,7 @@
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 #dark-mode-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+  margin: auto 62px;
   background: #05031a;
   color: white;
   border: none;
@@ -41,11 +39,14 @@ nav {
   box-shadow: 0px 2px 9px 2px rgb(226, 226, 226);
   z-index: 2;
 }
+.logoimgdiv{
+  margin:auto 50px;
+}
 
- .anchor_margin{
+ /* .anchor_margin{
   margin-right:100px;
 
- }
+ } */
 .dropspan{
   padding-top:30px;
   position: relative;
@@ -58,11 +59,6 @@ nav {
   height:300px;
 }
 
-/* .flexstyle{
-  display: flex;
-  justify-content: space-evenly;
-} */
-/* dropdown content styling  */
 .hidden_menu{
   width:40%;
   height:300px;
@@ -124,7 +120,7 @@ nav {
   border-bottom-style: solid;
 }
 .marginauto{
-  margin-top:4.5%;
+  margin-top:auto;
 }
 
 a{
@@ -156,7 +152,7 @@ display:flex;
 justify-content:end;
 /* padding-right: 167px; */
 align-items:center;
-width: 50%;
+width: 53%;
 }
 /* .size{
   font-size:40px;
@@ -167,7 +163,7 @@ width: 50%;
 }
 .cart{
   font-size:40px;
-  padding:19px;
+  padding: 18px 58px;
 
 }
 .drop_profile{
@@ -231,13 +227,47 @@ height:50%;
   font-weight: 700;
 }
 
+.hiddencontainer{
+  display:none;
 
+}
 
+/*responsive        ......................................*/
+
+@media only screen and (max-width: 1750px) {
+ 
+  /* .container2{
+    display:block
+  } */
+.profile{
+    display:none;
+    
+  }
+  .cart_div{
+    display:none;
+    
+  } 
+ 
+}
+@media only screen and (max-width: 1482px) {
+ 
+  .container2{
+    display: none;
+  }
+  .hiddencontainer{
+    display:block;
+    padding: 30px 60px;
+    font-size:x-large;
+  
+  }
+   
+  }
 /*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,navigation searchbar */
 
 .searchBox {
   position: relative;
-  margin-right: 120px;
+  margin-right: 108px;
+  
   transform: translate(-0%,-50%);
   background: #f5f6f7;
   height: 40px;
@@ -247,7 +277,7 @@ height:50%;
 
 
 .searchBox:hover > .searchInput {
-  width: 400px;
+  width: 380px;
   padding-left:22px;
   margin:0px;
   
@@ -324,8 +354,8 @@ width:40px;
 margin-right:14px;
 }
 .reddot{
-  bottom: 24px;
-  left: 76px;
+  bottom: 16px;
+  left: 112px;
     font-weight: 700;
     position: relative;
   display: inline-block;
@@ -396,11 +426,12 @@ margin-right:14px;
 .brand_division{
   display:flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
  height:80%;
+ 
 }
 .banner{
-  position: relative;
+  position: sticky;
   bottom: 28%;
   right: 0%;
   width: 100%;
@@ -430,6 +461,7 @@ h4{
   padding:10%;
   color:white;
 }
+
 /* styling for the brand banner section   */
 
 

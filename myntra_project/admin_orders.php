@@ -5,10 +5,13 @@ include 'configer.php';
 //  admin nevigation bar is include by admin_header.php 
 @include 'admin_header.php';
 
+
+$admin = $_SESSION['admin'];
 // athuntication check  
-if (!isset($admin)) {
-  header('location:login.php');
-};
+// if (!isset($admin)) {
+//   header('location:login.php');
+
+// };
 
 
 

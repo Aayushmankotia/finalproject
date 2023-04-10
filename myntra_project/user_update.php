@@ -8,14 +8,6 @@ if (!isset($u_id)) {
     header("Location : login.php");
 }
 
-$admin = $_SESSION['admin'];
-
-// redireact to login.php 
-if (!isset($admin)) {
-  header('location:login.php');
-}
-;
-
 $u_id = $_SESSION['u_id'];
 $name = $_SESSION['user_name'];
 $email = $_SESSION['email'];

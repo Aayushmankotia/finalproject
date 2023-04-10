@@ -30,7 +30,7 @@ $phone = $_SESSION['phone'];
       <!-- main division  -->
       <div class="container1">
         <div class="container0">
-          <div>
+          <div class="logoimgdiv">
             <!-- logo image  -->
             <a href="myntra.php"><img class="logoimg"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-eqlSHJPKwe1riVNwVsJh_2e6KsKBmEmOX87ht807tQ&s"
@@ -182,8 +182,13 @@ $phone = $_SESSION['phone'];
 
             </section>
           </div>
+
           <!-- orange section ends  -->
         </div>
+        <div class="hiddencontainer">
+          <i class="fa fa-bars"></i>
+        </div>
+
         <div class="container2"><!--this container using flex box-->
 
           <!-- search bar section  -->
@@ -273,16 +278,17 @@ $phone = $_SESSION['phone'];
             <a class="cart anchor_margin" href="cart.php" alt='CART'>
               <i class="fa fa-cart-plus "></i></a>
           </div>
-
-        </div>
-        <div class="">
-
           <button id="dark-mode-btn">dark/light</button>
 
         </div>
+        <!-- <div class="light_dark"> -->
+
+
+
+        <!-- </div> -->
 
       </div>
-      </div>
+
     </nav>
     <!-- navigation section ends  -->
 

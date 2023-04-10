@@ -38,10 +38,10 @@ session_start();
     @include 'navigationbar.php';
 
 
-    if (isset($_GET['product_id'])) {
-        $product_id = mysqli_real_escape_string($conn, $_GET['product_id']);
+    if (isset($_GET['cart_id'])) {
+        $cart_id = mysqli_real_escape_string($conn, $_GET['cart_id']);
 
-        $sql = "DELETE FROM cart WHERE product_id = '$product_id'";
+        $sql = "DELETE FROM cart WHERE cart_id = '$cart_id'";
 
         if ($conn->query($sql) === TRUE) {
             // deletion successful
@@ -113,7 +113,7 @@ session_start();
                                     <?php echo "<span class='green'>(" . $row['product_quantity'] . ")</span>";
                                     // echo "<input type='submit' value='DELETE' name='DELETE'>";
                             
-                                    echo "<div class = 'red'>" . '<a href="cart.php?product_id=' . $row['product_id'] . '" > DELETE </a>' . "</div>";
+                                    echo "<div class = 'red'>" . '<a href="cart.php?cart_id=' . $row['cart_id'] . '" > DELETE </a>' . "</div>";
 
                                     ?>
                                 </div>
