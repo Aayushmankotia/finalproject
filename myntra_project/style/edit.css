@@ -1,3 +1,4 @@
+/* style for all update pages in admin pannel */
 .add_product_div {
     margin: 120px auto;
     width: 500px;
@@ -8,7 +9,7 @@
     text-align: center;
     color: #e51a3e;
 }
-
+ /* the update form style main form  */
 .mainform {
     width: 500px;
     margin: 50px auto;
@@ -18,12 +19,14 @@
     padding: 20px;
 }
 
+/* label styling update page  */
 label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
+/* input type styling  */
 .productinput {
     padding: 10px;
     border-radius: 5px;
@@ -34,6 +37,7 @@ label {
     background-color: #f4f4f4;
 }
 
+/* select tag css  */
 select {
     padding: 10px;
     border-radius: 5px;
@@ -63,6 +67,7 @@ select {
     background-color: #3e8e41;
 }
 
+/* data visible in form of table is styling here  */
 table {
     border-collapse: collapse;
     width: 70%;

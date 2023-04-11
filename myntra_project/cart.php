@@ -13,11 +13,11 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/cart.css">
     <link rel="stylesheet" href="style/myntra.css">
-   
+
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <title>men</title>
 </head>
@@ -137,9 +137,7 @@ session_start();
                     //     window.location.href = 'myntra.php';
                     //     </script>";
                 
-                    
-                   
-               
+                    // here bootstrap is use to show popup 
                     if (empty($cart_items)) {
                         echo '<div class=" modal fade" id="emptyCartModal" tabindex="-1" role="dialog" aria-labelledby="emptyCartModalLabel" aria-hidden="true" data-backdrop="static">';
                         echo '<div class="popup modal-dialog modal-dialog-centered" role="document">';
@@ -156,14 +154,14 @@ session_start();
                         echo '</div>';
                         echo '</div>';
                         echo '</div>';
-                    
+
                         // Show the modal popup using JavaScript
                         echo '<script>$("#emptyCartModal").modal("show");</script>';
                     }
                 }
-                    
-                    ?>
-                    
+
+                ?>
+
             </div>
         </div>
         <div class="total">

@@ -1,9 +1,5 @@
 /* css for view_product.php */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+
 
 .fullbody {
     margin-top: 90px;
@@ -15,7 +11,7 @@ body {
     margin-bottom: 10px;
     text-align: center;
 }
-
+/* style for paragraph tag text  */
 .p_text{
     font-size: 18px;
     margin-top: 5px;
@@ -33,6 +29,7 @@ body {
     margin-right: auto;
 }
 
+/* input field for the numbers  */
 input[type="number"] {
     width: 60px;
     margin-right: 10px;
@@ -63,7 +60,7 @@ input[type="submit"]:active {
     transform: translateY(2px);
 }
 
-/* css for logoutscreen  */
+/* css for logoutscreen  ****************************/
 .center{
     
     width:260px;

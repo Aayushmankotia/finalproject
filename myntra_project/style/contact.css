@@ -1,3 +1,6 @@
+/* this styling is used to style  contactdetails.php */
+
+/* this class make the form in the center of the screen/ */
 .center{
     border:solid rgb(131, 126, 126) 1px;
     width:450px;
@@ -6,6 +9,7 @@
     flex-direction:column; */
 
 }
+/* this is the containes which holds the input fields into it  */
 .inputdivision{
     overflow:auto;
     padding: 16px ;
@@ -13,6 +17,7 @@
    
   
 }
+/* css for all input tags  */
 .input{
     width:97%;
     overflow:auto;
@@ -28,6 +33,7 @@
     border-radius:8px;
     border :none;
 }
+/* this makes the text center  */
 .textcenter{
      text-align:center;
 }

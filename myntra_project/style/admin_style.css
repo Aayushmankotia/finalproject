@@ -5,7 +5,7 @@
    padding:0;
 }
 
-
+/* this is the heading div for the forms  */
 .add_product {
    font-size: xx-large;
    margin-top: 120px;
@@ -19,16 +19,16 @@
    font-family: Arial, sans-serif;
    font-size: 16px;
    border: solid black 2px;
-   
    padding: 20px;
 }
 
+/* css for all label tag present in admin dashboards  */
 label {
    display: block;
    margin-bottom: 10px;
    font-weight: bold;
 }
-
+/* input tag style is added in this class  */
 .productinput {
    padding: 10px;
    border-radius: 5px;
@@ -39,6 +39,7 @@ label {
    background-color: #f4f4f4;
 }
 
+/* section tag style for all pages  */
 select {
    padding: 10px;
    border-radius: 5px;
@@ -53,7 +54,7 @@ select {
    text-align: center;
    margin-top: 30px;
 }
-
+/* class is use to design the add_to_cart button  */
 .btn {
    background-color: #4CAF50;
    color: white;
@@ -67,7 +68,7 @@ select {
 .btn:hover {
    background-color: #3e8e41;
 }
-
+/* all table styling  */
 table {
    border-collapse: collapse;
    width: 70%;
@@ -94,6 +95,7 @@ th {
    background-color: #4CAF50;
    color: white;
 }
+/* all table styling ends  */
 
 button {
    background-color: #008CBA;
@@ -107,9 +109,12 @@ button {
 button:hover {
    background-color: #006080;
 }
+/* margin for top to avoid the overlapping of navigation bar  */
+
 .margin-top_table{
    margin-top:120px;
 }
+
 .main_division_profile {
    margin: 90px auto 0 auto;
    width: 100%;
@@ -196,8 +201,6 @@ button:hover {
       margin: 30px auto;
       padding:20px;
      
-     
-
     }
     .admincenter{
       text-align: center;
