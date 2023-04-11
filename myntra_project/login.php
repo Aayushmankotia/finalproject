@@ -8,7 +8,26 @@ if (isset($_SESSION['registered']) || $_SESSION['registered']) {
     header('Location: myntra.php');
     exit;
 }
+?>
 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/myntra.css">
+    <link rel="stylesheet" href="style/login .css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>login/signup</title>
+</head>
+<?php
 
 $phoneerr = null;
 // error messesge store in $phoneerr
@@ -17,7 +36,7 @@ $phoneerr = null;
 $flag = TRUE;
 
 if (isset($_POST['submit'])) {
-   // Retrieve the form data using the POST method
+    // Retrieve the form data using the POST method
 
     if (!preg_match('/^[0-9]{10}+$/', $_POST['phone'])) {
         $phoneerr = "INVALID PHONE NUMBER ";
@@ -59,27 +78,79 @@ if (isset($_POST['submit'])) {
             //  if role id is mathched then redirect to admin page 
             if ($_SESSION['role_id'] == 1) {
                 $_SESSION['admin'] = 'admin';
+            
+ 
+                    echo '<div class=" modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="emptyCartModalLabel" aria-hidden="true" data-backdrop="static">';
+                    echo '<div class="popup modal-dialog modal-dialog-centered" role="document">';
+                    echo '<div class="modal-content">';
+                    echo '<div class="modal-header">';
+                    echo '<h3 class="bigtext modal-title" id="adminModalLabel">Welcome Admin</h3>';
 
-                echo "<script> alert('WELCOME ADMIN'); 
-                window.location.href = 'admin_profile.php';
-                </script>";
-
+                    echo '</div>';
+                    echo '<div class="poppara modal-body">';
+                    echo 'You have successfully logged in as an admin.';
+                    echo '</div>';
+                    echo '<div class="modal-footer">';
+                    echo '<a class="closebtn btn btn-primary" href="admin_profile.php" role="button">OK</a>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                
+                    // Show the modal popup using JavaScript
+                    echo '<script>$("#adminModal").modal("show");</script>';
+                
+                
             } else {
 
                 // otherwise redirect to myntra.php 
-                echo "<script> alert('WELCOME BACK USER'); 
-                        window.location.href = 'myntra.php';
-                        </script>";
+                echo '<div class=" modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="emptyCartModalLabel" aria-hidden="true" data-backdrop="static">';
+                    echo '<div class="popup modal-dialog modal-dialog-centered" role="document">';
+                    echo '<div class="modal-content">';
+                    echo '<div class="modal-header">';
+                    echo '<h3 class="bigtext modal-title" id="adminModalLabel">Welcome Back User</h3>';
+
+                    echo '</div>';
+                    echo '<div class="poppara modal-body">';
+                    echo 'You have successfully logged in as an user';
+                    echo '</div>';
+                    echo '<div class="modal-footer">';
+                    echo '<a class="closebtn btn btn-primary" href="myntra.php" role="button">OK</a>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                
+                    // Show the modal popup using JavaScript
+                    echo '<script>$("#adminModal").modal("show");</script>';
             }
 
         } else {
 
             // othwise complete your registration 
-            echo "<script> alert('COMPLETED YOUR SIGNUP'); 
-                    window.location.href = 'registration.php';
-                    </script>";
+         
+                    echo '<div class=" modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="emptyCartModalLabel" aria-hidden="true" data-backdrop="static">';
+                    echo '<div class="popup modal-dialog modal-dialog-centered" role="document">';
+                    echo '<div class="modal-content">';
+                    echo '<div class="modal-header">';
+                    echo '<h3 class="bigtext modal-title" id="adminModalLabel">COMPLETE YOUR SIGNUP</h3>';
 
-        }
+                    echo '</div>';
+                    echo '<div class="poppara modal-body">';
+                    echo 'Please enter more information';
+                    echo '</div>';
+                    echo '<div class="modal-footer">';
+                    echo '<a class="closebtn btn btn-primary" href="registration.php" role="button">OK</a>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                
+                    // Show the modal popup using JavaScript
+                    echo '<script>$("#adminModal").modal("show");</script>';
+            }
+
+        
 
     }
 
@@ -89,18 +160,6 @@ if (isset($_POST['submit'])) {
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style/myntra.css">
-    <link rel="stylesheet" href="style/login .css">
-    <title>login/signup</title>
-</head>
 
 <body>
 

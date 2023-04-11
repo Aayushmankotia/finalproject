@@ -7,6 +7,27 @@ include "configer.php";
 
 // navigation bar included 
 @include 'navigationbar.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/myntra.css">
+    <link rel="stylesheet" href="style/order.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Order Page</title>
+</head>
+
+<?php
 
  $phone = $_SESSION['phone'];
 
@@ -95,9 +116,29 @@ if (isset($_POST['order'])) {
     // Execute the query
     if (mysqli_query($conn, $sql)) {
         
-        echo "<script> alert('Order placed successfully'); 
-  window.location.href = 'myntra.php';
-  </script>";
+//         echo "<script> alert('Order placed successfully'); 
+//   window.location.href = 'myntra.php';
+//   </script>";
+
+
+  echo '<div class=" modal fade" id="emptyCartModal" tabindex="-1" role="dialog" aria-labelledby="emptyCartModalLabel" aria-hidden="true" data-backdrop="static">';
+  echo '<div class="popup modal-dialog modal-dialog-centered" role="document">';
+  echo '<div class="modal-content">';
+  echo '<div class="modal-header">';
+  echo '<h3 class="bigtext modal-title" id="emptyCartModalLabel">YOUR ORDER PLACED SUCESSFULLY</h3>';
+  echo '</div>';
+  echo '<div class="poppara modal-body">';
+  echo 'Please Press OK And Continue Your Shopping.';
+  echo '</div>';
+  echo '<div class="modal-footer">';
+  echo '<a class="closebtn btn btn-primary" href="myntra.php" role="button">OK</a>';
+  echo '</div>';
+  echo '</div>';
+  echo '</div>';
+  echo '</div>';
+
+  // Show the modal popup using JavaScript
+  echo '<script>$("#emptyCartModal").modal("show");</script>';
 
     } else {
         echo "Error: " . $sql  . mysqli_error($conn);
@@ -110,23 +151,6 @@ if (isset($_POST['order'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style/myntra.css">
-    <link rel="stylesheet" href="style/order.css">
-
-    <title>Order Page</title>
-</head>
-<style>
-  
-</style>
-</head>
 
 <body>
     <div class="flex_div">

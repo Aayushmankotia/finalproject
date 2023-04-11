@@ -15,6 +15,7 @@ include 'configer.php';
 
 
 $state = $_SESSION['state'];
+
 if (isset($state)) {
     // header ("Location :order.php");
     echo "<script> 

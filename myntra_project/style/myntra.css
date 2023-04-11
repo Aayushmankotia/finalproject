@@ -24,7 +24,46 @@
 
 
 
+
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.modal {
+  background-color: rgb(255, 255, 255);
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 20;
+  left: 0;
+  z-index: 10;
+  border-radius:14px;
+  width: 100%;
+  height: 100%;
+  background-color: black;  
+}
+.popup{
+  border-radius:14px;
+  
+} 
+.closebtn{
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6;
+  background-color: #1fd3e1;
+  border-color: #fffcfc;
+}
+.bigtext{
+  color:rgb(255, 103, 1);
+  font-weight: 800;
+  font-family:'Times New Roman', Times, serif;
+ 
+  
+}
+.poppara{
+  font-size:16px;
+  font-style: italic;
+}
+
+
+/* bootstaped popups                         */
 
 
 
@@ -322,7 +361,7 @@ color : #1512d4;
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 36%;
+  top: 38%;
   width: auto;
   margin-bottom: 10px;
   padding: 16px;
