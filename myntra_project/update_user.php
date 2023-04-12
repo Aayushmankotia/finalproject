@@ -10,6 +10,10 @@ session_start();
     <title>Update User</title>
     <link rel="stylesheet" href="style/myntra.css">
     <link rel="stylesheet" href="style/update.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -41,10 +45,26 @@ session_start();
         // Check if update was successful
         if ($result) {
 
-            echo "<script> alert('USER UPDATED SUCESSFULLY'); 
+    //         echo "<script> alert('USER UPDATED SUCESSFULLY'); 
 
-	window.location.href = 'admin_users.php';
-	</script>";
+	// window.location.href = 'admin_users.php';
+	// </script>";
+
+    echo '<div class=" modal fade" id="emptyCartModal" tabindex="-1" role="dialog" aria-labelledby="emptyCartModalLabel" aria-hidden="true" data-backdrop="static">';
+    echo '<div class="popup modal-dialog modal-dialog-centered" role="document">';
+    echo '<div class="modal-content">';
+    echo '<div class="modal-header">';
+    echo '<h3 class="bigtext modal-title" id="emptyCartModalLabel">USER UPDATED SUCESSFULLY</h3>';
+    echo '</div>';
+    echo '<div class="modal-footer">';
+    echo '<a class= "closebtn btn btn-primary" href="admin_users.php" role="button">BACK</a>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+  
+    // Show the modal popup using JavaScript
+    echo '<script>$("#emptyCartModal").modal("show");</script>';
         } else {
             echo "<script>alert('Error updating user data');</script>";
         }

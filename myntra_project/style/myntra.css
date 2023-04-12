@@ -66,9 +66,6 @@
 /* bootstaped popups                         */
 
 
-
-
-
 /* navigation css styling  */
 nav {
   width: 100%;
@@ -655,6 +652,7 @@ span{
   color:#e92f70;
 }
 /* styling for the admin_header.php */
+
 /* sxdcfgvhuji************************************************* */
 .main_division_profile {
   margin: 100px auto 0 auto;
@@ -732,3 +730,10 @@ span{
 
 
 /* pagination button css ends  */
+
+@media only screen and (max-width: 755px) {
+  .flex_foot{
+  text-align: center;
+}
+
+}

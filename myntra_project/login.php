@@ -108,7 +108,7 @@ if (isset($_POST['submit'])) {
                     echo '<div class="popup modal-dialog modal-dialog-centered" role="document">';
                     echo '<div class="modal-content">';
                     echo '<div class="modal-header">';
-                    echo '<h3 class="bigtext modal-title" id="adminModalLabel">Welcome Back User</h3>';
+                    echo '<h3 class="bigtext modal-title" id="adminModalLabel">Welcome Back '. $_SESSION['user_name'].'</h3>';
 
                     echo '</div>';
                     echo '<div class="poppara modal-body">';
