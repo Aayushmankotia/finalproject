@@ -42,15 +42,52 @@ echo $_SESSION['u_id'];
 // database connection is called 
 include 'configer.php';
 
+if (isset($_GET['p_id'])) {
+	$p_id = $_GET['p_id'];
 
-$flag = false; 
+	// Fetch the category from the database
+	$sql = "SELECT * FROM product WHERE p_id= '$p_id'";
+	$result = mysqli_query($conn, $sql);
+
+	if (mysqli_num_rows($result) > 0) {
+		// Output form with data for the product
+		$row = mysqli_fetch_assoc($result);
+        echo '<div class="add_product_div">
+        <div class="add_product"> Edit Category</div>';
+		echo "<form class='mainform' action='#' method='POST' enctype='multipart/form-data'>";
+		// echo "<input type='hidden' name='p_id' value='" . $row["p_id"] . "'>";
+		echo "<label for='p_name'>Product Name:</label>";
+		echo "<input class='productinput' type='text' id='p_name' name='p_name' value='" . $row["p_name"] . "' required><br><br>";
+		echo "<label for='category'>Product Category:</label>";
+		echo "<select id='category' name='p_category'>";
+		echo "<option value='KID'" . ($row["p_category"] == "KID" ? " selected" : "") . ">KIDS</option>";
+		echo "<option value='MEN'" . ($row["p_category"] == "MEN" ? " selected" : "") . ">MEN</option>";
+		echo "<option value='WOMEN'" . ($row["p_category"] == "WOMEN" ? " selected" : "") . ">WOMEN</option>";
+		echo "</select>";
+		echo "<label for='p_price'>Product Price:</label>";
+		echo "<input class='productinput' type='text' id='p_price' name='p_price' value='" . $row["p_price"] . "' required><br><br>";
+		echo "<label for='avatar'>Avatar:</label>";
+		echo "<img src='uploads/" . $row["avatar"] . "' width='100' height='100'><br>";
+		echo "<input class='productinput' type='file' placeholder='IMAGE URL' name='avatar' id='avatar' value='" . $row["avatar"] . "'><br><br>";
+		echo "<input class='btn' type='submit' name='submit' value='UPDATE'>";
+		echo "</form>";
+        echo "</div>";
+        echo "</div>";
+	} else {
+		echo "Product not found.";
+	}
+	echo "</div>";
+}
+
+$_SESSION['avatar']=$row["avatar"];
+ 
 
 if (isset($_POST['submit'])) {
 
 
     $p_name = $_POST['p_name'];
-    $p_category =$_POST['p_category'];
-    $p_price =  $_POST['p_price'];
+    $p_category = $_POST['p_category'];
+    $p_price = $_POST['p_price'];
 
    // Initialize $flag to false
 
@@ -101,30 +138,17 @@ if (isset($_POST['submit'])) {
 
     }
     // display piture using url 
-    elseif (!empty($file_url = $_POST['avatar'])) {
-        // $imgname =(END(explode('/',$avatar)));
-        $target_dir = "uploads/";
 
-
-        $avatar = basename($file_url);
-        $folder_path = $target_dir . basename($file_url);
-
-
-        if (file_put_contents($folder_path, file_get_contents($file_url))) {
-            echo "";
-        } else {
-            $imgerror = "File can't be moved!";
-        }
-    } else {
-        $avatar = "person-gb066ca900_640.png";
+    else {
+        $avatar = $_SESSION['avatar'];
 
         // $imgerror= "*IMAGE IS REQUIRED ";
         // $flag= false;
     }
 
-    if ($flag) {
+   
 
-        $sql = "UPDATE product SET p_name = '$p_name', p_category = '$p_category', p_price = '$p_price', avatar = '$avatar' WHERE p_id = '$p_id'";
+        $sql = "UPDATE product SET p_name = '$p_name', p_category = '$p_category', p_price = '$p_price', avatar = '$avatar' WHERE p_id = '$p_id' ";
 	echo $sql ;
         $result = mysqli_query($conn, $sql);
 
@@ -155,47 +179,6 @@ if (isset($_POST['submit'])) {
         // header("Location: login.php");
        
     }
-	
-}
-
-if (isset($_GET['p_id'])) {
-	$p_id = $_GET['p_id'];
-
-	// Fetch the category from the database
-	$sql = "SELECT * FROM product WHERE p_id= '$p_id'";
-	$result = mysqli_query($conn, $sql);
-
-	if (mysqli_num_rows($result) > 0) {
-		// Output form with data for the product
-		$row = mysqli_fetch_assoc($result);
-        echo '<div class="add_product_div">
-        <div class="add_product"> Edit Category</div>';
-		echo "<form class='mainform' action='#' method='POST' enctype='multipart/form-data'>";
-		// echo "<input type='hidden' name='p_id' value='" . $row["p_id"] . "'>";
-		echo "<label for='p_name'>Product Name:</label>";
-		echo "<input class='productinput' type='text' id='p_name' name='p_name' value='" . $row["p_name"] . "' required><br><br>";
-		echo "<label for='category'>Product Category:</label>";
-		echo "<select id='category' name='p_category'>";
-		echo "<option value='KID'" . ($row["p_category"] == "KID" ? " selected" : "") . ">KIDS</option>";
-		echo "<option value='MEN'" . ($row["p_category"] == "MEN" ? " selected" : "") . ">MEN</option>";
-		echo "<option value='WOMEN'" . ($row["p_category"] == "WOMEN" ? " selected" : "") . ">WOMEN</option>";
-		echo "</select>";
-		echo "<label for='p_price'>Product Price:</label>";
-		echo "<input class='productinput' type='text' id='p_price' name='p_price' value='" . $row["p_price"] . "' required><br><br>";
-		echo "<label for='avatar'>Avatar:</label>";
-		echo "<img src='uploads/" . $row["avatar"] . "' width='100' height='100'><br>";
-		echo "<input class='productinput' type='file' placeholder='IMAGE URL' name='avatar' id='avatar'><br><br>";
-		echo "<input class='btn' type='submit' name='submit' value='UPDATE'>";
-		echo "</form>";
-        echo "</div>";
-        echo "</div>";
-	} else {
-		echo "Product not found.";
-	}
-	echo "</div>";
-}
-
-
 
 	?>
 	</body>
