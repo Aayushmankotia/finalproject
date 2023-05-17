@@ -12,7 +12,7 @@
          </div>
          <div>
             <!-- ADMINPANEL button  -->
-            <a href="admin_page.php" class="logo">Admin<span>Panel</span></a>
+            <a href="admin_profile.php" class="logo">Admin<span>Panel</span></a>
          </div>
 
          <!-- navigation buttons  -->

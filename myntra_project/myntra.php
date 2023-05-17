@@ -9,6 +9,7 @@ session_start();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/myntra.css">
+  <link rel="Website Icon" type="png" href="images/deku.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>HOME-PAGE</title>
 
@@ -48,15 +49,7 @@ session_start();
     <!-- brand image with aside text  -->
     <div class="brand_division">
 
-      <section class="brandimg brand">
-        <img class="banner" src="images/banner2.jpg" alt="">
-      </section>
-
-      <section class="brandtext brand">
-        <h4>FASHION</h4>
-        <p class="brand_paragraph"> off upto 65% </p>
-      </section>
-
+    <img src="images/cropbanner2.jpg" class="banner_img " alt="Your Image">
     </div>
 
     <!-- deals of the day heading section  -->
@@ -161,7 +154,7 @@ session_start();
 
         <a href="men.php">
           <article class="box">
-            <img src="images/mformalshirtsmultiple.jpg" alt="product" class="productimg">
+            <img src="images/mformalshirt.jpg" alt="product" class="productimg">
             <div class="productname">SHIRT</div>
           </article>
         </a>
@@ -187,3 +180,5 @@ session_start();
 </body>
 
 </html>
+
+

@@ -25,6 +25,7 @@ $u_id = $_SESSION['u_id'];
   <link rel="stylesheet" href="style/myntra.css">
   <link rel="stylesheet" href="style/admin_style.css">
   <!-- <link rel="stylesheet" href="style/contact.css"> -->
+  <link rel="Website Icon" type="png" href="images/deku.png">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>MY-ORDERS</title>
@@ -35,7 +36,7 @@ $u_id = $_SESSION['u_id'];
   <table class="margin-top_table">
 
     <!-- table heading is given here  -->
-    <h2 class=' margin-top_table'> ALL ORDERS </h2>
+    <h3 class=' margin-top_table'> ALL ORDERS </h3>
     <thead>
 
       <!-- table headers is used here  -->

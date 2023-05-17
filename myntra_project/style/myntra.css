@@ -5,7 +5,7 @@
 
 }
 
-/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx dark and light mode button  */
 
 #dark-mode-btn {
   margin: auto 62px;
@@ -17,13 +17,9 @@
   cursor: pointer;
 }
 .dark-mode {
-  background: #07051a;
+  background: #000000;
   color: rgb(10, 58, 189);
 }
-
-
-
-
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
@@ -79,10 +75,6 @@ nav {
   margin:auto 50px;
 }
 
- /* .anchor_margin{
-  margin-right:100px;
-
- } */
 .dropspan{
   padding-top:30px;
   position: relative;
@@ -113,13 +105,13 @@ nav {
 
 /* background color css for dropdown content  */
 .hidden_menu_green{
-  background-color: rgb(65, 228, 60);
+  background-color: rgb(251, 251, 251);
 }
 .hidden_menu_yellow{
-  background-color: rgb(232, 245, 52);
+  background-color: rgb(251, 251, 251);
 }
 .hidden_menu_orange{
-  background-color:rgb(51, 235, 189);
+  background-color:rgb(251, 251, 251);
 }
 
 /* hover on navigation  */
@@ -145,13 +137,13 @@ nav {
 }
 
 
-.link {
+.navlink {
   padding: 32px 60px;
   height: 80px;
   display: inline-block;
 }
 
-.link:hover{
+.navlink:hover{
   border-bottom-width: 4px;
   border-bottom-style: solid;
 }
@@ -159,7 +151,7 @@ nav {
   margin-top:auto;
 }
 
-a{
+.aa{
 text-decoration: none;
 color: black;
 }
@@ -221,8 +213,30 @@ width: 53%;
   display:block;
 }
 .orange_heading{
-  font-size:14px;
-  color:rgb(255, 81, 0);
+  font-size:28px;
+  font-weight: 700;
+  color: cyan;
+  text-shadow: 1px 3px #ffc085;
+  text-align: center;
+ 
+  
+}
+.orangee_heading
+{
+  font-size:16px;
+  font-weight: 700;
+  color: rgb(51, 235, 189);
+}
+.green_heading{
+  font-size:16px;
+  font-weight: 700;
+  color:rgb(111, 243, 111);
+}
+.yellow_heading{
+  font-size:16px;
+  font-weight: 700;
+  color:rgb(232, 245, 52);
+
 }
 .drop_info
 {
@@ -232,19 +246,20 @@ width: 53%;
 .login_button{
   border:solid rgb(48, 245, 252) 3px;
   border-radius: 6px;
-  /* background-color: #eeeeee; */
   padding:4px;
   font-size:small;
   background-color: black;
   color:rgb(45, 150, 248);
- 
-  /* margin-left:6px; */
   
 }
+.login_button:hover{
+  background-color: #ffffff;
+}
+
 .flexbutton{
 display:flex;
 justify-content: space-around;
-align-items: end;
+align-items: center;
 height:50%;
 
 }
@@ -271,6 +286,7 @@ height:50%;
 /*responsive        ......................................*/
 
 @media only screen and (max-width: 1750px) {
+  
  
   /* .container2{
     display:block
@@ -452,50 +468,15 @@ margin-right:14px;
 }
 
 /* media quary for responsive slider */
-@media only screen and (max-width: 300px) {
+  @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
 }
 
 /* slider css ends  ////////////////////////////////////////////////////////////////////*/
 
 /* styling for the brand banner section   */
-.brand_division{
-  display:flex;
-  justify-content: space-evenly;
-  flex-wrap: nowrap;
- height:80%;
- 
-}
-.banner{
-  position: sticky;
-  bottom: 28%;
-  right: 0%;
-  width: 100%;
-}
-.brand{ 
-background-color: rgb(1 11 80);
-overflow: hidden; 
-}
-.brandimg {
-  width:70%;
-  height:500px;
-}
-.brandtext {
-  width:30%;
-  height:500px;
-  text-align:center;
-}
-
-h4{
-  font-size: 56px;
-  margin-top:25%;
-  color:orangered;
-  text-shadow: 2px 2px 4px 5px #717171;
-}
-.brand_paragraph{
-  font-size: 50px;
-  padding:10%;
-  color:white;
+.banner_img{
+  width:100%;
 }
 
 /* styling for the brand banner section   */
@@ -564,11 +545,19 @@ footer{
   flex-wrap: wrap;
   gap:3%;
 }
+@media only screen and (max-width: 840px) {
+.flex_foot{
+  width:86%;
+  text-align: left;
+}
+
+}
 ul {
   list-style-type:none;
 }
 h3{
   margin-bottom: 4%;
+  color: #ff2b88;
 }
 .bottom_margin{
   margin: 2%;
@@ -718,14 +707,19 @@ span{
 /* pagination button css  */
 
 .paginationbtn{
-  
-  margin-top: 22px;
+  margin:22px 40px 40px 40px;
   text-align: center;
+}
+.block:hover{
+  background-color: #ff2b88;
+  color:white;
+  border:solid #ff2b88 2px;
 }
 .block{
    border:solid black 2px;
    padding:15px;
    border-radius: 6px;
+   
 }
 
 
@@ -735,5 +729,16 @@ span{
   .flex_foot{
   text-align: center;
 }
+
+}
+a{
+  color: #000000;
+  text-decoration: none;
+  font-size: larger;
+
+}
+a:hover{
+  color: #000000 !important;
+  text-decoration: none !important;
 
 }

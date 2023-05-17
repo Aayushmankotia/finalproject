@@ -1,8 +1,4 @@
-<?php
-session_start();
 
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,12 +7,19 @@ session_start();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/myntra.css">
+
+  <link rel="Website Icon" type="png" href="images/deku.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>firstpage</title>
+  <title>MYNTRA</title>
 
 </head>
 
 <?php
+
+session_start();
+
+
+
 include "configer.php";
 
 $u_id = $_SESSION['u_id'];
@@ -32,21 +35,22 @@ $phone = $_SESSION['phone'];
         <div class="container0">
           <div class="logoimgdiv">
             <!-- logo image  -->
-            <a href="logout.php"><img class="logoimg"
+            <a href="logout.php"><img class="logoimg aa"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-eqlSHJPKwe1riVNwVsJh_2e6KsKBmEmOX87ht807tQ&s"
                 alt="LOGO"></a>
           </div>
+          
           <!-- green background dropdown  -->
           <div class="green">
 
-            <a class="link greendrop" href="men.php">MEN</a>
+            <a class="navlink greendrop aa" href="men.php">MEN</a>
             <section class="hidden_menu_green hidden_menu">
 
               <!-- //sxdfcgvbhjnkmljnhbgvfcdx -->
               <?php
 
               include 'configer.php';
-              $sql = "SELECT * FROM categories WHERE category = 'MEN' ORDER BY category_type, category_name";
+              $sql = "SELECT * FROM categories WHERE category = 'MEN'";
               $result = mysqli_query($conn, $sql);
 
               // Group categories by category type and name
@@ -72,7 +76,7 @@ $phone = $_SESSION['phone'];
                     echo "<td class='tabledata'>";
                     echo "<h5 class='green_heading'>" . $category_type . '</h5><br>';
                     foreach ($category_names as $category_name) {
-                      echo '<a href="men.php?name=' . $category_name . '">' . $category_name . '</a><br>';
+                      echo '<a class="aa" href="men.php?name=' . $category_name . '">' . $category_name . '</a><br>';
                     }
                     echo '</td>';
                   }
@@ -86,13 +90,13 @@ $phone = $_SESSION['phone'];
 
           <!-- yellow dropdown section -->
           <div class="yellow">
-            <a class='link yellowdrop ' href="women.php">WOMEN</a>
+            <a class='navlink yellowdrop aa' href="women.php">WOMEN</a>
             <section class="hidden_menu_yellow hidden_menu">
 
               <?php
 
 
-              $sql = "SELECT * FROM categories WHERE category = 'WOMEN' ORDER BY category_type, category_name";
+              $sql = "SELECT * FROM categories WHERE category = 'WOMEN'";
 
 
               $result = mysqli_query($conn, $sql);
@@ -124,7 +128,7 @@ $phone = $_SESSION['phone'];
                     echo "<td class='tabledata'>";
                     echo "<h5 class='yellow_heading'>" . $category_type . '</h5><br>';
                     foreach ($category_names as $category_name) {
-                      echo '<a href="women.php?name=' . $category_name . '">' . $category_name . '</a><br>';
+                      echo '<a class="aa" href="women.php?name=' . $category_name . '">' . $category_name . '</a><br>';
                     }
                     echo '</td>';
                   }
@@ -140,12 +144,12 @@ $phone = $_SESSION['phone'];
 
           <!-- orange dropdown section  -->
           <div class="orange">
-            <a class='link orangedrop' href="kids.php">KIDS</a>
+            <a class='navlink orangedrop aa' href="kids.php">KIDS</a>
 
             <section class="hidden_menu_orange hidden_menu">
               <?php
 
-              $sql = "SELECT * FROM categories WHERE category = 'KIDS' ORDER BY category_type, category_name";
+              $sql = "SELECT * FROM categories WHERE category = 'KIDS'";
 
               $result = mysqli_query($conn, $sql);
 
@@ -169,9 +173,9 @@ $phone = $_SESSION['phone'];
                   echo '<tr>';
                   foreach ($grouped_categories as $category_typey => $category_names) {
                     echo "<td class='tabledata'>";
-                    echo "<h5 class='orange_heading'>" . $category_typey . '</h5><br>';
+                    echo "<h5 class='orangee_heading'>". $category_typey . '</h5><br>';
                     foreach ($category_names as $category_namey) {
-                      echo '<a href="kids.php?name=' . $category_namey . '">' . $category_namey . '</a><br>';
+                      echo '<a class="aa" href="kids.php?name=' . $category_namey . '">' . $category_namey . '</a><br>';
                     }
                     echo '</td>';
                   }
@@ -205,7 +209,7 @@ $phone = $_SESSION['phone'];
 
 
           <div class="profile_div">
-            <a class="profile anchor_margin" href="#profile" alt='PROFILE'>
+            <a class="profile anchor_margin aa" href="#profile" alt='PROFILE'>
               <i class="fa fa-user-circle-o "></i>
             </a>
 
@@ -275,7 +279,7 @@ $phone = $_SESSION['phone'];
             <span class="reddot">
               <?php echo $count_value; ?>
             </span>
-            <a class="cart anchor_margin" href="cart.php" alt='CART'>
+            <a class="cart anchor_margin aa" href="cart.php" alt='CART'>
               <i class="fa fa-cart-plus "></i></a>
           </div>
           <button id="dark-mode-btn">dark/light</button>

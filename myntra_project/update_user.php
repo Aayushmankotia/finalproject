@@ -10,6 +10,7 @@ session_start();
     <title>Update User</title>
     <link rel="stylesheet" href="style/myntra.css">
     <link rel="stylesheet" href="style/update.css">
+    <link rel="Website Icon" type="png" href="images/deku.png">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -32,14 +33,14 @@ session_start();
 
     // Check if form was submitted
     if (isset($_POST['submit'])) {
-        $id = $_POST['id'];
+        $u_id = $_POST['u_id'];
         $role_id = $_POST['role_id'];
         $phone = $_POST['phone'];
         $user_name = $_POST['user_name'];
         $email = $_POST['email'];
 
         // Update user data in database
-        $sql = "UPDATE users SET role_id='$role_id', phone='$phone', user_name='$user_name', email='$email' WHERE u_id='$id'";
+        $sql = "UPDATE users SET role_id='$role_id', phone='$phone', user_name='$user_name', email='$email' WHERE u_id='$u_id'";
         $result = mysqli_query($conn, $sql);
 
         // Check if update was successful
@@ -73,8 +74,8 @@ session_start();
         mysqli_close($conn);
     } else {
         // Fetch user data from database
-        $id = $_GET['id'];
-        $sql = "SELECT * FROM users WHERE u_id='$id'";
+        $u_id = $_GET['u_id'];
+        $sql = "SELECT * FROM users WHERE u_id='$u_id'";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
 
@@ -103,7 +104,7 @@ session_start();
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" value="<?php echo $row['email']; ?>" required>
             </div>
-            <button type="submit" name="submit">Update</button>
+            <input type="submit" name="submit" value ="update">
         </form>
     </div>
 

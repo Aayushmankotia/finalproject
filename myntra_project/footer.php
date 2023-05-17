@@ -98,7 +98,7 @@
         <div class="copywrite">
 
           <!-- copyrights      -->
-          <p>© 2023 www.myntra.com. All rights reserved.</p>
+          <p>© 2023 www.myntra.com. All rights reserved by AAYUSH MANKOTIA.</p>
         </div>
 
       </div>

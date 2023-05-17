@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -20,6 +21,7 @@ $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 // calculate the starting product index for the current page
 $start = ($page - 1) * $productsPerPage;
 
+
 // perform the search query
 $sql = "SELECT * FROM product WHERE p_name LIKE '$searchTerm%' LIMIT $start, $productsPerPage";
 $result = mysqli_query($conn, $sql);
@@ -35,19 +37,20 @@ $totalProducts = $countRow['count'];
 // calculate the total number of pages
 $totalPages = ceil($totalProducts / $productsPerPage);
 
+
 // output the search results
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="style/myntra.css">
-    <link rel="stylesheet" href="style/admin_style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/myntra.css">
+  <link rel="stylesheet" href="style/admin_style.css">
     <!-- font awesome cdn link  -->
+    <link rel="Website Icon" type="png" href="images/deku.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <title>searchclist</title>
@@ -57,7 +60,7 @@ $totalPages = ceil($totalProducts / $productsPerPage);
 
 <body>
 
-    <h2 class="margin-top_table">Product Table</h2>
+    <h3 class="margin-top_table">PRODUCT TABLE</h3>
     <table>
         <tr>
             <th>ID</th>

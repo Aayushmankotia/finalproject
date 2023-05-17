@@ -28,10 +28,17 @@
     box-shadow:2px 2px 12px 8px rgb(177, 177, 177);
     background-color: black;
 }
-.container_boxes:hover{
+.container_boxes img {
+    -webkit-transition: 0.5s linear;
+    transition: 0.5s linear;
+  }
 
-    box-shadow:2px 2px 14px 4px black;
-    transform:scale(1.1);
+.container_boxes:hover img{
+
+    /* box-shadow:2px 2px 14px 4px black;
+    transform:scale(1.1); */
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
 
 }
 .container_boxes:hover .btn{
@@ -54,15 +61,19 @@
     color:white;
 
 }
+
 .hiddenbtn{
    margin:auto;
    height:30px;
-   width:80px;
+   width:120px;
    border:solid rgb(76, 233, 76) 2px;
    color:white;
    background-color: black;
    border-radius:5px ;
    
+}
+.hiddenbtn:hover{
+    cursor: pointer;
 }
 /* style for quantity  */
 .qty{
@@ -78,5 +89,15 @@
 }
 
 input {
-    margin:6px;
+    
+  
+    margin: 6px;
+    background-color: black;
+    
+    color: #ff00e8;
+    text-align: center;
+    font-size: 16px;
+    width: 50%;
+    font-family: system-ui;
+
 }

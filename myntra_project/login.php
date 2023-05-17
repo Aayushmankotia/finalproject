@@ -21,6 +21,7 @@ if (isset($_SESSION['registered']) || $_SESSION['registered']) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/myntra.css">
     <link rel="stylesheet" href="style/login .css">
+    <link rel="Website Icon" type="png" href="images/deku.png">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -53,7 +54,7 @@ if (isset($_POST['submit'])) {
     if ($flag) {
         // sql query to fetch users data 
         $sql = "SELECT * FROM users WHERE phone = '$phone'";
-        echo $sql;
+       
 
 
         $result = mysqli_query($conn, $sql);
@@ -186,7 +187,7 @@ if (isset($_POST['submit'])) {
             </div>
 
             <div class="inputdivision textcenter">
-                <input class="input" type="tel" name="phone" placeholder="+91 | Mobile Number*">
+                <input class="input" type="tel" name="phone" placeholder="Mobile Number*">
                 <?php echo "<span>" . $phoneerr . "<span>"; ?>
 
             </div>

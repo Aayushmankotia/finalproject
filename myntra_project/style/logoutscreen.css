@@ -1,6 +1,5 @@
 /* css for view_product.php */
 
-
 .fullbody {
     margin-top: 90px;
 }
@@ -62,7 +61,6 @@ input[type="submit"]:active {
 
 /* css for logoutscreen  ****************************/
 .center{
-    
     width:260px;
     margin:10% auto;
     overflow:hidden;
@@ -79,3 +77,5 @@ input[type="submit"]:active {
     border-radius: 10px;
     height: 40px;
 }
+
+
